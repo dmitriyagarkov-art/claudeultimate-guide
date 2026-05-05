@@ -1,0 +1,3929 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="content-version" content="2026-05-05-v13-claude-icon">
+<title>Claude Ultimate Guide 2026 — от Dmitriymarketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin="">
+<!-- Gilroy (фирменный шрифт Dmitriymarketing) — основной -->
+<link href="https://fonts.cdnfonts.com/css/gilroy-bold" rel="stylesheet">
+<!-- Montserrat — fallback с Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&amp;display=swap" rel="stylesheet">
+<style>
+  /* ===== THEME SYSTEM ===== */
+  :root { --sidebar-w: 290px; --content-max: 760px }
+
+  [data-theme="light"] {
+    --bg:           #FAFAF7;
+    --surface:      #FFFFFF;
+    --surface-2:    #F5EFE6;
+    --cream:        #F5EFE6;
+    --beige:        #E8DFD0;
+    --beige-soft:   rgba(232,223,208,0.4);
+    --dark:         #4A4535;
+    --text:         #2C2820;
+    --text-dim:     #8B8579;
+    --text-muted:   #B4ADA0;
+
+    /* Terra cotta — main accent */
+    --terra-50:     #FDF4ED;
+    --terra-100:    #F9E5D2;
+    --terra-200:    #F2C9A6;
+    --terra-300:    #E8A975;
+    --terra-400:    #D4853F;
+    --terra-500:    #B8621B;
+    --terra-600:    #9A5217;
+    --terra-700:    #7C4214;
+
+    /* Semantic */
+    --emerald-50:   #ECFDF5;
+    --emerald-200:  #A7F3D0;
+    --emerald-400:  #34D399;
+    --emerald-600:  #059669;
+    --emerald-700:  #047857;
+
+    --red-50:       #FEF2F2;
+    --red-200:      #FECACA;
+    --red-500:      #EF4444;
+    --red-600:      #DC2626;
+    --red-700:      #B91C1C;
+
+    --violet-50:    #F5F3FF;
+    --violet-100:   #EDE9FE;
+    --violet-400:   #A78BFA;
+    --violet-600:   #7C3AED;
+    --violet-700:   #6D28D9;
+
+    --shadow-sm:    0 1px 2px rgba(74,69,53,.05);
+    --shadow:       0 4px 16px rgba(74,69,53,.07);
+    --shadow-lg:    0 12px 40px rgba(74,69,53,.10);
+  }
+
+  [data-theme="dark"] {
+    --bg:           #1A1612;
+    --surface:      #25201A;
+    --surface-2:    #2D2823;
+    --cream:        #2D2823;
+    --beige:        #3D362E;
+    --beige-soft:   rgba(61,54,46,0.4);
+    --dark:         #F5F1EA;
+    --text:         #F5F1EA;
+    --text-dim:     #A09689;
+    --text-muted:   #6B6259;
+
+    --terra-50:     rgba(212,133,63,0.08);
+    --terra-100:    rgba(212,133,63,0.15);
+    --terra-200:    rgba(212,133,63,0.25);
+    --terra-300:    #C28B5C;
+    --terra-400:    #E8A975;
+    --terra-500:    #D4853F;
+    --terra-600:    #B8621B;
+    --terra-700:    #9A5217;
+
+    --emerald-50:   rgba(52,211,153,0.08);
+    --emerald-200:  rgba(52,211,153,0.25);
+    --emerald-400:  #34D399;
+    --emerald-600:  #6EE7B7;
+    --emerald-700:  #A7F3D0;
+
+    --red-50:       rgba(239,68,68,0.08);
+    --red-200:      rgba(239,68,68,0.25);
+    --red-500:      #F87171;
+    --red-600:      #FCA5A5;
+    --red-700:      #FECACA;
+
+    --violet-50:    rgba(167,139,250,0.08);
+    --violet-100:   rgba(167,139,250,0.15);
+    --violet-400:   #C4B5FD;
+    --violet-600:   #A78BFA;
+    --violet-700:   #DDD6FE;
+
+    --shadow-sm:    0 1px 2px rgba(0,0,0,.3);
+    --shadow:       0 4px 16px rgba(0,0,0,.4);
+    --shadow-lg:    0 12px 40px rgba(0,0,0,.5);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box }
+  html { scroll-behavior: smooth }
+  body {
+    font-family: 'Gilroy', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background .3s, color .3s;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--terra-200); color: var(--dark) }
+  ::-webkit-scrollbar { width: 8px; height: 8px }
+  ::-webkit-scrollbar-track { background: var(--bg) }
+  ::-webkit-scrollbar-thumb { background: var(--beige); border-radius: 4px }
+  ::-webkit-scrollbar-thumb:hover { background: var(--terra-300) }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    position: fixed; top: 0; left: 0;
+    width: var(--sidebar-w); height: 100vh;
+    background: var(--surface);
+    border-right: 1px solid var(--beige);
+    z-index: 40; overflow-y: auto;
+    display: flex; flex-direction: column;
+    transition: transform .3s, background .3s, border-color .3s;
+  }
+  .sidebar-header {
+    padding: 24px 22px 18px;
+    border-bottom: 1px solid var(--beige);
+  }
+  .sidebar-logo {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 21px; font-weight: 800;
+    color: var(--dark); letter-spacing: -0.5px;
+    transition: color .3s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sidebar-logo .dot {
+    display: inline-block; width: 10px; height: 10px;
+    border-radius: 50%; background: var(--terra-400);
+  }
+  .sidebar-sub {
+    font-size: 13px; color: var(--text-dim);
+    margin-top: 4px; font-weight: 500;
+    letter-spacing: .3px;
+  }
+
+  .progress-container {
+    padding: 14px 22px;
+    border-bottom: 1px solid var(--beige);
+  }
+  .progress-row {
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--text-dim);
+    margin-bottom: 6px; text-transform: uppercase;
+    letter-spacing: 1px; font-weight: 600;
+  }
+  .progress-pct { color: var(--terra-500); font-weight: 700; font-size: 12px; }
+  .progress-bar {
+    width: 100%; height: 4px; border-radius: 2px;
+    background: var(--cream); overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; border-radius: 2px;
+    background: linear-gradient(90deg, var(--terra-400), var(--terra-500));
+    width: 0%; transition: width .3s;
+  }
+
+  .sidebar nav { padding: 8px 0; flex: 1; overflow-y: auto }
+  .nav-block-title {
+    display: block; padding: 18px 22px 6px;
+    font-size: 12.5px; font-weight: 800;
+    color: var(--dark); text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color .3s;
+  }
+  .nav-item {
+    display: block; width: 100%; padding: 9px 22px;
+    background: none; border: none; color: var(--text-dim);
+    font: inherit; font-size: 14.5px; text-align: left;
+    cursor: pointer; transition: all .2s;
+    border-left: 3px solid transparent; line-height: 1.45;
+    font-weight: 500;
+  }
+  .nav-item:hover { color: var(--text); background: var(--terra-50) }
+  .nav-item.active {
+    color: var(--terra-500); border-left-color: var(--terra-400);
+    background: var(--terra-50); font-weight: 600;
+  }
+
+  .theme-toggle-wrap {
+    padding: 14px 22px; border-top: 1px solid var(--beige);
+  }
+  .theme-toggle {
+    display: flex; align-items: center; gap: 10px; width: 100%;
+    padding: 10px 14px; background: var(--cream);
+    border: 1px solid var(--beige); border-radius: 10px;
+    cursor: pointer; font: inherit; font-size: 13px;
+    font-weight: 600; color: var(--text); transition: all .2s;
+  }
+  .theme-toggle:hover { border-color: var(--terra-400); color: var(--terra-500) }
+  .theme-toggle svg { width: 16px; height: 16px; flex-shrink: 0 }
+
+  .menu-toggle {
+    display: none; position: fixed; top: 14px; left: 14px; z-index: 50;
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--surface); border: 1px solid var(--beige);
+    color: var(--text); font-size: 18px; cursor: pointer;
+    align-items: center; justify-content: center;
+    box-shadow: var(--shadow);
+    transition: all .2s;
+  }
+  .menu-toggle:hover { border-color: var(--terra-400) }
+
+  /* ===== MAIN ===== */
+  .main {
+    margin-left: var(--sidebar-w);
+    min-height: 100vh;
+    transition: margin-left .3s;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 100px 48px 80px;
+    overflow: hidden;
+    min-height: 75vh;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-orb-1 {
+    width: 500px; height: 500px;
+    background: rgba(212,133,63,.18);
+    top: -10%; right: -8%;
+    animation: float 14s ease-in-out infinite;
+  }
+  .hero-orb-2 {
+    width: 350px; height: 350px;
+    background: rgba(184,98,27,.12);
+    bottom: 10%; left: -3%;
+    animation: float 18s ease-in-out infinite reverse;
+  }
+  [data-theme="dark"] .hero-orb-1 { background: rgba(212,133,63,.12) }
+  [data-theme="dark"] .hero-orb-2 { background: rgba(232,169,117,.08) }
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1) }
+    50% { transform: translate(30px, -20px) scale(1.05) }
+  }
+
+  .hero-inner { position: relative; z-index: 1; max-width: 720px }
+
+  /* Hero visual — иконка Claude, покачивается */
+  .hero-visual {
+    position: absolute;
+    top: 50%; right: clamp(24px, 6vw, 80px);
+    transform: translateY(-50%);
+    width: clamp(180px, 22vw, 260px);
+    aspect-ratio: 1 / 1;
+    z-index: 1;
+    pointer-events: none;
+    filter: drop-shadow(0 14px 40px rgba(184,98,27,.30))
+            drop-shadow(0 0 60px rgba(212,133,63,.18));
+    animation: hero-float 4.2s ease-in-out infinite;
+  }
+  .hero-visual svg { width: 100%; height: 100%; display: block }
+  @keyframes hero-float {
+    0%, 100% { transform: translateY(calc(-50% - 0px)) rotate(-3deg) }
+    25%      { transform: translateY(calc(-50% - 8px)) rotate(2deg) }
+    50%      { transform: translateY(calc(-50% - 4px)) rotate(4deg) }
+    75%      { transform: translateY(calc(-50% + 4px)) rotate(-2deg) }
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 14px; border-radius: 20px;
+    background: var(--terra-50);
+    border: 1px solid var(--terra-200);
+    color: var(--terra-600);
+    font-size: 12px; font-weight: 600;
+    letter-spacing: .3px;
+    margin-bottom: 28px;
+  }
+  .hero-badge .dot {
+    display: inline-block; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--terra-500);
+    box-shadow: 0 0 0 3px rgba(184,98,27,.2);
+  }
+  .hero h1 {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: clamp(36px, 5.5vw, 64px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    color: var(--dark);
+    margin-bottom: 22px;
+  }
+  .hero h1 em {
+    font-style: normal; font-weight: 800;
+    color: var(--terra-500);
+  }
+  .hero-desc {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    max-width: 620px;
+    margin-bottom: 18px;
+  }
+  .hero-desc em { font-style: italic; color: var(--text); font-weight: 500 }
+  .hero-author {
+    font-size: 15px;
+    color: var(--text-dim);
+    margin-bottom: 36px;
+  }
+  .hero-author a {
+    color: var(--terra-500); text-decoration: none;
+    border-bottom: 1px solid var(--terra-200);
+  }
+  .hero-author a:hover { color: var(--terra-600) }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 28px;
+    padding: 20px 0; border-top: 1px solid var(--beige);
+    border-bottom: 1px solid var(--beige);
+    margin-bottom: 36px;
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 3px }
+  .hero-meta-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--terra-500);
+  }
+  .hero-meta-value {
+    font-size: 15px; font-weight: 600;
+    color: var(--text);
+  }
+
+  .hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 15px 28px;
+    background: var(--dark); color: var(--bg);
+    font-size: 15px; font-weight: 600;
+    border: none; border-radius: 12px;
+    cursor: pointer; text-decoration: none;
+    transition: all .2s;
+    font-family: inherit;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg) }
+  [data-theme="dark"] .btn-primary { background: var(--terra-500); color: #FFF }
+
+  /* Терракотовая CTA-кнопка */
+  .btn-terra,
+  .section a.btn-terra,
+  a.btn-terra {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 17px 36px;
+    background: var(--terra-500) !important;
+    color: #FFF !important;
+    font-size: 16px; font-weight: 700;
+    border: none !important;
+    border-bottom: none !important;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all .2s;
+    font-family: inherit;
+    letter-spacing: -.1px;
+    box-shadow: 0 4px 14px rgba(184,98,27,.25);
+  }
+  .btn-terra:hover,
+  .section a.btn-terra:hover,
+  a.btn-terra:hover {
+    background: var(--terra-600) !important;
+    color: #FFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(184,98,27,.35);
+  }
+  .btn-terra svg, .btn-terra span { flex-shrink: 0; color: #FFF !important }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 15px 24px;
+    background: transparent; color: var(--text);
+    border: 1px solid var(--beige);
+    font-size: 15px; font-weight: 600;
+    border-radius: 12px; cursor: pointer;
+    text-decoration: none; transition: all .2s;
+    font-family: inherit;
+  }
+  .btn-secondary:hover { border-color: var(--terra-400); color: var(--terra-500) }
+
+  /* ===== SECTIONS ===== */
+  .section {
+    padding: 80px 48px;
+    border-top: 1px solid var(--beige);
+    transition: border-color .3s, background .3s;
+  }
+  .section.section-cream { background: var(--cream); }
+  .section-inner { max-width: var(--content-max); margin: 0 auto }
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; font-weight: 700;
+    color: var(--terra-500);
+    text-transform: uppercase; letter-spacing: 1.4px;
+    margin-bottom: 14px;
+  }
+  .section-eyebrow .dash {
+    display: inline-block; width: 28px; height: 1.5px;
+    background: var(--terra-400);
+  }
+  .section h2 {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--dark);
+    margin-bottom: 18px;
+  }
+  .section h2 em {
+    font-style: normal; font-weight: 700;
+    color: var(--terra-500);
+  }
+  .section-lead {
+    font-size: 18px; line-height: 1.65;
+    color: var(--text-dim);
+    margin-bottom: 36px;
+    max-width: 640px;
+  }
+  .section h3 {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--dark);
+    margin: 44px 0 14px;
+    letter-spacing: -.3px;
+  }
+  .section h3:first-child { margin-top: 0 }
+  .section h4 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--dark);
+    margin: 28px 0 10px;
+  }
+  .section p {
+    font-size: 16px; line-height: 1.75;
+    color: var(--text); margin-bottom: 16px;
+  }
+  .section p strong { color: var(--dark); font-weight: 700 }
+  .section p em { color: var(--terra-500); font-style: normal; font-weight: 600 }
+  .section a {
+    color: var(--terra-500); text-decoration: none;
+    border-bottom: 1px solid var(--terra-200);
+    transition: all .2s;
+  }
+  .section a:hover { color: var(--terra-600); border-bottom-color: var(--terra-400) }
+
+  /* ===== LISTS ===== */
+  .list-clean {
+    list-style: none;
+    margin: 18px 0;
+  }
+  .list-clean li {
+    position: relative;
+    padding: 8px 0 8px 24px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .list-clean li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 16px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--terra-400);
+  }
+  .list-clean li strong {
+    color: var(--dark); font-weight: 700;
+  }
+
+  /* ===== CALLOUTS — founders-guide style ===== */
+  .callout {
+    border-radius: 16px;
+    padding: 22px 26px;
+    margin: 28px 0;
+    border-left: 4px solid;
+    transition: border-color .3s, background .3s;
+  }
+  .callout-icon {
+    font-size: 18px; line-height: 1;
+    margin-right: 8px;
+  }
+  .callout-title {
+    font-size: 14px; font-weight: 700;
+    margin-bottom: 8px;
+    display: flex; align-items: center;
+    letter-spacing: .2px;
+  }
+  .callout p:last-child { margin-bottom: 0 }
+  .callout p { font-size: 15px; line-height: 1.7 }
+
+  .callout-tip {
+    background: var(--terra-50);
+    border-color: var(--terra-400);
+  }
+  .callout-tip .callout-title { color: var(--terra-600) }
+
+  .callout-success {
+    background: var(--emerald-50);
+    border-color: var(--emerald-400);
+  }
+  .callout-success .callout-title { color: var(--emerald-700) }
+
+  .callout-warning {
+    background: var(--red-50);
+    border-color: var(--red-500);
+  }
+  .callout-warning .callout-title { color: var(--red-700) }
+
+  .callout-info {
+    background: var(--surface-2);
+    border-color: var(--text-muted);
+  }
+  .callout-info .callout-title { color: var(--text-dim) }
+  .callout-info p { color: var(--text-dim); font-size: 13.5px; line-height: 1.6 }
+
+  /* ===== PRODUCT LIST — горизонтальные карточки с крупной иконкой сбоку ===== */
+  .product-list {
+    margin: 28px 0;
+    display: flex; flex-direction: column;
+    gap: 12px;
+  }
+  .product-card {
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--beige);
+    border-radius: 18px;
+    padding: 24px 28px;
+    transition: all .3s;
+  }
+  .product-card:hover {
+    border-color: var(--terra-300);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+  }
+  .product-emoji {
+    flex-shrink: 0;
+    width: 76px; height: 76px;
+    border-radius: 18px;
+    background: var(--terra-50);
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    font-size: 40px; line-height: 1;
+    transition: background .3s;
+  }
+  .product-card:hover .product-emoji { background: var(--terra-100) }
+  .product-content { flex: 1; min-width: 0 }
+  .product-content h4 {
+    font-size: 19px; font-weight: 700;
+    color: var(--dark); margin: 4px 0 8px;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    letter-spacing: -.2px;
+  }
+  .product-content p {
+    font-size: 15px; line-height: 1.7;
+    color: var(--text-dim); margin: 0;
+  }
+  /* Внутренние <div>-разрывы из contenteditable — рендерятся как блоки */
+  .product-content p > div { margin-top: 8px }
+
+  @media (max-width: 600px) {
+    .product-card { flex-direction: column; gap: 14px; padding: 20px 22px }
+    .product-emoji { width: 64px; height: 64px; font-size: 34px; border-radius: 14px }
+  }
+
+  /* ===== MODEL CARDS (Sonnet/Haiku/Opus) ===== */
+  .model-card {
+    background: var(--surface);
+    border: 1px solid var(--beige);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin: 16px 0;
+    display: flex; gap: 18px; align-items: flex-start;
+    transition: all .3s;
+  }
+  .model-card:hover {
+    border-color: var(--terra-300);
+    box-shadow: var(--shadow);
+  }
+  .model-emoji {
+    font-size: 32px;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 54px; height: 54px;
+    border-radius: 14px;
+    background: var(--terra-50);
+    display: inline-flex;
+    align-items: center; justify-content: center;
+  }
+  .model-content { flex: 1 }
+  .model-title {
+    font-size: 18px; font-weight: 700;
+    color: var(--dark); margin-bottom: 4px;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+  }
+  .model-tag {
+    display: inline-block;
+    padding: 2px 10px; border-radius: 12px;
+    background: var(--terra-100); color: var(--terra-700);
+    font-size: 11px; font-weight: 600;
+    margin-left: 8px;
+    letter-spacing: .2px;
+  }
+  .model-card p {
+    font-size: 14.5px; line-height: 1.65;
+    color: var(--text-dim); margin: 6px 0 0;
+  }
+  .model-best {
+    margin-top: 10px; padding-top: 10px;
+    border-top: 1px solid var(--beige-soft);
+    font-size: 13px; color: var(--text-dim);
+  }
+  .model-best strong { color: var(--dark) }
+
+  /* ===== COMPARE BLOCK — тёмный контейнер a-la founders guide "If you've used ChatGPT" ===== */
+  .compare {
+    position: relative;
+    background: linear-gradient(160deg, var(--dark) 0%, #2D2820 100%);
+    border-radius: 20px;
+    padding: 36px 38px;
+    margin: 32px 0;
+    color: #FAF6EE;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .compare {
+    background: linear-gradient(160deg, #0F0D0A 0%, #1A1612 100%);
+    border: 1px solid var(--beige);
+  }
+  .compare::before {
+    content: '';
+    position: absolute;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(212,133,63,.20);
+    filter: blur(90px);
+    top: -30%; right: -10%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .compare > * { position: relative; z-index: 1 }
+
+  .compare h4 {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 22px; font-weight: 800;
+    color: #FAF6EE;
+    margin: 0 0 22px;
+    letter-spacing: -.3px;
+  }
+
+  .compare-list {
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  .compare-list li {
+    position: relative;
+    padding: 14px 0 14px 26px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(250,246,238,.78);
+    border-bottom: 1px solid rgba(250,246,238,.08);
+  }
+  .compare-list li:last-child { border-bottom: none }
+  .compare-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 24px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--terra-300);
+    box-shadow: 0 0 0 4px rgba(212,133,63,.15);
+  }
+  .compare-list li strong {
+    color: #FFF;
+    font-weight: 800;
+    display: inline;
+    margin-right: 2px;
+  }
+  .compare-list li em {
+    color: var(--terra-300);
+    font-style: italic;
+  }
+
+  /* ===== YOUTUBE CARD — рекламная карточка для видео автора ===== */
+  .yt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .yt-card {
+    background: var(--surface);
+    border: 1px solid var(--beige);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: all .3s;
+    display: flex; flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+  .yt-card:hover {
+    border-color: var(--terra-300);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+  }
+  .yt-card-cover {
+    position: relative;
+    aspect-ratio: 16/9;
+    background: var(--cream);
+    overflow: hidden;
+  }
+  .yt-card-cover img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s;
+  }
+  .yt-card:hover .yt-card-cover img { transform: scale(1.04) }
+  .yt-play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: var(--terra-500);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,.35);
+    transition: all .3s;
+    z-index: 1;
+  }
+  .yt-card:hover .yt-play {
+    background: var(--terra-600);
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+  .yt-play svg { width: 26px; height: 26px; color: #FFF; margin-left: 4px }
+  .yt-card-body { padding: 18px 22px 22px; flex: 1; display: flex; flex-direction: column; gap: 10px }
+  .yt-card-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    align-self: flex-start;
+    font-size: 11px; font-weight: 700;
+    color: var(--terra-500);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .yt-card-tag::before {
+    content: '';
+    display: inline-block; width: 14px; height: 14px;
+    background: var(--terra-500);
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z'/></svg>") no-repeat center;
+            mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.546 15.568V8.432L15.818 12l-6.272 3.568z'/></svg>") no-repeat center;
+  }
+  .yt-card-title {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 18px; font-weight: 700;
+    color: var(--dark); line-height: 1.3;
+    margin: 0;
+  }
+  .yt-card-cta {
+    margin-top: auto;
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--terra-500); font-size: 14px; font-weight: 700;
+    padding-top: 10px;
+  }
+  .yt-card-cta svg { width: 14px; height: 14px }
+  .yt-card:hover .yt-card-cta { color: var(--terra-600) }
+
+  /* ===== CATEGORY GRID — для Блока 7 ===== */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 18px;
+    margin: 28px 0;
+  }
+  .category-card {
+    background: var(--surface);
+    border: 1px solid var(--beige);
+    border-radius: 18px;
+    padding: 24px 26px;
+    transition: all .3s;
+  }
+  .category-card:hover {
+    border-color: var(--terra-300);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+  }
+  .category-card .cat-emoji {
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .category-card h4 {
+    font-size: 17px; font-weight: 800;
+    color: var(--dark); margin: 0 0 14px;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+  }
+  .category-card ul {
+    list-style: none; margin: 0; padding: 0;
+  }
+  .category-card li {
+    position: relative;
+    padding: 6px 0 6px 18px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--text-dim);
+  }
+  .category-card li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 14px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--terra-400);
+  }
+
+  /* ===== HIGHLIGHT — жёлтое выделение текста как маркером (нежное) ===== */
+  .highlight-mark {
+    background: linear-gradient(180deg, transparent 50%, rgba(212,133,63,.22) 50%);
+    padding: 0 2px;
+  }
+
+  /* ===== INLINE IMAGE ===== */
+  .figure {
+    margin: 32px 0;
+  }
+  .figure-img {
+    width: 100%; max-width: 100%;
+    border-radius: 14px;
+    border: 1px solid var(--beige);
+    display: block;
+    box-shadow: var(--shadow);
+  }
+  .figure-caption {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* ===== ORDERED STEPS — большие нумерованные шаги ===== */
+  .steps-list {
+    list-style: none;
+    counter-reset: step;
+    margin: 24px 0;
+    padding: 0;
+  }
+  .steps-list > li {
+    counter-increment: step;
+    position: relative;
+    padding: 0 0 24px 64px;
+    min-height: 52px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .steps-list > li::before {
+    content: counter(step);
+    position: absolute; left: 0; top: 0;
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    background: var(--terra-50);
+    color: var(--terra-500);
+    font-size: 19px; font-weight: 800;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    flex-shrink: 0;
+  }
+  /* Сбрасываем margin-top у первого элемента li, чтобы цифра и заголовок встали в один ряд */
+  .steps-list > li > *:first-child {
+    margin-top: 0 !important;
+  }
+  /* Заголовок h4/strong — выравниваем по центру цифры через min-height + flex */
+  .steps-list > li > h4:first-child,
+  .steps-list > li > strong:first-child {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    margin: 0 0 12px;
+    line-height: 1.35;
+    font-size: 17px;
+  }
+  .steps-list > li strong { color: var(--dark); font-weight: 700 }
+  .steps-list > li a { color: var(--terra-500); border-bottom: 1px solid var(--terra-200) }
+
+  /* ===== CODE BLOCK — спокойный кремовый фон с тёплой рамкой ===== */
+  .code-block {
+    margin: 24px 0;
+    background: var(--cream);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1.5px solid var(--terra-200);
+    transition: all .3s;
+  }
+  [data-theme="dark"] .code-block {
+    background: var(--surface-2);
+    border-color: var(--beige);
+  }
+  .code-block-header {
+    padding: 14px 20px;
+    background: rgba(184,98,27,.06);
+    border-bottom: 1px solid var(--beige);
+    color: var(--text-dim);
+    font-size: 12.5px; font-weight: 700;
+    letter-spacing: .5px; text-transform: uppercase;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px;
+    transition: all .3s;
+  }
+  [data-theme="dark"] .code-block-header { background: rgba(212,133,63,.08) }
+  .code-copy-btn {
+    background: var(--dark);
+    border: none;
+    color: var(--bg);
+    padding: 9px 18px; border-radius: 9px;
+    font: 700 13px 'Gilroy', 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: all .15s;
+    display: inline-flex; align-items: center; gap: 7px;
+    flex-shrink: 0;
+  }
+  .code-copy-btn:hover {
+    background: var(--terra-500);
+    color: #FFF;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+  }
+  .code-copy-btn.copied {
+    background: var(--emerald-600);
+    color: #FFF;
+  }
+  .code-block pre {
+    margin: 0;
+    padding: 20px 24px;
+    color: var(--text);
+    background: var(--cream);
+    font: 400 14px/1.7 'SF Mono', 'Fira Code', 'Cascadia Code', Menlo, monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    transition: all .3s;
+  }
+  [data-theme="dark"] .code-block pre { background: var(--surface-2) }
+
+  /* ===== INLINE CODE ===== */
+  .section code:not(.code-block code) {
+    background: var(--terra-50);
+    color: var(--terra-600);
+    padding: 2px 6px;
+    border-radius: 5px;
+    font: 500 .92em 'SF Mono', monospace;
+  }
+
+  /* ===== HIGHLIGHTED CALL-OUT — большая фраза акцент (как у founders в dark CTA) ===== */
+  .pull-quote {
+    margin: 32px 0;
+    padding: 32px 38px;
+    background: linear-gradient(160deg, var(--dark) 0%, #2D2820 100%);
+    border-radius: 18px;
+    color: #FAF6EE;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 22px; font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -.3px;
+    position: relative;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .pull-quote {
+    background: linear-gradient(160deg, #0F0D0A 0%, #1A1612 100%);
+    border: 1px solid var(--beige);
+  }
+  .pull-quote::before {
+    content: '';
+    position: absolute;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(212,133,63,.18);
+    filter: blur(80px);
+    top: -30%; right: -10%;
+    pointer-events: none;
+  }
+  .pull-quote em, .pull-quote strong {
+    color: var(--terra-300);
+    font-style: normal;
+    font-weight: 800;
+  }
+
+  /* ===== COMPARE ROW (vs / good vs bad) ===== */
+  .vs-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 28px 0;
+  }
+  .vs-card {
+    padding: 22px 24px;
+    border-radius: 14px;
+    border: 1px solid var(--beige);
+    background: var(--surface);
+    transition: all .3s;
+  }
+  .vs-card.bad {
+    background: var(--red-50);
+    border-color: var(--red-200);
+  }
+  .vs-card.good {
+    background: var(--emerald-50);
+    border-color: var(--emerald-200);
+  }
+  .vs-mark {
+    font-size: 24px; line-height: 1;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+  .vs-card h5 {
+    font-size: 13px; font-weight: 800;
+    color: var(--dark); margin-bottom: 10px;
+    text-transform: uppercase; letter-spacing: .5px;
+  }
+  .vs-card.bad h5 { color: var(--red-700) }
+  .vs-card.good h5 { color: var(--emerald-700) }
+  .vs-card p { font-size: 15px; line-height: 1.6; color: var(--text); margin: 0 }
+
+  @media (max-width: 700px) { .vs-row { grid-template-columns: 1fr } }
+
+  /* ===== FORMULA — для RIGHT ===== */
+  .formula-letter {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 18px 22px;
+    background: var(--surface);
+    border: 1px solid var(--beige);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    transition: all .3s;
+  }
+  .formula-letter:hover {
+    border-color: var(--terra-300);
+    box-shadow: var(--shadow);
+  }
+  .formula-badge {
+    flex-shrink: 0;
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    background: var(--terra-500);
+    color: #FFF;
+    font: 800 22px/1 'Gilroy', sans-serif;
+    display: inline-flex; align-items: center; justify-content: center;
+    letter-spacing: -.5px;
+  }
+  .formula-content { flex: 1; min-width: 0 }
+  .formula-content h5 {
+    font-size: 16px; font-weight: 700;
+    color: var(--dark); margin-bottom: 4px;
+  }
+  .formula-content p { font-size: 14.5px; line-height: 1.65; color: var(--text-dim); margin: 0 }
+  .formula-content em {
+    color: var(--terra-600);
+    font-style: italic;
+    display: block; margin-top: 6px;
+    font-size: 13.5px; font-weight: 500;
+  }
+
+  /* ===== SECTION на тёмном фоне — для целой секции (например, 13 фраз) ===== */
+  .section.section-dark {
+    background: linear-gradient(160deg, var(--dark) 0%, #2D2820 100%);
+    color: #FAF6EE;
+    position: relative;
+    overflow: hidden;
+    border-top: none;
+  }
+  [data-theme="dark"] .section.section-dark {
+    background: linear-gradient(160deg, #0F0D0A 0%, #1A1612 100%);
+  }
+  .section.section-dark::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: rgba(212,133,63,.18);
+    filter: blur(100px);
+    top: -10%; right: -10%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .section.section-dark::after {
+    content: '';
+    position: absolute;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: rgba(184,98,27,.10);
+    filter: blur(90px);
+    bottom: 5%; left: -8%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .section.section-dark .section-inner { position: relative; z-index: 1 }
+  .section.section-dark h2,
+  .section.section-dark h3 { color: #FAF6EE }
+  .section.section-dark .section-eyebrow {
+    color: var(--terra-300);
+  }
+  .section.section-dark .section-eyebrow .dash { background: var(--terra-300) }
+  .section.section-dark .section-lead,
+  .section.section-dark p {
+    color: rgba(250,246,238,.75);
+  }
+  .section.section-dark p strong,
+  .section.section-dark .section-lead strong { color: #FFF }
+  .section.section-dark p em { color: var(--terra-300) }
+  .section.section-dark a { color: var(--terra-300) }
+
+  /* ===== PHRASE LIST — 13 фраз ===== */
+  .phrase-card {
+    background: var(--surface);
+    border: 1px solid var(--beige);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: all .3s;
+  }
+  .phrase-card:hover {
+    border-color: var(--terra-300);
+    box-shadow: var(--shadow);
+  }
+
+  /* Тёмная вариация — phrase-card внутри section-dark */
+  .section.section-dark .phrase-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(250,246,238,.10);
+    backdrop-filter: blur(8px);
+  }
+  .section.section-dark .phrase-card:hover {
+    background: rgba(255,255,255,.06);
+    border-color: rgba(212,133,63,.4);
+  }
+
+  .phrase-num {
+    flex-shrink: 0;
+    width: 32px; height: 32px;
+    border-radius: 10px;
+    background: var(--terra-50);
+    color: var(--terra-500);
+    font: 800 14px/1 'Gilroy', sans-serif;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .section.section-dark .phrase-num {
+    background: var(--terra-500);
+    color: #FFF;
+  }
+
+  .phrase-content { flex: 1; min-width: 0 }
+  .phrase-content blockquote {
+    font-size: 15.5px; font-weight: 600;
+    color: var(--dark); margin: 0 0 8px;
+    line-height: 1.5;
+    border: none; padding: 0;
+  }
+  .phrase-content p {
+    font-size: 14px; line-height: 1.65;
+    color: var(--text-dim); margin: 0;
+  }
+  .section.section-dark .phrase-content blockquote { color: #FFF }
+  .section.section-dark .phrase-content p { color: rgba(250,246,238,.7) }
+
+  /* ===== QUOTE — единый стиль "цитата" для выделения важных мыслей ===== */
+  .quote-block {
+    margin: 24px 0;
+    padding: 18px 26px;
+    background: var(--terra-50);
+    border-left: 3px solid var(--terra-500);
+    border-radius: 0 12px 12px 0;
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--dark);
+    max-width: var(--content-max);
+    transition: all .3s;
+  }
+  .quote-block strong { font-weight: 700; font-style: normal }
+
+  /* ===== DARK CTA SECTION ===== */
+  .section-dark {
+    padding: 100px 48px;
+    background: linear-gradient(160deg, var(--dark) 0%, #2D2820 100%);
+    color: #FAFAF7;
+    position: relative;
+    overflow: hidden;
+  }
+  [data-theme="dark"] .section-dark {
+    background: linear-gradient(160deg, #0F0D0A 0%, #1A1612 100%);
+  }
+  .section-dark::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: rgba(212,133,63,.18);
+    filter: blur(100px);
+    top: -20%; right: -10%;
+    pointer-events: none;
+  }
+  .section-dark .section-inner { position: relative; z-index: 1 }
+  .section-dark h2 { color: #FAFAF7 }
+  .section-dark h2 em { color: var(--terra-300) }
+  .section-dark p { color: rgba(250,250,247,.75) }
+  .section-dark .btn-primary { background: var(--terra-400); color: var(--dark) }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    padding: 60px 48px;
+    border-top: 1px solid var(--beige);
+    text-align: center;
+    background: var(--surface);
+  }
+  .footer-brand {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 22px; font-weight: 800;
+    color: var(--dark); margin-bottom: 8px;
+  }
+  .footer-desc {
+    font-size: 14px; color: var(--text-dim);
+    max-width: 460px; margin: 0 auto 24px;
+  }
+  .footer-tg {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 28px;
+    background: #2AABEE; color: #FFF;
+    font-weight: 600; font-size: 15px;
+    border-radius: 12px; text-decoration: none;
+    transition: all .2s;
+    border: none;
+  }
+  .footer-tg:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg) }
+  .footer-copy {
+    margin-top: 24px;
+    font-size: 12px; color: var(--text-muted);
+  }
+
+  /* ===== STUB SECTION ===== */
+  .stub {
+    padding: 80px 48px;
+    border-top: 1px solid var(--beige);
+    text-align: center;
+  }
+  .stub-inner {
+    max-width: 520px; margin: 0 auto;
+    padding: 36px 30px;
+    background: var(--cream);
+    border: 1px dashed var(--beige);
+    border-radius: 16px;
+  }
+  .stub-eyebrow {
+    font-size: 11px; font-weight: 700;
+    color: var(--terra-500);
+    text-transform: uppercase; letter-spacing: 1.4px;
+    margin-bottom: 10px;
+  }
+  .stub h2 {
+    font-family: 'Gilroy', 'Montserrat', sans-serif;
+    font-size: 26px; font-weight: 700;
+    color: var(--dark); margin-bottom: 8px;
+    letter-spacing: -.5px;
+  }
+  .stub p {
+    font-size: 14px; color: var(--text-dim);
+    margin: 0;
+  }
+
+  /* ===== EDIT MODE ===== */
+  .edit-fab {
+    position: fixed; right: 18px; bottom: 18px;
+    z-index: 100;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 18px;
+    background: var(--dark); color: var(--bg);
+    font: 600 13px/1 'Gilroy', 'Montserrat', sans-serif;
+    border: none; border-radius: 999px;
+    cursor: pointer; transition: all .2s;
+    box-shadow: var(--shadow-lg);
+  }
+  .edit-fab:hover { transform: translateY(-2px) }
+  .edit-fab svg { width: 16px; height: 16px }
+
+  .edit-panel {
+    position: fixed; right: 18px; bottom: 18px;
+    z-index: 100;
+    background: var(--surface);
+    border: 1px solid var(--beige);
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: var(--shadow-lg);
+    display: none;
+    flex-direction: column; gap: 8px;
+    width: 240px;
+  }
+  .edit-panel.open { display: flex }
+  .edit-panel-title {
+    font-size: 13px; font-weight: 700;
+    color: var(--dark); margin-bottom: 4px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .edit-panel-close {
+    background: none; border: none; cursor: pointer;
+    color: var(--text-dim); font-size: 18px;
+    line-height: 1; padding: 0;
+  }
+  .edit-panel-status {
+    font-size: 11px; color: var(--terra-500);
+    margin-bottom: 4px; line-height: 1.45;
+  }
+  .edit-panel button {
+    width: 100%; padding: 10px 14px;
+    border: 1px solid var(--beige);
+    background: var(--cream); color: var(--text);
+    font: 600 12.5px 'Gilroy', 'Montserrat', sans-serif;
+    border-radius: 10px; cursor: pointer;
+    transition: all .15s;
+  }
+  .edit-panel button:hover { border-color: var(--terra-400); color: var(--terra-500) }
+  .edit-panel .btn-strong {
+    background: var(--terra-500); color: #FFF;
+    border-color: var(--terra-500);
+  }
+  .edit-panel .btn-strong:hover { background: var(--terra-600); color: #FFF; border-color: var(--terra-600) }
+
+  .edit-panel-section {
+    border-top: 1px solid var(--beige);
+    padding-top: 10px; margin-top: 4px;
+  }
+  .edit-panel-label {
+    font-size: 11px; font-weight: 700;
+    color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: .8px; margin-bottom: 8px;
+    display: block;
+  }
+  .color-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 0;
+  }
+  .color-row label {
+    font-size: 12px; color: var(--text);
+    flex: 1; line-height: 1.3;
+  }
+  .color-row input[type="color"] {
+    width: 36px; height: 28px;
+    border: 1px solid var(--beige);
+    border-radius: 6px;
+    background: none; cursor: pointer;
+    padding: 0;
+  }
+  .color-row .swatch-hex {
+    font-size: 10.5px; color: var(--text-dim);
+    font-family: 'SF Mono', monospace;
+  }
+  .preset-row {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .preset-swatch {
+    width: 28px; height: 28px;
+    border-radius: 8px; cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform .15s;
+  }
+  .preset-swatch:hover { transform: scale(1.1) }
+  .preset-swatch.active { border-color: var(--dark) }
+
+  /* Floating toolbar — появляется над активным блоком в edit-mode */
+  .edit-toolbar {
+    position: absolute;
+    z-index: 200;
+    display: none;
+    gap: 4px;
+    padding: 6px;
+    background: var(--dark);
+    border-radius: 10px;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-100%);
+    margin-top: -8px;
+    flex-wrap: wrap;
+    max-width: 380px;
+  }
+  .edit-toolbar.visible { display: inline-flex }
+  .edit-toolbar button {
+    background: rgba(255,255,255,.08);
+    border: none;
+    color: #FAFAF7;
+    font: 600 12px 'Gilroy', 'Montserrat', sans-serif;
+    padding: 5px 9px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .15s;
+    line-height: 1;
+    height: 26px;
+    white-space: nowrap;
+  }
+  .edit-toolbar button:hover { background: var(--terra-400); color: var(--dark) }
+  .edit-toolbar .sep {
+    width: 1px;
+    background: rgba(255,255,255,.15);
+    margin: 0 2px;
+    height: 26px;
+  }
+  .edit-toolbar .icon-only { padding: 5px 8px; min-width: 26px }
+  .edit-toolbar button b { font-weight: 800 }
+  .edit-toolbar button i { font-style: italic; font-weight: 600 }
+
+  body.edit-active [data-edit] {
+    outline: 1px dashed var(--terra-300);
+    outline-offset: 4px;
+    border-radius: 4px;
+    transition: outline-color .15s;
+  }
+  body.edit-active [data-edit]:hover { outline-color: var(--terra-500) }
+  body.edit-active [data-edit]:focus {
+    outline: 2px solid var(--terra-500);
+    outline-offset: 4px;
+    background: var(--terra-50);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .sidebar { transform: translateX(-100%) }
+    .sidebar.open { transform: translateX(0) }
+    .menu-toggle { display: inline-flex }
+    .main { margin-left: 0 }
+    .hero { padding: 88px 24px 50px }
+    .section, .section-dark, .stub, .footer { padding-left: 24px; padding-right: 24px }
+    .hero-visual { display: none }
+  }
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 36px; letter-spacing: -1px }
+    .hero-desc { font-size: 16px }
+    .hero-meta { gap: 16px }
+    .section { padding-top: 60px; padding-bottom: 60px }
+    .section h2 { font-size: 28px }
+    .section h3 { font-size: 21px }
+    .model-card { flex-direction: column; gap: 12px }
+    .quote-block { padding: 20px 22px; font-size: 17px }
+  }
+</style>
+</head>
+<body class="">
+
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Меню">☰</button>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo"><span class="dot"></span>Claude Guide</div>
+    <div class="sidebar-sub">от Dmitriymarketing · 2026</div>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-row">
+      <span>Прогресс</span>
+      <span class="progress-pct" id="progress-pct">100%</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 100%;"></div></div>
+  </div>
+
+  <nav>
+    <span class="nav-block-title">Введение</span>
+    <button class="nav-item" onclick="navTo('hero')">Главная</button>
+    <button class="nav-item" onclick="navTo('intro')">О гайде</button>
+
+    <span class="nav-block-title">Раздел 1</span>
+    <button class="nav-item" onclick="navTo('what-is-claude')">Что такое Claude</button>
+    <button class="nav-item" onclick="navTo('claude-tasks')">Какие задачи решает</button>
+    <button class="nav-item" onclick="navTo('claude-models')">Модели Claude</button>
+    <button class="nav-item" onclick="navTo('claude-vs-gpt')">Claude vs ChatGPT</button>
+
+    <span class="nav-block-title">Блок 2 — Регистрация</span>
+    <button class="nav-item" onclick="navTo('block-2')">Как зарегистрироваться из РФ</button>
+    <button class="nav-item" onclick="navTo('reg-self')">Самостоятельная регистрация</button>
+    <button class="nav-item" onclick="navTo('reg-rules')">Чего нельзя делать</button>
+
+    <span class="nav-block-title">Блок 3 — Старт работы</span>
+    <button class="nav-item" onclick="navTo('block-3')">Зачем нужна фактура</button>
+    <button class="nav-item" onclick="navTo('faktura-instr')">Как собрать фактуру</button>
+    <button class="nav-item" onclick="navTo('faktura-lifehack-1')">Лайфхак №1: интервью</button>
+    <button class="nav-item" onclick="navTo('faktura-where')">Куда загружать фактуру</button>
+    <button class="nav-item" onclick="navTo('faktura-lifehack-2')">Лайфхак №2: переезд из ChatGPT</button>
+
+    <span class="nav-block-title">Блок 4 — Промптинг</span>
+    <button class="nav-item" onclick="navTo('block-4')">Главный закон LLM</button>
+    <button class="nav-item" onclick="navTo('pro-prompt')">Что такое PRO-промпт</button>
+    <button class="nav-item" onclick="navTo('right-formula')">Формула RIGHT</button>
+    <button class="nav-item" onclick="navTo('good-vs-bad')">Хороший vs плохой промпт</button>
+    <button class="nav-item" onclick="navTo('reverse-prompt')">Обратный промптинг</button>
+    <button class="nav-item" onclick="navTo('phrases-13')">13 фраз для х10 результата</button>
+
+    <span class="nav-block-title">Блок 5 — Секретное оружие</span>
+    <button class="nav-item" onclick="navTo('block-5')">Проекты Claude</button>
+    <button class="nav-item" onclick="navTo('skills')">Skills (навыки)</button>
+    <button class="nav-item" onclick="navTo('skill-creator')">Skill Creator</button>
+    <button class="nav-item" onclick="navTo('connectors')">Коннекторы (MCP)</button>
+
+    <span class="nav-block-title">Блок 6 — PRO-уровень</span>
+    <button class="nav-item" onclick="navTo('block-6')">Cowork — Claude как сотрудник</button>
+    <button class="nav-item" onclick="navTo('cowork-tasks')">Что можно в Cowork</button>
+    <button class="nav-item" onclick="navTo('claude-code')">Claude Code</button>
+    <button class="nav-item" onclick="navTo('claude-design')">Claude Design</button>
+
+    <span class="nav-block-title">Блок 7 — Примеры</span>
+    <button class="nav-item" onclick="navTo('block-7')">Реальные кейсы</button>
+
+    <span class="nav-block-title">Блок 8</span>
+    <button class="nav-item" onclick="navTo('block-8')">Что делать дальше</button>
+    <button class="nav-item active" onclick="navTo('cta-final')">Закрытый канал</button>
+  </nav>
+
+  <div class="theme-toggle-wrap">
+    <button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="themeIcon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <span id="themeLabel">Тёмная тема</span>
+    </button>
+  </div>
+</aside>
+
+<main class="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <!-- Иконка Claude — покачивается, как 3D-объект.
+       src="assets/Claude-ai-icon.png" — основной (если файл лежит в assets/)
+       onerror — fallback на AWS URL из Notion (живёт час с момента генерации) -->
+  <div class="hero-visual" aria-hidden="true">
+    <img src="assets/Claude-ai-icon.png"
+         alt="Claude"
+         style="width:100%;height:100%;display:block;object-fit:contain"
+         onerror="this.onerror=null;this.src='https://prod-files-secure.s3.us-west-2.amazonaws.com/61a3abf2-2ba7-450f-9558-9cccba7b4a24/59825ce9-3b31-4e32-a831-4d201840cc91/Claude-ai-icon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB466U6HKM6MH%2F20260505%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20260505T085404Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjELn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIFxwma05FGcvFQZLfrX0mVEGG9gJV1dudjobWyKpKXB5AiEArIwy1qMqVZGuXJPqtDaHHVudVggR2k7371C7uG4E0G8qiAQIgv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDJHtoTkBSpBUUsw2NyrcA0ok3%2FcwSd6Vncw91wylrkeuioWCCwBxEXjpIW6tpmDYCioQ6ZQwjaWUnK6kMTguMuVV8iF%2FQZeyIWWLywOEDPiBE8V8WfHLuay9zAjsggIoFIfRTIp42bW2%2BKKHNFqePiKtdPelAPHZq7PQ0vekg6yB266u8FCvV3vz5AAGZT2wRl7X1zJc%2B7vxJU1V1PAds4grfMz4n1Od3u%2Fn0Ezeu4tty2MBQXwBFfWEDQsaNQrm%2BHhJrDUlPPr7gvliJjYyNIxdCniFUF4arUokpT%2Bz4THTLzI0%2FqjKav0baTjsaeJFWyoP1nbxJ13S33SXKWCmC0uF5%2BnN%2Fqq36slDoPBSH4Py1olWeQAEEkVVAasLH4Wrxrwd18w7Twu%2BRTUioPyQvV0%2B%2B4iAh%2FSixe47A1shn4JGfIHiuOViWK%2FrR60LxLrAblVvOGmFzklJRNuIEH5V%2F%2FoFW9zeSFowVMjV5RpUgAhuCPOT6h%2BHETa0IUi5qkErLOL9TacOyqQt8NvgiFIyM8SoY5rHpbqgQte%2B72r5eUQYOud9u0MimSgkYlKoYtrpK7bFgkDQ8Y3KTEOry%2FStZlnEScInsptOyql6CikaD5WWxbah6ahJtF9TlIK5LFbixcIIC5OmJ%2Br%2Fw%2FwcMODW5s8GOqUBFDdPD%2B5Dg1gFR1e4B8L7vDl7RXoR0oVbtGEitPeyJCM078ci7R26Czz6CrsMshL%2FlBBKhBnSUnPzWeivxl%2BfU%2Fw7M9feWLpEb1lOKTZd2EztzzNRd%2FozJeCYsiYcnV2ybaa8OaWAyyJFiIWpcXMmV2mdg0XZwSxxMr00FiZF6kf3ZFfHJBNScLaFzHVie2wIC3vkhyv60zXdd3HKU3gmtLJrt2tL&amp;X-Amz-Signature=d0b6b7c6a1ad3309b562871a94897bfa6628987f7b40e9283d2364ed2038035f&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject'">
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span data-edit="" data-edit-id="e0" data-bound-blur="1">Бесплатный гайд от Dmitriymarketing</span>
+    </div>
+    <h1 data-edit="" data-edit-id="e1" data-bound-blur="1">📋 Claude Ultimate <em>Guide</em> 2026</h1>
+    <p class="hero-desc" data-edit="" data-edit-id="e2" data-bound-blur="1">
+      Исчерпывающее руководство по работе с Claude для предпринимателей, экспертов и всех,
+      кто хочет <u>за 10 минут разобраться в лучшем ИИ этого года.
+    </u></p>
+    <p class="hero-author" data-edit="" data-edit-id="e3" data-bound-blur="1">от маркетолога-практика и эксперта по ИИ Dmitriymarketing</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Время на изучение</span>
+        <span class="hero-meta-value" data-edit="" data-edit-id="e4" data-bound-blur="1">~25 минут</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Основано на:</span>
+        <span class="hero-meta-value" data-edit="" data-edit-id="e5" data-bound-blur="1">Курсы Anthropic + опыт 400+ студентов</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Уровень пользы</span>
+        <span class="hero-meta-value" data-edit="" data-edit-id="e6" data-bound-blur="1">⭐⭐⭐⭐⭐</span>
+      </div>
+    </div>
+    <div class="hero-cta-row">
+      <a href="https://t.me/dmitriymarketing" class="btn-terra" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.939z"></path></svg>
+        <span data-edit="" data-edit-id="e7" data-bound-blur="1">Подписаться на Telegram-канал автора</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT THE GUIDE ============ -->
+<section class="section section-cream" id="intro">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>О гайде</div>
+    <h2 data-edit="" data-edit-id="e9-h2" data-bound-blur="1"><span style="font-size: clamp(28px, 3.5vw, 40px);">🤌🏻&nbsp;</span>Почему это руководство стоит вашего внимания?</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e9" data-bound-blur="1">Если коротко - это <b>самый полезный бесплатный мануал</b> по работе с Claude, который вы можете найти в интернете</p>
+
+    <p data-edit="" data-edit-id="e9b" data-bound-blur="1">Создан практикующим маркетологом для тех, взять от этой нейросети максимум🔥</p>
+
+    <p data-edit="" data-edit-id="e10" data-bound-blur="1"><strong>Вся информация основана на официальных курсах Anthropic,&nbsp; сотням часов работу и опыту обучения 400+ человек</strong></p>
+
+    <p data-edit="" data-edit-id="e10b" data-bound-blur="1">Вы освоите <u>все актуальные функции Claude</u> (Артефакты, Code, Cowork, MCP, Skills, и т.д.)&nbsp;</p><p data-edit="" data-edit-id="eAdd1777902295878" data-bound-blur="1">И узнаете нюансы, которые не знают 9 из 10 пользователей этой нейросети</p>
+
+    <p data-edit="" data-edit-id="e11" data-bound-blur="1">Приятного изучения и будьте богаты 🫂</p>
+
+    <div class="callout callout-info">
+      <div class="callout-title"><span class="callout-icon">⚠️</span>Авторские права</div>
+      <p data-edit="" data-edit-id="e13" data-bound-blur="1">© 2026 ИП Агарков Д.И  Все права защищены. Копирование, тиражирование, публикация в открытых источниках, перепродажа и любое коммерческое использование материала является нарушением авторского права (ст. 1259, 1270 ГК РФ).</p>
+      <p data-edit="" data-edit-id="e14" data-bound-blur="1">Нарушение влечёт гражданскую, административную и уголовную ответственность (ст. 1301 ГК РФ, ст. 7.12 КоАП РФ, ст. 146 УК РФ).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ РАЗДЕЛ 1.1 — WHAT IS CLAUDE ============ -->
+<section class="section" id="what-is-claude">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Раздел 1 · Знакомство</div>
+    <h2 data-edit="" data-edit-id="e15" data-bound-blur="1"><span style="font-size: clamp(28px, 3.5vw, 40px);">🤨&nbsp;</span>Что такое Claude и почему на нём все помешались?</h2>
+    <p class="section-lead" data-edit="" data-edit-id="e16" data-bound-blur="1">Claude - это LLM-модель от компании <strong>Anthropic</strong> (США).</p>
+    <p data-edit="" data-edit-id="e17" data-bound-blur="1">Ещё несколько месяцев назад это был <i>«ещё один аналог ChatGPT».</i></p>
+    <p data-edit="" data-edit-id="e18" data-bound-blur="1">Сейчас - целая платформа, в которой можно делать всё, что раньше делали несколько человек в команде.</p>
+    <p data-edit="" data-edit-id="e19" data-bound-blur="1">И я не преувеличиваю.</p>
+    <p data-edit="" data-edit-id="e19b" data-bound-blur="1">Всё больше случаев, когда отдельные позиции в бизнесах полностью закрывает функционал Claude.</p>
+    <p data-edit="" data-edit-id="e20" data-bound-blur="1">Это одновременно <u>пугает и вдохновляет.</u></p>
+    <p data-edit="" data-edit-id="e21" data-bound-blur="1">Внутри Claude первым появился Claude Code - режим, который запустил <strong>целое направление вайбкодинга.</strong></p>
+    <p data-edit="" data-edit-id="e22" data-bound-blur="1">Это когда обычные люди без знаний программирования собирают сайты, приложения и микросервисы через голосовой диалог с ИИ — и <strong>реально на этом зарабатывают.</strong></p>
+
+    <div class="quote-block" data-edit="" data-edit-id="e23" data-bound-blur="1">
+      Короче говоря, игнорировать эту нейросеть нельзя. ☝🏻
+    </div>
+
+    <h3 id="claude-tasks" data-edit="" data-edit-id="e24" data-bound-blur="1">Что умеет Сlaude и почему это уже не просто нейросеть?</h3>
+
+    <div class="product-list">
+      <div class="product-card">
+        <div class="product-emoji">💬</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e25" data-bound-blur="1">Claude Chat</h4>
+          <p data-edit="" data-edit-id="e26" data-bound-blur="1">диалог с нейросетью в привычном формате, как в ChatGPT. Открыли окно, написали запрос, получили ответ. Самая простая точка входа.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">⚡</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e27" data-bound-blur="1">Artifacts (Артефакты)</h4>
+          <p data-edit="" data-edit-id="e28" data-bound-blur="1">то, что Claude собирает прямо в окне чата: рабочие лендинги, мини-приложения, калькуляторы, интерактивные таблицы. Видите сразу, тыкаете, копируете, показываете клиенту.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">🔍</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e29" data-bound-blur="1">Web Search и Research</h4>
+          <p data-edit="" data-edit-id="e30" data-bound-blur="1">встроенный поиск по интернету и режим глубокого исследования. Research сам собирает по теме десятки источников, читает их и выдаёт структурированный отчёт.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">🧠</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e31" data-bound-blur="1">Memory</h4>
+          <p data-edit="" data-edit-id="e32" data-bound-blur="1">долгосрочная память между всеми чатами. Один раз дали Claude контекст про себя — он помнит его везде, в любом новом диалоге. Можно даже импортировать историю из ChatGPT, чтобы не собирать заново.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">🎯</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e33" data-bound-blur="1">Skills</h4>
+          <p data-edit="" data-edit-id="e34" data-bound-blur="1">навыки, которыми можно прокачать Claude под конкретный процесс. Загружаете нужный скилл - получаете ассистента, который работает как профи по нужному алгоритму.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">🔌</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e35" data-bound-blur="1">Connectors (MCP)</h4>
+          <p data-edit="" data-edit-id="e36" data-bound-blur="1">готовые к сервисам типа Gmail, Notion, Slack, Google Drive, Asana, CRM и сотням других сервисов. Claude может их читать, анализировать, и даже выполнять действия за вас.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">📁</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e37" data-bound-blur="1">Claude Projects</h4>
+          <p data-edit="" data-edit-id="e38" data-bound-blur="1">рабочие пространства, где Claude работает как отдельный ИИ-ассистент под конкретную задачу. Один проект - один «специалист в команде».</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">🤝</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e39" data-bound-blur="1">Claude Cowork</h4>
+          <p data-edit="" data-edit-id="e40" data-bound-blur="1">приложение, где Claude становится агентом, который работает с файлами и приложениями на вашем компьютере. Поставили задачу → ушли по делам → вернулись к готовому результату.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">⌨️</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e41" data-bound-blur="1">Claude Code</h4>
+          <p data-edit="" data-edit-id="e42" data-bound-blur="1">режим ИИ-агента для разработчиков и для тех, кто занимается вайб-кодингом.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">🎨</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e43" data-bound-blur="1">Claude Design</h4>
+          <p data-edit="" data-edit-id="e44" data-bound-blur="1">визуальный редактор. Делает дизайны, интерактивные прототипы, презентации и лендинги через диалог. Описал в чате — получил макет, дальше правишь голосом.</p>
+        </div>
+      </div>
+    </div>
+
+    <p data-edit="" data-edit-id="e45" data-bound-blur="1">Думаю вы поняли, это уже серьезная платформа для глубокой и качественной работы 😌</p>
+    <p data-edit="" data-edit-id="e46" data-bound-blur="1">Подробнее про каждый продукт рассказываю далее.</p>
+
+    <h3 data-edit="" data-edit-id="e47" data-bound-blur="1">Какие задачи можно решать с помощью Claude?</h3>
+    <p data-edit="" data-edit-id="e48" data-bound-blur="1">Список задач зависит от вашей фантазии, но вот некоторые для расширения кругозора</p>
+
+    <h4 data-edit="" data-edit-id="e49" data-bound-blur="1">🙃 Простые (час работы превращается в 5 минут):</h4>
+    <ul class="list-clean">
+      <li data-edit="" data-edit-id="e50" data-bound-blur="1">Написать пост в Telegram, Reels-сценарий, текст для лендинга, КП</li>
+      <li data-edit="" data-edit-id="e51" data-bound-blur="1">Распарсить голосовое или транскрипт созвона в структурированный отчёт</li>
+      <li data-edit="" data-edit-id="e52" data-bound-blur="1">Проанализировать рынок, конкурентов, собрать аудит чужого Telegram-канала</li>
+      <li data-edit="" data-edit-id="e53" data-bound-blur="1">Прочитать договор на 30 страниц и вытащить подводные камни</li>
+      <li data-edit="" data-edit-id="e54" data-bound-blur="1">Свести Excel-выгрузку из CRM в выводы по продажам</li>
+      <li data-edit="" data-edit-id="e55" data-bound-blur="1">Сделать ТЗ для дизайнера, разработчика, копирайтера</li>
+      <li data-edit="" data-edit-id="e56" data-bound-blur="1">Отвечать клиентам в стиле, который не выдаёт, что писал ИИ</li>
+      <li data-edit="" data-edit-id="e57" data-bound-blur="1">Подбирать кандидатов на собеседование по резюме с HH</li>
+    </ul>
+
+    <h4 data-edit="" data-edit-id="e58" data-bound-blur="1">😥 Сложные (раньше нужны были подрядчики и недели работы):</h4>
+    <ul class="list-clean">
+      <li data-edit="" data-edit-id="e59" data-bound-blur="1">Создать полноценного ИИ-агента под бизнес-процесс и автоматизировать его</li>
+      <li data-edit="" data-edit-id="e60" data-bound-blur="1">Написать глубокую и детальную маркетинговую стратегию на 100+ листов за 1 вечер</li>
+      <li data-edit="" data-edit-id="e61" data-bound-blur="1">Написать сценарий автоворонки с прогревом и продажей мини-продукта под нужный сегмент ЦА</li>
+      <li data-edit="" data-edit-id="e62" data-bound-blur="1">Собрать сайт или приложение, которое реально работает</li>
+      <li data-edit="" data-edit-id="e63" data-bound-blur="1">Связать между собой Gmail, Notion, Google Drive и CRM в один автоматизированный поток</li>
+      <li data-edit="" data-edit-id="e64" data-bound-blur="1">Написать сложный код или фронт под продукт</li>
+      <li data-edit="" data-edit-id="e65" data-bound-blur="1">Провести многоэтапный анализ ниши с десятками источников</li>
+    </ul>
+
+    <p data-edit="" data-edit-id="e66" data-bound-blur="1">
+      Именно благодаря Claude рвануло такое направление, как <strong>вайбкодинг</strong> —это когда обычные люди без навыков программирования собирают рабочие сайты и приложения через диалог с ИИ.
+    </p>
+
+    <div class="callout callout-warning">
+      <div class="callout-title"><span class="callout-icon">⚠️</span><span data-edit="" data-edit-id="e67" data-bound-blur="1">Важный момент.</span></div>
+      <p data-edit="" data-edit-id="e68" data-bound-blur="1">Не воспринимайте Claude как «волшебную кнопку», которая всё сделает за вас.</p>
+      <p data-edit="" data-edit-id="e69" data-bound-blur="1">А у тех, кто вам это обещает - ничего не покупайте</p>
+      <p data-edit="" data-edit-id="e70" data-bound-blur="1"><strong>Нейросети это ускоритель экспертизы, а не её замена☝🏻</strong></p>
+      <p data-edit="" data-edit-id="e71" data-bound-blur="1"><i>Я всегда говорю: если человек до ИИ делал говно 💩, то с ИИ он будет заводом по производству говна 🏭</i></p>
+      <p data-edit="" data-edit-id="e72" data-bound-blur="1">Сложные задачи с ИИ всегда решаются с параллельным контролем специалиста💪🏻</p>
+    </div>
+
+    <p data-edit="" data-edit-id="e73" data-bound-blur="1">Но вот что правда - <strong>один специалист с Claude действительно способен заменить целую команду.</strong></p>
+    <p data-edit="" data-edit-id="e74" data-bound-blur="1">Это уже не маркетинговый лозунг, а реальность.</p>
+  </div>
+</section>
+
+<!-- ============ MODELS ============ -->
+<section class="section section-cream" id="claude-models">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Раздел 1 · Модели</div>
+    <h2 data-edit="" data-edit-id="e75" data-bound-blur="1">Модели Claude: Какую выбирать под свою задачу?</h2>
+    <p class="section-lead" data-edit="" data-edit-id="e76" data-bound-blur="1">
+      На момент написая гайда в Claude три основных модели</p><p data-edit="" data-edit-id="eAdd1777902572599" data-bound-blur="1">Они постоянно обновляются и каждая хороша по своему</p>
+
+    <figure class="figure">
+      <img src="assets/image.png" alt="Сравнение моделей Claude в интерфейсе" class="figure-img">
+    </figure>
+
+    <div class="model-card">
+      <div class="model-emoji">🐎</div>
+      <div class="model-content">
+        <div class="model-title" data-edit="" data-edit-id="e77" data-bound-blur="1">Sonnet 4.6 — рабочая лошадка</div>
+        <p data-edit="" data-edit-id="e78" data-bound-blur="1">80–90% задач закрываются именно ей. Достаточно умная, чтобы делать сложную работу, достаточно быстрая, чтобы не сидеть в ожидании. Сбалансированный интеллект и скорость.</p>
+        <div class="model-best" data-edit="" data-edit-id="e79" data-bound-blur="1"><strong>Идеально для:</strong> написания текстов, анализа, разработки стратегии, ежедневной работы.</div>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <div class="model-emoji">😈</div>
+      <div class="model-content">
+        <div class="model-title" data-edit="" data-edit-id="e80" data-bound-blur="1">Haiku 4.5 — демон скорости</div>
+        <p data-edit="" data-edit-id="e81" data-bound-blur="1">Молниеносная, лёгкая. Когда нужно переписать заголовок за 3 секунды или быстро ответить на простой вопрос. Представьте очень быстрого стажёра, который мгновенно справляется с простыми запросами.</p>
+        <div class="model-best" data-edit="" data-edit-id="e82" data-bound-blur="1"><strong>Идеально для:</strong> правок, простых вопросов и ответов, базовых перефразировок.</div>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <div class="model-emoji">🚛</div>
+      <div class="model-content">
+        <div class="model-title" data-edit="" data-edit-id="e83" data-bound-blur="1">Opus 4.7 — тяжелая артиллерия</div>
+        <p data-edit="" data-edit-id="e84" data-bound-blur="1">Глубокие рассуждения, детальный анализ, сложные многоэтапные проекты. Самая дорогая, самая медленная, самая умная. Когда ставки высоки или задача нетривиальная, то берёте её.</p>
+        <div class="model-best" data-edit="" data-edit-id="e85" data-bound-blur="1"><strong>Идеально для:</strong> серьёзной аналитики, многослойных стратегий, сложного кода, ключевых решений в бизнесе.</div>
+      </div>
+    </div>
+
+    <div class="callout callout-tip">
+      <div class="callout-title"><span class="callout-icon">💡</span><span data-edit="" data-edit-id="e86" data-bound-blur="1">Рекомендация для новичков:</span></div>
+      <p data-edit="" data-edit-id="e87" data-bound-blur="1">начинайте с Sonnet.</p>
+      <p data-edit="" data-edit-id="e88" data-bound-blur="1">Переключайтесь на Opus, когда чувствуете, что задача требует другого уровня глубины (учтите что эта модель быстрее расходует лимиты вашей подписки)</p>
+      <p data-edit="" data-edit-id="e89" data-bound-blur="1">На Haiku когда нужно быстро прогнать что-то простое.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLAUDE VS GPT ============ -->
+<section class="section" id="claude-vs-gpt">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Раздел 1 · Сравнение</div>
+    <h2 data-edit="" data-edit-id="e90" data-bound-blur="1"><span style="font-size: clamp(28px, 3.5vw, 40px);">😏&nbsp;</span>Чем Claude отличается от ChatGPT?</h2>
+    <p class="section-lead" data-edit="" data-edit-id="e91" data-bound-blur="1">
+      Ниже реальные различия, которые вы почувствуете уже через пару дней работы. 👏🏻
+    </p>
+
+    <div class="compare">
+      <h4 data-edit="" data-edit-id="e91h" data-bound-blur="1">Если ты уже пользовался ChatGPT — вот разница</h4>
+      <ul class="compare-list">
+        <li data-edit="" data-edit-id="e92" data-bound-blur="1"><strong>Claude глубже думает.</strong> ChatGPT хорош на коротких вопросах, а Claude на длинных задачах. Дайте обоим прочитать 80-страничный договор и найти противоречия. Разница будет очевидна с первого ответа.</li>
+        <li data-edit="" data-edit-id="e93" data-bound-blur="1"><strong>Claude лучше помнит.</strong> Claude быстро научится понимать ваш бизнес и решать задачи под него в то время ChatGPT часто терят контекст вашей работы</li>
+        <li data-edit="" data-edit-id="e94" data-bound-blur="1"><strong>Claude честнее.</strong> Он скажет вам: «эта идея слабая», «эта стратегия не сработает», «здесь в коде ошибка». ChatGPT в большинстве случаев кивнёт и согласится даже если вы написали ерунду. Это эффект подхалимства, и его в Claude изначально вытравливали при обучении. 🤌🏻</li>
+        <li data-edit="" data-edit-id="e95" data-bound-blur="1"><strong>Claude меньше фантазирует.</strong> В юридических, медицинских и финансовых вопросах Claude чаще признает: «не знаю, проверьте у специалиста» вместо того, чтобы уверенно выдумать ответ на основе интернет-источников☝🏻</li>
+        <li data-edit="" data-edit-id="e96" data-bound-blur="1"><strong>Claude пишет живым языком.</strong> Тексты Claude труднее отличить от написанных человеком - это меньше шаблонных оборотов, больше нюансов, естественный ритм. Особенно на русском. Это нейросеть идеально для создания постов, сценариев, статей и т.д.!</li>
+        <li data-edit="" data-edit-id="e97" data-bound-blur="1"><strong>Claude не боится объёмов.</strong> Сотни страниц, целые контракты, кодовые базы, исследования, Claude разбирает это целиком, а не выдаёт резюме на три абзаца.🙃</li>
+      </ul>
+    </div>
+
+    <h3 data-edit="" data-edit-id="e98" data-bound-blur="1">💬 Моё личное мнение - почему я выбрал Claude</h3>
+    <p data-edit="" data-edit-id="e99" data-bound-blur="1">Я пользуюсь Claude 1,5+ года - с того момента, как он только появился и не был на хайпе. Даже на сырых версиях он решал для меня задачи лучше, чем ChatGPT.</p>
+    <p data-edit="" data-edit-id="e101" data-bound-blur="1"><i>Анализ ЦА, тексты, воронки, продающие письма, лендинги, реклама....</i></p>
+    <p data-edit="" data-edit-id="e102" data-bound-blur="1"><strong>На всех этих задачах Claude для меня всегда был сильнее.</strong></p>
+    <p data-edit="" data-edit-id="e103" data-bound-blur="1">И я не один такой: всё больше маркетологов и экспертов в моём окружении пересаживаются на него.</p>
+  </div>
+</section>
+
+<!-- ============ STUB SECTIONS ============ -->
+<!-- ============ БЛОК 2 — РЕГИСТРАЦИЯ И ОПЛАТА ============ -->
+<section class="section" id="block-2">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 2 · Регистрация</div>
+    <h2 data-edit="" data-edit-id="e107" data-bound-blur="1">💳 Как зарегистрироваться и оплатить Claude из РФ</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e108" data-bound-blur="1">Если вы не хотите париться с регистрацией, то у меня есть ребята, которые делают всё под ключ: <em>зарегистрируют почту, оформят аккаунт, оплатят подписку и все это ниже рыночной цены минимум на 400-600 руб.😇</em></p>
+
+    <p data-edit="" data-edit-id="e109" data-bound-blur="1">Они уже год помогают студентам моей онлайн-школы 💪🏻</p>
+
+    <p data-edit="" data-edit-id="e110" data-bound-blur="1"><strong>Оплатить подписку можно будет рублями через СБП 👇🏻</strong></p>
+
+    <ol class="steps-list">
+      <li data-edit="" data-edit-id="e111" data-bound-blur="1">Заходите в <a href="https://t.me/dmitriy_market_bot?start=r_47197755" target="_blank" rel="noopener">этого бота</a></li>
+      <li data-edit="" data-edit-id="e112" data-bound-blur="1">Оплачиваете подписку ChatGPT или Claude</li>
+      <li data-edit="" data-edit-id="e113" data-bound-blur="1">Менеджер помогает бесплатно зарегать почту или сделать регистрацию (за 5-10 минут)</li>
+      <li data-edit="" data-edit-id="e114" data-bound-blur="1">И все, никакого геммороя</li>
+    </ol>
+
+    <p style="margin-top:24px"><a href="https://t.me/dmitriy_market_bot?start=r_47197755" target="_blank" rel="noopener" class="btn-terra">⭢ <span data-edit="" data-edit-id="e115" data-bound-blur="1">Оплатить ChatGPT и Claude по лучшей цене</span></a></p>
+
+    <p style="margin-top:32px" data-edit="" data-edit-id="e116" data-bound-blur="1">Для тех, кто хочет сделать сам — инструкция ниже ⬇️</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 2 — САМОСТОЯТЕЛЬНАЯ ============ -->
+<section class="section section-cream" id="reg-self">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 2 · Самостоятельно</div>
+    <h2 data-edit="" data-edit-id="e117" data-bound-blur="1">🤓 Самостоятельная регистрация и оплата</h2>
+
+    <p data-edit="" data-edit-id="e118" data-bound-blur="1">Россия и Беларусь не входят в список 175 стран, где Anthropic (Claude) и OpenAI (ChatGPT) официально работают. С российских банковских карт оплатить нельзя.</p>
+
+    <p data-edit="" data-edit-id="e119" data-bound-blur="1"><strong>Решение:</strong> покупаете <strong>сервис из 3 букв</strong> и зарубеждая карта (виртуальная или физическая)</p>
+
+    <p data-edit="" data-edit-id="e120" data-bound-blur="1">Важное правило: Claude видит ваш IP. Поэтому:</p>
+
+    <div class="quote-block" data-edit="" data-edit-id="e121" data-bound-blur="1">
+      <strong>Не меняйте локацию после регистрации. Используйте платный, надёжный сервис из 3-х букв</strong>
+    </div>
+
+    <p data-edit="" data-edit-id="e122" data-bound-blur="1">Я не занимаюсь популяризацией запрещенных сервисов, но сам иногда пользуюсь вот этим <em>(вы меня поняли 😁)</em></p>
+
+    <p><a href="https://storage.googleapis.com/amnezia/amnezia.org?m-path=premium&amp;arf=51RRRT2QZJJQGN3K" target="_blank" rel="noopener">Купить можно по этой ссылке</a></p>
+
+    <h3 data-edit="" data-edit-id="e123" data-bound-blur="1">Шаги регистрации</h3>
+
+    <ol class="steps-list">
+      <li>
+        <h4 data-edit="" data-edit-id="e124" data-bound-blur="1">Шаг 1. Создайте новый Gmail.</h4>
+        <p data-edit="" data-edit-id="e125" data-bound-blur="1">Не используйте свой основной российский, для Сlaude нужен отдельный аккаунт.</p>
+        <p data-edit="" data-edit-id="e126" data-bound-blur="1">При регистрации:</p>
+        <ul class="list-clean">
+          <li data-edit="" data-edit-id="e127" data-bound-blur="1">Включите сервис из 3 букв с правильной страной</li>
+          <li data-edit="" data-edit-id="e128" data-bound-blur="1">Укажите ту же страну в настройках Google-аккаунта</li>
+          <li data-edit="" data-edit-id="e129" data-bound-blur="1">Подготовьте иностранный номер для SMS, потому что российский не подойдет</li>
+        </ul>
+        <p data-edit="" data-edit-id="e130" data-bound-blur="1">Купить одноразовый иностранный номер можно тут:</p>
+        <ul class="list-clean">
+          <li data-edit="" data-edit-id="e131" data-bound-blur="1"><strong>online-sim.io</strong> — пополнение от $5, номер для Claude около $0.04</li>
+          <li data-edit="" data-edit-id="e132" data-bound-blur="1"><strong>grizzlysms.com</strong> — рублями, через СБП</li>
+        </ul>
+        <p data-edit="" data-edit-id="e133" data-bound-blur="1"><strong>Какую страну брать:</strong> ту же, что в вашем сервисе из 3 букв. Если у вас Германия, то берёте немецкий номер.</p>
+      </li>
+      <li>
+        <h4 data-edit="" data-edit-id="e134" data-bound-blur="1">Шаг 2. Регистрируем сам Claude.</h4>
+        <p data-edit="" data-edit-id="e135" data-bound-blur="1">Заходите на claude.ai через сервис из 3 букв, регистрируетесь по новой почте, подтверждаете телефон.</p>
+      </li>
+      <li>
+        <h4 data-edit="" data-edit-id="e136" data-bound-blur="1">Шаг 3. Оплачиваем подписку.</h4>
+        <p data-edit="" data-edit-id="e137" data-bound-blur="1">Здесь нужна виртуальная карта зарубежного банка.</p>
+        <p data-edit="" data-edit-id="e138" data-bound-blur="1">Купить зарубежную виртуальную карту VISA и Mastercard можете у этих ребят, лучшие условия на рынке - ✅✅✅</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ БЛОК 2 — ЧЕГО НЕЛЬЗЯ ============ -->
+<section class="section" id="reg-rules">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 2 · Правила</div>
+    <h2 data-edit="" data-edit-id="e139" data-bound-blur="1">❌ Чего НЕЛЬЗЯ делать (можно потерять аккаунт без возврата средств)</h2>
+
+    <div class="callout callout-warning">
+      <p data-edit="" data-edit-id="e140" data-bound-blur="1">❌ Делиться аккаунтом с друзьями - Anthropic ловит «странную географию»</p>
+      <p data-edit="" data-edit-id="e141" data-bound-blur="1">❌ Менять страны в сервисе из 3 букв — особенно прыгать «сегодня Германия, завтра Канада»</p>
+      <p data-edit="" data-edit-id="e142" data-bound-blur="1">❌ Покупать дешёвые готовые аккаунты на маркетплейсах и авито</p>
+      <p data-edit="" data-edit-id="e143" data-bound-blur="1">❌ Оплачивать подписку Claude сразу же после создания аккаунта</p>
+    </div>
+
+    <h3 data-edit="" data-edit-id="e144" data-bound-blur="1">💡 Как не получить блок вашего аккаунта?</h3>
+
+    <p data-edit="" data-edit-id="e145" data-bound-blur="1">Когда регистрируете новый аккаунт — <strong>не оплачивайте подписку сразу.</strong></p>
+
+    <p data-edit="" data-edit-id="e146" data-bound-blur="1">Дайте аккаунту день-два прогреться после создания.&nbsp;</p><p data-edit="" data-edit-id="eAdd1777902000825" data-bound-blur="1"><b>Это снижает риск блокировки🚫</b></p>
+
+    <p data-edit="" data-edit-id="e147" data-bound-blur="1">Первые 2 дня работайте в лёгком режиме: 3-10 запросов в день.</p>
+
+    <p data-edit="" data-edit-id="e148" data-bound-blur="1">Простые вопросы, без массовой генерации.</p>
+
+    <p data-edit="" data-edit-id="e149" data-bound-blur="1">На третий день можно оплачивать, это гораздо безопаснее ✅</p>
+
+    <p data-edit="" data-edit-id="e150" data-bound-blur="1">Выбирайте подписку Pro за 20$ для начала вам ее хватит.</p>
+
+    <p data-edit="" data-edit-id="e151" data-bound-blur="1">Для объемной работы и вайбкодинга однозначно нужен Max (всегда можно сделать апгрейд)</p>
+
+    <figure class="figure">
+      <img src="assets/image-1.png" alt="Скриншот настроек Claude" class="figure-img">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3 — ФАКТУРА ============ -->
+<section class="section section-cream" id="block-3">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 3 · Старт работы</div>
+    <h2 data-edit="" data-edit-id="e152" data-bound-blur="1">💻 Как правильно начать работу с Claude</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e153" data-bound-blur="1">Обучив больше 500 предпринимателей и экспертов и вижу как на старте все совершают одну и ту же ошибку.</p>
+
+    <div class="quote-block" data-edit="" data-edit-id="e154" data-bound-blur="1">
+      <strong>❌ Не дают Claude подробную фактуру (контекст).</strong>
+    </div>
+
+    <p data-edit="" data-edit-id="e155" data-bound-blur="1"><strong>Фактура (контекст)</strong> - это подробная информация о вас, вашей компании, нише, продуктах и ваших задачах.</p>
+
+    <p data-edit="" data-edit-id="e156" data-bound-blur="1">На её основе Claude создает долгосрочную память и формирует ответы.</p>
+
+    <p data-edit="" data-edit-id="e157" data-bound-blur="1">Если вы хотите получать от Claude <u>максимально точные ответы и результат х20</u> от того, что получают обычные пользователи то <strong>не игнорируйте этот шаг</strong></p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3 — ИНСТРУКЦИЯ ============ -->
+<section class="section" id="faktura-instr">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 3 · Инструкция</div>
+    <h2 data-edit="" data-edit-id="e158" data-bound-blur="1">📋 ИНСТРУКЦИЯ: Как создать фактуру для Claude</h2>
+
+    <p data-edit="" data-edit-id="e159" data-bound-blur="1">Создайте файл (Word, Notion, Google Doc — без разницы), в котором подробно опишите:</p>
+
+    <ul class="list-clean">
+      <li data-edit="" data-edit-id="e160" data-bound-blur="1"><strong>Кто вы.</strong> Имя, ниша, экспертиза, сколько лет в теме.</li>
+      <li data-edit="" data-edit-id="e161" data-bound-blur="1"><strong>Чем занимаетесь.</strong> Какие продукты или услуги продаёте, какие задачи решаете.</li>
+      <li data-edit="" data-edit-id="e162" data-bound-blur="1"><strong>Кто ваши клиенты.</strong> C какими проблемами к вам приходят клиенты, какие у них боли, страхи, в каких ситуациях они покупают</li>
+      <li data-edit="" data-edit-id="e163" data-bound-blur="1"><strong>Как вы пишите контент.</strong> Ваш стиль он мягкий или жёсткий, аналитический или интуитивный. Любимые речевые обороты, чего избегаете. (здесь лучше дать примеры)</li>
+      <li data-edit="" data-edit-id="e164" data-bound-blur="1"><strong>Чего у вас нет и что у вас есть.</strong> Команды, бюджета на рекламу, времени — Claude должен понимать ограничения.</li>
+      <li data-edit="" data-edit-id="e165" data-bound-blur="1"><strong>Что для вас в фокусе прямо сейчас.</strong> Над чем работаете, что хотите запустить, какию задачи ставите перед собой</li>
+    </ul>
+
+    <div class="quote-block" data-edit="" data-edit-id="e166" data-bound-blur="1">
+      ✅ Этот файл - ваша <strong>фактура и основа решения всех задач</strong>.
+    </div>
+
+    <p data-edit="" data-edit-id="e167" data-bound-blur="1">Его можно загружать его в каждый проект или в общую память Claude и он ВСЕГДА будет в курсе на чем нужно фокусироваться.</p>
+
+    <h3 data-edit="" data-edit-id="e168" data-bound-blur="1">Как сделать такой файл-фактуру за 30–40 минут?</h3>
+
+    <ol class="steps-list">
+      <li data-edit="" data-edit-id="e169" data-bound-blur="1">Надиктуйте голосовое по списку выше - себе в Telegram.</li>
+      <li data-edit="" data-edit-id="e170" data-bound-blur="1">Перешлите его в этого бота для транскрибации <i>(советую, это самый стабильный)</i></li>
+      <li data-edit="" data-edit-id="e171" data-bound-blur="1">Можно не стесняться и говорить «как идёт» - нейронка потом всё причешет и структурирует.</li>
+      <li data-edit="" data-edit-id="e172" data-bound-blur="1">Получившийся текст загружаете в Claude вместе с промптом ниже.</li>
+    </ol>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>Промпт для структурирования фактуры</span>
+        <button class="code-copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+      </div>
+      <pre data-edit="" data-edit-id="e173" data-bound-blur="1">Ты — мой помощник по структурированию информации.
+
+Я надиктовал голосовое сообщение, в котором рассказал о себе,
+своём проекте, клиентах и текущих задачах. Текст ниже — это сырая
+транскрибация моей речи, поэтому в нём могут быть повторы,
+оговорки, скачки между темами и разговорные обороты.
+
+Твоя задача — превратить эту запись в чистый, структурированный
+документ-фактуру обо мне и моём бизнесе.
+
+ЧТО НУЖНО СДЕЛАТЬ:
+
+1. Внимательно прочитай весь текст и пойми контекст.
+
+2. Структурируй информацию по разделам:
+   — Кто я (имя, ниша, экспертиза, опыт)
+   — Чем я занимаюсь (продукты, услуги, задачи)
+   — Мои клиенты (кто они, какие у них боли, страхи, ситуации покупки)
+   — Мой стиль контента (как я пишу, любимые обороты, чего избегаю)
+   — Мои ресурсы и ограничения (команда, бюджет, время)
+   — Что в фокусе прямо сейчас (текущие задачи, цели, запуски)
+
+3. Внутри каждого раздела:
+   — Убери повторы, оговорки и слова-паразиты
+   — Сохрани мою живую речь, не превращай в канцелярию
+   — Если я что-то упомянул вскользь, но это важно — вынеси отдельным пунктом
+   — Используй маркированные списки там, где это улучшит читаемость
+
+4. Если в каком-то разделе информации недостаточно — отметь это
+   списком уточняющих вопросов в конце документа.
+
+5. Не додумывай факты, которых я не говорил. Работай только с тем,
+   что есть в транскрибации.
+
+ФОРМАТ ВЫВОДА:
+— Заголовок документа: «Фактура: [моё имя / ниша]»
+— Шесть разделов из пункта 2 с подзаголовками
+— В конце — блок «Уточняющие вопросы» (если есть пробелы)
+
+Вот моя транскрибация:
+
+[вставьте сюда текст]</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3 — ЛАЙФХАК 1 ============ -->
+<section class="section section-cream" id="faktura-lifehack-1">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 3 · Лайфхак 1</div>
+    <h2 data-edit="" data-edit-id="e174" data-bound-blur="1">💡 Лайфхак №1: попросите Claude взять у вас интервью</h2>
+
+    <p data-edit="" data-edit-id="e175" data-bound-blur="1">Если вам тяжело писать/надиктовать всё это с нуля - это нормально.</p>
+
+    <p data-edit="" data-edit-id="e176" data-bound-blur="1">Многие эксперты сталкиваются с такой проблемой.</p>
+
+    <p data-edit="" data-edit-id="e177" data-bound-blur="1"><strong>Решение:</strong> попросите Claude провести вам интервью и задать вопросы.</p>
+
+    <p data-edit="" data-edit-id="e178" data-bound-blur="1">Закидываете в Claude этот промпт, и он сам проведёт глубинное интервью, а в конце соберёт фактуру в структурированный документ. 😎</p>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>Промпт для интервью с Claude</span>
+        <button class="code-copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+      </div>
+      <pre data-edit="" data-edit-id="e179" data-bound-blur="1">Ты — опытный маркетолог-стратег с 15+ годами практики проведения интервью
+и распаковке экспертов и предпринимателей.
+
+Твоя суперсила — задавать ПРАВИЛЬНЫЕ вопросы, которые
+помогают человеку сформулировать то, что у него есть в голове,
+но никак не складывается в слова.
+
+ТВОЯ ЗАДАЧА
+
+Провести со мной глубинное интервью и собрать структурированную
+фактуру обо мне, моём бизнесе, клиентах и продукте. Этот документ
+я потом буду использовать как контекст для всех будущих
+маркетинговых задач: тексты, воронки, лендинги, реклама.
+
+КАК ТЫ РАБОТАЕШЬ
+
+1. Веди интервью ВОПРОС ЗА ВОПРОСОМ. Никаких списков из 20 вопросов
+   разом — это убивает мотивацию отвечать.
+
+2. После каждого моего ответа решай: достаточно информации или
+   нужно копнуть глубже. Если ответ размытый — задай уточняющий
+   вопрос. Если конкретный — переходи к следующей теме.
+
+3. Если я отвечаю общими словами («помогаю людям», «улучшаю
+   качество жизни», «делаю крутой продукт») — НЕ принимай это
+   за ответ. Возвращайся и проси конкретику: цифры, имена,
+   ситуации, кейсы.
+
+4. Если я застрял или не знаю как ответить — предложи 2–3
+   варианта на выбор, основанных на моей нише. Помоги
+   сформулировать.
+
+5. Я могу отвечать как удобно: текстом, голосовым, ссылкой
+   на сайт или соцсети. Разбирайся с любым форматом.
+
+СТРУКТУРА ИНТЕРВЬЮ — ТРИ БЛОКА
+
+БЛОК 1. Я как эксперт
+— Кто я, чем занимаюсь, как давно
+— Мой путь в нишу: почему именно это
+— Что я делаю иначе, чем коллеги
+— Мои сильные стороны и слабые места
+— Мой стиль общения, как я пишу контент, чего избегаю
+
+БЛОК 2. Мои клиенты
+— Кто они: возраст, пол, профессия, уровень дохода
+— С какими проблемами и болями приходят
+— Чего на самом деле боятся (часто это не то, о чём говорят вслух)
+— В каких ситуациях принимают решение купить
+— Какие возражения слышу чаще всего
+— Как клиенты говорят сами о себе и о проблеме (их язык, словечки)
+
+БЛОК 3. Продукт и ниша
+— Что я продаю: продукты, услуги, форматы, цены
+— Какой результат получает клиент
+— Что у меня есть и чего нет (команда, бюджет, время)
+— Что в фокусе прямо сейчас: над чем работаю, что хочу запустить
+— Где я сейчас в нише и куда хочу прийти
+
+ВАЖНЫЕ ПРАВИЛА
+
+— Не задавай все вопросы из блока разом. Веди диалог живо.
+— После каждого блока делай короткое резюме («Окей, я понял
+  про тебя следующее: ...») — чтобы я мог поправить,
+  если что-то услышал не так.
+— Не додумывай факты, которых я не говорил.
+— Тон — дружеский, профессиональный, без подхалимства
+  и без занудства.
+
+ФИНАЛЬНЫЙ РЕЗУЛЬТАТ
+
+После всех трёх блоков собери документ «ФАКТУРА: [моё имя/ниша]»
+с шестью разделами:
+
+1. Кто я (личность, экспертиза, путь)
+2. Мой стиль и голос (как пишу, любимые обороты, чего избегаю)
+3. Мои клиенты (портрет, боли, страхи, ситуации покупки, их язык)
+4. Мой продукт (что продаю, кому, по какой цене, какой результат)
+5. Мои ресурсы и ограничения
+6. Что в фокусе сейчас
+
+В конце — список из 5–7 уточняющих вопросов, ответы на которые
+сделают документ ещё точнее.
+
+НАЧНИ ИНТЕРВЬЮ
+
+Поприветствуй меня, коротко объясни как мы будем работать,
+и задай ПЕРВЫЙ вопрос. Один. Жди ответа.</pre>
+    </div>
+
+    <p data-edit="" data-edit-id="e180" data-bound-blur="1">Уделите этому 30–40 минут и получите документ, который сэкономит вам сотни часов в будущем. 🤌🏻</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3 — КУДА ЗАГРУЖАТЬ ============ -->
+<section class="section" id="faktura-where">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 3 · Куда загружать</div>
+    <h2 data-edit="" data-edit-id="e181" data-bound-blur="1">📎 Куда загружать фактуру</h2>
+
+    <p data-edit="" data-edit-id="e182" data-bound-blur="1">Три варианта по приоритету:</p>
+
+    <ol class="steps-list">
+      <li>
+        <strong data-edit="" data-edit-id="e183" data-bound-blur="1">В проект (Projects)</strong>
+        <p data-edit="" data-edit-id="e184" data-bound-blur="1"><i>(что такое проект будет дальше подробно)</i>&nbsp;- Назовите файл, например «Обо мне и моих задачах», загрузите в проект Claude и он будет учитывать это <b>во всех чатах внутри данного проекта.</b></p>
+        <figure class="figure">
+          <img src="assets/image-2.png" alt="Загрузка фактуры в проект Claude" class="figure-img">
+        </figure>
+      </li>
+      <li>
+        <strong data-edit="" data-edit-id="e185" data-bound-blur="1">В долгосрочную память Claude (Memory)</strong>
+        <p data-edit="" data-edit-id="e186" data-bound-blur="1">- для постоянно использования на все чаты</p><p data-edit="" data-edit-id="eAdd1777901935691" data-bound-blur="1">Включается в Settings → Capabilities → Memory и там можно подгрузить нужный текст</p>
+        <figure class="figure">
+          <img src="assets/image-3.png" alt="Memory в настройках Claude" class="figure-img">
+        </figure>
+      </li>
+      <li>
+        <strong data-edit="" data-edit-id="e187" data-bound-blur="1">Закинуть прямо в чат</strong>
+        <p data-edit="" data-edit-id="e188" data-bound-blur="1">если задача разовая.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ БЛОК 3 — ЛАЙФХАК 2 ============ -->
+<section class="section section-cream" id="faktura-lifehack-2">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 3 · Лайфхак 2</div>
+    <h2 data-edit="" data-edit-id="e189" data-bound-blur="1">💡 Лайфхак №2: Как «переехать» на Claude из ChatGPT</h2>
+
+    <p data-edit="" data-edit-id="e190" data-bound-blur="1">Если вы долго работали с ChatGPT и не хочется потерять весь контекст, то есть простые способы перенести историю в Claude.</p>
+
+    <h3 data-edit="" data-edit-id="e191" data-bound-blur="1">Первый вариант (самый простой):</h3>
+
+    <p data-edit="" data-edit-id="e192" data-bound-blur="1"><strong>Шаг 1:</strong></p>
+    <p data-edit="" data-edit-id="e193" data-bound-blur="1">Заходите в Settings → Capabilities → Memory → Import memory from other AI providers → нажимаете Start import</p>
+    <figure class="figure">
+      <img src="assets/image-4.png" alt="Import memory в Claude" class="figure-img">
+    </figure>
+
+    <p data-edit="" data-edit-id="e194" data-bound-blur="1"><strong>Шаг 2:</strong></p>
+    <p data-edit="" data-edit-id="e195" data-bound-blur="1">Копируете промпт из всплывающего окна и вставляете его в новый чат вашей прошлой нейронки, а получившийся ответ вставляете в свободное окошко 👏🏻</p>
+    <figure class="figure">
+      <img src="assets/image-5.png" alt="Импорт памяти в Claude — окно" class="figure-img">
+    </figure>
+
+    <h3 data-edit="" data-edit-id="e196" data-bound-blur="1">Второй вариант:</h3>
+
+    <p data-edit="" data-edit-id="e197" data-bound-blur="1"><strong>Шаг 1. Экспортируем историю из ChatGPT.</strong></p>
+
+    <p data-edit="" data-edit-id="e198" data-bound-blur="1">Заходите в ChatGPT → клик по аватарке слева внизу → <strong>Settings</strong> → <strong>Data Controls</strong> → <strong>Export data</strong> → <strong>Confirm export</strong>.</p>
+
+    <p data-edit="" data-edit-id="e199" data-bound-blur="1">ChatGPT отправит вам на почту архив со всей историей чатов. Обычно это занимает 5–30 минут.</p>
+
+    <p data-edit="" data-edit-id="e200" data-bound-blur="1"><strong>Шаг 2. Распаковываем архив.</strong></p>
+
+    <p data-edit="" data-edit-id="e201" data-bound-blur="1">Внутри будет несколько файлов, главный — <code>conversations.json</code>. В нём вся ваша переписка с ChatGPT. Открыть его глазами тяжело — JSON выглядит как каша.</p>
+
+    <p data-edit="" data-edit-id="e202" data-bound-blur="1"><strong>Шаг 3. Превращаем JSON в человеческий вид.</strong></p>
+
+    <p data-edit="" data-edit-id="e203" data-bound-blur="1">Самый быстрый способ: загружаете <code>conversations.json</code> в Claude и пишете:</p>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>Промпт для разбора истории ChatGPT</span>
+        <button class="code-copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+      </div>
+      <pre data-edit="" data-edit-id="e204" data-bound-blur="1">Вот моя экспортированная история чатов из ChatGPT в формате JSON.
+
+Извлеки из неё:
+1. Все мои основные темы и проекты, по которым я работал с ИИ
+2. Мой стиль общения с ИИ — как я формулирую запросы
+3. Мои повторяющиеся задачи и интересы
+4. Ключевые решения и идеи, которые мы обсуждали
+
+Сделай из этого документ-фактуру, который я загружу в Claude как контекст.</pre>
+    </div>
+
+    <p data-edit="" data-edit-id="e205" data-bound-blur="1">Claude разбирает JSON, выдаёт вам сводку — и вы получаете готовую фактуру <strong>без необходимости создавать ее заново</strong></p>
+
+    <p data-edit="" data-edit-id="e206" data-bound-blur="1"><strong>Шаг 4. Загружаете эту фактуру в проект или в память Claude.</strong></p>
+
+    <p data-edit="" data-edit-id="e207" data-bound-blur="1">Всё.</p>
+    <p data-edit="" data-edit-id="e208" data-bound-blur="1">Теперь все ваши данные находятся внутри Claude 🔥</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4 — ПРОМПТИНГ: ВВЕДЕНИЕ ============ -->
+<section class="section" id="block-4">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 4 · Промптинг</div>
+    <h2 data-edit="" data-edit-id="e209" data-bound-blur="1">💬 Промптинг - как общаться с Claude, чтобы получать результат х5-х20</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e210" data-bound-blur="1">Первое, что вам нужно понять</p>
+
+    <p data-edit="" data-edit-id="e211" data-bound-blur="1">LLM <i>(семейство моделей, к которому относится и Claude) </i>- это не «мозг», который думает и <u>не искусственный интелект</u> в буквальном смысле.</p>
+
+    <p data-edit="" data-edit-id="e212" data-bound-blur="1">Это огромная база текстов и математика, которая на каждый ваш запрос <strong>подбирает наиболее вероятное продолжение</strong>.</p>
+
+    <p data-edit="" data-edit-id="e213" data-bound-blur="1">Грубо говоря - умное угадывание, основанное на сотнях миллиардов прочитанных страниц.</p>
+
+    <p data-edit="" data-edit-id="e214" data-bound-blur="1">Отсюда главное правило работы:</p>
+
+    <div class="quote-block" data-edit="" data-edit-id="e215" data-bound-blur="1">
+      <strong>«Качество результата работы Claude прямо пропорционально качеству вашего запроса»</strong>
+    </div>
+
+    <p data-edit="" data-edit-id="e216" data-bound-blur="1">Проще говоря: если дадите херовый промпт, то получите херню в ответ</p>
+
+    <div class="vs-row">
+      <div class="vs-card bad">
+        <div class="vs-mark">❌</div>
+        <h5 data-edit="" data-edit-id="e217" data-bound-blur="1">Херовый промпт</h5>
+        <p data-edit="" data-edit-id="e218" data-bound-blur="1">получили 💩</p>
+      </div>
+      <div class="vs-card good">
+        <div class="vs-mark">✅</div>
+        <h5 data-edit="" data-edit-id="e219" data-bound-blur="1">Структурный и контекстный запрос</h5>
+        <p data-edit="" data-edit-id="e220" data-bound-blur="1">получили шикарный результат</p>
+      </div>
+    </div>
+
+    <p data-edit="" data-edit-id="e221" data-bound-blur="1">Я работаю с LLM моделями уже 2+ года и являюсь автором 60+ PRO-промптов для решения маркетинговых задач</p>
+
+    <p data-edit="" data-edit-id="e222" data-bound-blur="1">И могу точно сказать, что запросы созданные по структуре работают в 500 раз лучше</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4 — PRO-ПРОМПТ ============ -->
+<section class="section section-cream" id="pro-prompt">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 4 · PRO-промпт</div>
+    <h2 data-edit="" data-edit-id="e223" data-bound-blur="1">Что такое PRO-промпт? 🧐</h2>
+
+    <p data-edit="" data-edit-id="e224" data-bound-blur="1"><strong>PRO-промпт</strong> — это инженерный запрос, написанный экспертом, который точно знает, какой результат должен получиться.</p>
+
+    <p data-edit="" data-edit-id="e225" data-bound-blur="1">По сут это инструкция которая создает <strong>готового ИИ-ассистент</strong> под конкретную задачу.</p>
+
+    <p data-edit="" data-edit-id="e226" data-bound-blur="1">Загружаете его в чат и получаете шикарный результат за 30 секунд.</p>
+
+    <div class="callout callout-tip">
+      <div class="callout-title"><span class="callout-icon">⭐</span><h3 data-edit="" data-edit-id="e227" data-bound-blur="1">Где получить 60+ готовых ИИ-ассистентов и промптов?</h3></div>
+      <p data-edit="" data-edit-id="e228" data-bound-blur="1">Если вам нужны 60+ проверенных промптов, скилов и ИИ-ассистентов для привлечения клиентов, анализа ЦА, создания текстов, сценариев, сборки воронок и т.д. то <strong>обратите внимание на мой закрытый канал «ИИ на практике 4.0»</strong></p>
+      <p data-edit="" data-edit-id="e229" data-bound-blur="1">Доступ и обновления <strong>навсегда</strong>, сейчас действует скидка 50%.</p>
+      <p>👉 <a href="https://dmitriymarketing.com/chatgpt" target="_blank" rel="noopener">Доступ к закрытому каналу</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4 — ФОРМУЛА RIGHT ============ -->
+<section class="section" id="right-formula">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 4 · Формула</div>
+    <h2 data-edit="" data-edit-id="e230" data-bound-blur="1">Формула правильного промпта - RIGHT</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e231" data-bound-blur="1">Вот вам идеальная формула, которой можно следовать в любой текстовой нейросети</p>
+
+    <div class="formula-letter">
+      <div class="formula-badge">R</div>
+      <div class="formula-content">
+        <h5 data-edit="" data-edit-id="e232" data-bound-blur="1">Role — кем должен быть Claude</h5>
+        <p data-edit="" data-edit-id="e233" data-bound-blur="1">Кем должен быть Claude в этом диалоге, подробно.</p>
+        <em data-edit="" data-edit-id="e234" data-bound-blur="1">«Ты — копирайтер, который специализируется на создании текстов для конверсионных лендингов, которые дают максимально целевые заявки».</em>
+      </div>
+    </div>
+
+    <div class="formula-letter">
+      <div class="formula-badge">I</div>
+      <div class="formula-content">
+        <h5 data-edit="" data-edit-id="e235" data-bound-blur="1">Information — контекст</h5>
+        <p data-edit="" data-edit-id="e236" data-bound-blur="1">Кто я, кто моя аудитория, что у меня есть.</p>
+        <em data-edit="" data-edit-id="e237" data-bound-blur="1">«Я фотограф из Москвы, моя аудитория - невесты 20–35, которые хотят максимально удачные фото с мероприятия, при этом не имею огромного бюджета».</em>
+      </div>
+    </div>
+
+    <div class="formula-letter">
+      <div class="formula-badge">G</div>
+      <div class="formula-content">
+        <h5 data-edit="" data-edit-id="e238" data-bound-blur="1">Goal — конкретная задача</h5>
+        <p data-edit="" data-edit-id="e239" data-bound-blur="1">Конкретная задача и нужный результат.</p>
+        <em data-edit="" data-edit-id="e240" data-bound-blur="1">«Напиши оффер для главного экрана лендинга для услуги свадебной фотосессии, который будет с наибольшей вероятностью вызывать любопытство, интригу и желание оставить заявку именно здесь».</em>
+      </div>
+    </div>
+
+    <div class="formula-letter">
+      <div class="formula-badge">H</div>
+      <div class="formula-content">
+        <h5 data-edit="" data-edit-id="e241" data-bound-blur="1">Hints — примеры и ограничения</h5>
+        <p data-edit="" data-edit-id="e242" data-bound-blur="1">Примеры, ориентиры, ограничения.</p>
+        <em data-edit="" data-edit-id="e243" data-bound-blur="1">«Я хочу чтобы сайт был спокойным, без агрессивных продаж, но при этом четко и быстро доносил главные преимущества моей компании, на языке выгод для клиента».</em>
+      </div>
+    </div>
+
+    <div class="formula-letter">
+      <div class="formula-badge">T</div>
+      <div class="formula-content">
+        <h5 data-edit="" data-edit-id="e244" data-bound-blur="1">Tone — стиль и формат</h5>
+        <p data-edit="" data-edit-id="e245" data-bound-blur="1">Стиль и формат вывода.</p>
+        <em data-edit="" data-edit-id="e246" data-bound-blur="1">«Распиши мне заголовок + 2–3 предложения о подходе + подзаголовок, продающие буллиты, и придумай уместную причину записаться именно сейчас + продумай текст для кнопки получения заявки».</em>
+      </div>
+    </div>
+
+    <p style="margin-top:32px" data-edit="" data-edit-id="e247" data-bound-blur="1">Как вы понимаете, для того чтобы дать хороший запрос нужна практика и экспертиза</p>
+
+    <p data-edit="" data-edit-id="e248" data-bound-blur="1">Мои PRO-промпты для маркетинга и продаж часто занимают 5-10 листов А4, но именно эта детальность и дает наилучший эффект</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4 — GOOD VS BAD ============ -->
+<section class="section section-cream" id="good-vs-bad">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 4 · На примере</div>
+    <h2 data-edit="" data-edit-id="e249" data-bound-blur="1">Хороший vs плохой промпт — на одном примере</h2>
+
+    <h3 data-edit="" data-edit-id="e250" data-bound-blur="1">❌ Плохо:</h3>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>Плохой промпт</span>
+        <button class="code-copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+      </div>
+      <pre data-edit="" data-edit-id="e251" data-bound-blur="1">Напиши мне пост про скидку 30% в моём салоне красоты.</pre>
+    </div>
+
+    <p data-edit="" data-edit-id="e252" data-bound-blur="1">Получите средний пост, который выглядит как «нейросеть писала».</p>
+
+    <h3 data-edit="" data-edit-id="e253" data-bound-blur="1">✅ Хорошо:</h3>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>Хороший промпт</span>
+        <button class="code-copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+      </div>
+      <pre data-edit="" data-edit-id="e254" data-bound-blur="1">R: Ты — опытный копирайтер с 10-летним опытом в бьюти-сфере.
+Специализируешься на постах для Telegram, которые НЕ давят
+и НЕ продают «в лоб», а вызывают доверие и желание записаться
+через ценность, а не через срочность.
+
+I: Я — владелица салона красоты «Лавр» в Санкт-Петербурге.
+Работаем 4 года, у нас 6 мастеров, средний чек 5–8 тысяч.
+Главный продукт — уходовые процедуры для лица: чистки,
+пилинги, массажи, аппаратная косметология.
+
+Моя аудитория — женщины 28–45 лет, в основном работающие,
+с доходом средним и выше среднего. Они уже устали от
+«чудо-процедур» и громких обещаний, ценят натуральный
+подход и доказательную косметологию. Решение принимают
+не по скидке, а по доверию к мастеру и салону.
+Раздражаются от текстов в духе «Беги! Успей! Осталось 2 места!».
+
+G: Напиши пост в Telegram про акцию: до конца месяца
+скидка 30% на все процедуры по уходу за лицом.
+Цель поста — мотивировать новых клиенток записаться
+на первую процедуру и вернуть тех, кто давно не приходил.
+
+H: Что важно учесть:
+ — Не используй слова «торопись», «успей», «осталось N мест»,
+   «не упусти шанс», «горящее предложение».
+ — Не давай скидку как главный аргумент. Скидка — это повод
+   зайти, а главное — забота, экспертность, результат.
+ — Поднимай тему «уход за собой = инвестиция в себя»,
+   а не «успейте сэкономить».
+ — Вот пример моего стиля — так я обычно пишу посты сама:
+   [вставить 1–2 своих поста]
+
+T: Эмодзи — точечно, максимум 3–4 на весь пост,
+не в каждой строке. Без CAPS LOCK. Без восклицательных
+знаков подряд.
+
+Сделай 2 варианта на выбор — один спокойный
+и поэтичный, второй — более прямой и «по делу».</pre>
+    </div>
+
+    <p data-edit="" data-edit-id="e255" data-bound-blur="1">Разница в результате ОГРОМНАЯ.</p>
+
+    <p data-edit="" data-edit-id="e256" data-bound-blur="1">Второй запрос диктуется за 3 минуты. Первый за 5 секунд. Но от первого вы не получите нормальный ответ</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4 — ОБРАТНЫЙ ПРОМПТИНГ ============ -->
+<section class="section" id="reverse-prompt">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 4 · Фишка</div>
+    <h2 data-edit="" data-edit-id="e257" data-bound-blur="1">💡 Лайфхак №3: Обратный промптинг&nbsp;</h2>
+
+    <p data-edit="" data-edit-id="e258" data-bound-blur="1">Этому я учу на каждом своем продукте, простая, но мощная техника.</p>
+
+    <p data-edit="" data-edit-id="e259" data-bound-blur="1"><strong>Идея:</strong> не вы объясняете Claude задачу, а <strong>Claude задаёт вам вопросы</strong>, чтобы понять, что нужно как специалист в нужной теме</p>
+
+    <p data-edit="" data-edit-id="e260" data-bound-blur="1">Отлично работает когда задача сложная, размытая, или вы сами до конца не понимаете чего хотите.</p>
+
+    <p data-edit="" data-edit-id="e261" data-bound-blur="1">Шаблон:</p>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>Шаблон обратного промптинга</span>
+        <button class="code-copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+      </div>
+      <pre data-edit="" data-edit-id="e262" data-bound-blur="1">У меня задача: [короткое описание].
+
+Я не уверен, как ее правильно сформулировать чтобы ты все правильно сделал,
+мне нужна твоя помощью. Прежде чем начать выполнять, задай мне 5–7 уточняющих вопросов, которые помогут тебе выдать максимально качественный результат.
+
+Задавай по одному вопросу за раз, дождись ответа, потом
+следующий. Если нужно-уточняй</pre>
+    </div>
+
+    <p data-edit="" data-edit-id="e263" data-bound-blur="1">Claude задаёт правильные вопросы — вы отвечаете — Claude собирает себе идеальный контекст и выдаёт результат, до которого вы бы сами не дошли.</p>
+
+    <p data-edit="" data-edit-id="e264" data-bound-blur="1">Я этим пользуюсь каждый день.</p>
+
+    <p data-edit="" data-edit-id="e265" data-bound-blur="1">И это одна из тех штук, после которых люди говорят <em>«а че так можно было?».</em></p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 4 — 13 ФРАЗ ============ -->
+<section class="section section-dark" id="phrases-13">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 4 · Сохранить в закладки</div>
+    <h2 data-edit="" data-edit-id="e266" data-bound-blur="1">13 малоизвестных фраз, которые дают х10 к результату с Сlaude</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e267" data-bound-blur="1">Сохраните этот блок в закладки.&nbsp;</p><p data-edit="" data-edit-id="eAdd1777901882315" data-bound-blur="1">Это работающие фразы, которые я выработал за тысячи часов работы с Claude.</p>
+
+    <div class="phrase-card">
+      <div class="phrase-num">1</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e268" data-bound-blur="1">«Прежде чем отвечать — подумай шаг за шагом.»</blockquote>
+        <p data-edit="" data-edit-id="e269" data-bound-blur="1">Включает у Claude режим рассуждения. Используйте везде, где есть логика, причинно-следственные связи, расчёт или стратегия. Качество ответа вырастает заметно.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">2</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e270" data-bound-blur="1">«Прежде чем что-то писать - задай мне 5–7 уточняющих вопросов чтобы усилить результат. Жди ответа после каждого.»</blockquote>
+        <p data-edit="" data-edit-id="e271" data-bound-blur="1">Когда задача объёмная или неоднозначная. Заставляет Claude собрать контекст, а не угадывать.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">3</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e272" data-bound-blur="1">«Этот ответ — на 3 из 10. Дай мне ответ на 9 из 10. Что нужно усилить?»</blockquote>
+        <p data-edit="" data-edit-id="e273" data-bound-blur="1">Поднимаете планку одной фразой. Часто срабатывает буквально магически: Claude как будто «включается» по-другому.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">4</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e274" data-bound-blur="1">«Скажи прямо и без подхалимства — что здесь слабое место?»</blockquote>
+        <p data-edit="" data-edit-id="e275" data-bound-blur="1">Когда тестируете гипотезу, оффер или текст и нужно честное мнение, а не «отличная идея, давайте развивать!».</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">5</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e276" data-bound-blur="1">«Дай 3 варианта решения и честно покажи минусы каждого.»</blockquote>
+        <p data-edit="" data-edit-id="e277" data-bound-blur="1">Когда стоите перед выбором и не хотите получить один «правильный» ответ. Видите спектр и сами принимаете решение.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">6</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e278" data-bound-blur="1">«Объясни это так, будто рассказываешь [моей маме / маркетологу-новичку / директору без бэкграунда в IT].»</blockquote>
+        <p data-edit="" data-edit-id="e279" data-bound-blur="1">Когда важен тон и уровень сложности. Один материал — под разные аудитории, без переписывания с нуля.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">7</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e280" data-bound-blur="1">«Сохрани вот это и вот это. Перепиши только это и вот это.»</blockquote>
+        <p data-edit="" data-edit-id="e281" data-bound-blur="1">При работе над текстом, дизайном, стратегией. Улучшаете точечно, а не получаете каждый раз новый ответ с нуля.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">8</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e282" data-bound-blur="1">«Прежде чем приступить — расскажи своими словами, как ты понял задачу. Какой результат ты собираешься выдать?»</blockquote>
+        <p data-edit="" data-edit-id="e283" data-bound-blur="1">Для сложных, многосоставных задач. Проверяете, что Claude не ушёл не туда — пока не потратил полчаса на ненужное.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">9</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e284" data-bound-blur="1">«Войди в роль [узкая экспертная роль] с 15+ годами опыта за плечами. Отвечай с этой позиции.»</blockquote>
+        <p data-edit="" data-edit-id="e285" data-bound-blur="1">Когда нужен конкретный экспертный взгляд. Чем уже роль - тем точнее ответ. «Маркетолог» - слабо. «Performance-маркетолог в недвижимости с опытом запусков для застройщиков» - то, что надо.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">10</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e286" data-bound-blur="1">«Собери краткое резюме всего, что мы обсудили. Так, чтобы я мог скопировать и вставить в новый чат — и продолжить с того же места.»</blockquote>
+        <p data-edit="" data-edit-id="e287" data-bound-blur="1">В конце длинной сессии, когда хотите продолжить позже без потерь контекста.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">11</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e288" data-bound-blur="1">«А теперь сыграй роль жёсткого скептика и разнеси эту идею в пух и прах. Найди все дыры.»</blockquote>
+        <p data-edit="" data-edit-id="e289" data-bound-blur="1">Поиск слабых мест в продукте, оффере, стратегии. Отрезвляет лучше любой фокус-группы.</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">12</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e290" data-bound-blur="1">«Что в этом ответе — твоё реальное мнение, а что ты сказал, чтобы мне понравилось?»</blockquote>
+        <p data-edit="" data-edit-id="e291" data-bound-blur="1">Прямой удар по подхалимству. Claude часто признаётся, где он подгонял ответ под ваши ожидания. Используйте, когда чувствуете, что вас «гладят по голове».</p>
+      </div>
+    </div>
+
+    <div class="phrase-card">
+      <div class="phrase-num">13</div>
+      <div class="phrase-content">
+        <blockquote data-edit="" data-edit-id="e292" data-bound-blur="1">«Что я как [маркетолог / эксперт / предприниматель] упускаю? О чём мне стоило бы спросить, но я не догадался?»</blockquote>
+        <p data-edit="" data-edit-id="e293" data-bound-blur="1">Самая мощная фраза в списке. Заставляет Claude выйти за рамки вашего вопроса и показать слепые зоны. Используйте в конце любой стратегической сессии.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5 — ПРОЕКТЫ ============ -->
+<section class="section" id="block-5">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 5 · Секретное оружие</div>
+    <h2 data-edit="" data-edit-id="e298" data-bound-blur="1">🔥 Секретное оружие Claude: Проекты, Скиллы, Коннекторы</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e299" data-bound-blur="1">Если предыдущий блок про то, <strong>как</strong> говорить с Claude, то этот — про то, <strong>как ускорять вашу работу.</strong></p>
+
+    <p data-edit="" data-edit-id="e300" data-bound-blur="1">Чтобы не повторять одно и то же по 50 раз, а работать как с ИИ-ассистентом ☝🏻</p>
+
+    <h3 data-edit="" data-edit-id="e301" data-bound-blur="1">Проекты = ваши ИИ-ассистенты</h3>
+
+    <p data-edit="" data-edit-id="e302" data-bound-blur="1"><strong>Проект (Project)</strong> — это рабочее пространство в Claude с собственной памятью, инструкциями и базой знаний.</p>
+
+    <p data-edit="" data-edit-id="e303" data-bound-blur="1">Если по-простому: проекты - это папки внутри Сlaude куда вы можете подгрузить нужные файлы, данные, фактуру и алгоритм решения задачи</p>
+
+    <p data-edit="" data-edit-id="e304" data-bound-blur="1">В итоге каждый проект будет работать на решение этой задачи 🔥</p>
+
+    <div class="quote-block" data-edit="" data-edit-id="e305" data-bound-blur="1">
+      Думайте о проекте как об<strong>&nbsp;ИИ-ассистенте, заточенном под нужную задачу</strong>.<br>
+      Один проект - для постов в Telegram-канал.<br>
+      Второй - для работы с конкретным клиентом.<br>
+      Третий - для анализа целевой аудитории.<br>
+      Четвёртый - для сценариев Reels.
+    <br></div>
+
+    <p data-edit="" data-edit-id="e306" data-bound-blur="1"><u>Примерный сценарий:&nbsp;</u><br>Создаёте проект → загружаете туда фактуру (из блока 3) + примеры работ + инструкции → Claude помнит этот контекст в <strong>каждом чате внутри проекта</strong>.<br></p>
+
+    <h4 data-edit="" data-edit-id="e307" data-bound-blur="1">Что грузить в проекты:</h4>
+
+    <ul class="list-clean">
+      <li data-edit="" data-edit-id="e308" data-bound-blur="1"><strong>Инструкции</strong> (Project Instructions) — текстовые правила, как Claude должен себя вести</li>
+      <li data-edit="" data-edit-id="e309" data-bound-blur="1"><strong>База знаний</strong> — файлы, документы, бренд-буки, примеры работ, прайсы</li>
+      <li data-edit="" data-edit-id="e310" data-bound-blur="1"><strong>История чатов</strong> — все разговоры внутри проекта группируются вместе</li>
+    </ul>
+
+    <p data-edit="" data-edit-id="e311" data-bound-blur="1">Магия начинается, когда у вас 5–10 проектов и каждый - это отдельный «специалист».</p>
+
+    <p data-edit="" data-edit-id="e312" data-bound-blur="1">Маркетолог, копирайтер, аналитик, ассистент по клиенту X, ассистент по клиенту Y.</p>
+
+    <p data-edit="" data-edit-id="e313" data-bound-blur="1">Все ждут вас. помнят контекст и готовы работать 24/7 🤓</p>
+
+    <p data-edit="" data-edit-id="e314" data-bound-blur="1">У меня на ютубе более 10 видео о том как работать в проектах на уровне PRO 😎</p>
+
+    <div class="yt-grid">
+      <a class="yt-card" href="https://www.youtube.com/watch?v=a3eMgOOAplg&amp;t=1008s" target="_blank" rel="noopener">
+        <div class="yt-card-cover">
+          <img src="assets/image-6.png" alt="Как делать ГЛУБОКИЙ анализ ЦА за 3 минуты">
+          <div class="yt-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
+        </div>
+        <div class="yt-card-body">
+          <span class="yt-card-tag">Видео на YouTube</span>
+          <h4 class="yt-card-title" data-edit="" data-edit-id="e315" data-bound-blur="1">Как делать ГЛУБОКИЙ анализ ЦА за 3 минуты 👇🏻</h4>
+          <span class="yt-card-cta">Смотреть на YouTube
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span>
+        </div>
+      </a>
+      <a class="yt-card" href="https://www.youtube.com/watch?v=czr5eqpr5Io&amp;t=1614s" target="_blank" rel="noopener">
+        <div class="yt-card-cover">
+          <img src="assets/image-7.png" alt="Как создать ПРИБЫЛЬНЫЙ МИНИ-ПРОДУКТ за 5 минут">
+          <div class="yt-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
+        </div>
+        <div class="yt-card-body">
+          <span class="yt-card-tag">Видео на YouTube</span>
+          <h4 class="yt-card-title" data-edit="" data-edit-id="e316" data-bound-blur="1">Как создать ПРИБЫЛЬНЫЙ МИНИ-ПРОДУКТ за 5 минут 👇🏻</h4>
+          <span class="yt-card-cta">Смотреть на YouTube
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span>
+        </div>
+      </a>
+      <a class="yt-card" href="https://www.youtube.com/watch?v=CLrWZHtJugk" target="_blank" rel="noopener">
+        <div class="yt-card-cover">
+          <img src="assets/cover-5.jpg" alt="Как создать МОЩНЫЙ ЛИД-МАГНИТ за 2 минуты">
+          <div class="yt-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
+        </div>
+        <div class="yt-card-body">
+          <span class="yt-card-tag">Видео на YouTube</span>
+          <h4 class="yt-card-title" data-edit="" data-edit-id="e317" data-bound-blur="1">Как создать МОЩНЫЙ ЛИД-МАГНИТ за 2 минуты 👇🏻</h4>
+          <span class="yt-card-cta">Смотреть на YouTube
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span>
+        </div>
+      </a>
+      <a class="yt-card" href="https://www.youtube.com/watch?v=MBheZGHvFuI&amp;t=94s" target="_blank" rel="noopener">
+        <div class="yt-card-cover">
+          <img src="https://img.youtube.com/vi/MBheZGHvFuI/maxresdefault.jpg" alt="Claude найдет ВАШУ УНИКАЛЬНОСТЬ за 15 минут" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/MBheZGHvFuI/maxresdefault.jpg'">
+          <div class="yt-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
+        </div>
+        <div class="yt-card-body">
+          <span class="yt-card-tag">Видео на YouTube</span>
+          <h4 class="yt-card-title" data-edit="" data-edit-id="e317b" data-bound-blur="1">Claude найдет ВАШУ УНИКАЛЬНОСТЬ за 15 минут! 👇🏻</h4>
+          <span class="yt-card-cta">Смотреть на YouTube
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5 — SKILLS ============ -->
+<section class="section section-cream" id="skills">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 5 · Skills</div>
+    <h2 data-edit="" data-edit-id="e318" data-bound-blur="1">💪🏻 Skills - это как промпты, но круче</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e319" data-bound-blur="1"><strong>Скилл (Skill)</strong> - это прокачанный промпт в особом «упаковочном» формате.</p>
+
+    <p data-edit="" data-edit-id="e320" data-bound-blur="1">Делает то же самое, что обычный промпт, но:</p>
+
+    <ul class="list-clean">
+      <li data-edit="" data-edit-id="e321" data-bound-blur="1"><strong>Не съедает контекстное окно впустую</strong> — Claude подгружает скилл только когда он реально нужен, а не держит его инструкцией в каждом сообщении.</li>
+      <li data-edit="" data-edit-id="e322" data-bound-blur="1"><strong>Вызывается автоматически</strong> в нужный момент — по контексту вашей задачи.</li>
+      <li data-edit="" data-edit-id="e323" data-bound-blur="1"><strong>Может содержать целую методологию</strong>, файлы-шаблоны, чек-листы и даже свои примеры.</li>
+    </ul>
+
+    <p data-edit="" data-edit-id="e324" data-bound-blur="1">Простой пример ☝🏻</p>
+
+    <p data-edit="" data-edit-id="e325" data-bound-blur="1">У вас есть скилл «Создание КП».</p>
+
+    <p data-edit="" data-edit-id="e326" data-bound-blur="1">В обычной работе вы пишете Claude: <em>«Помоги составить коммерческое предложение для клиента X».</em></p>
+
+    <p data-edit="" data-edit-id="e327" data-bound-blur="1">Со скилом: Claude сам понимает, что у него на этот случай есть навык «КП», подгружает его когда нужно и выполняет работу <strong>по вашему алгоритму</strong>, без дополнительных действий</p>
+
+    <p data-edit="" data-edit-id="e328" data-bound-blur="1">Коротко говоря это навыки под простые и сложные задачи, которые вызываются в нужный момент или командой слэш «/» в чате</p>
+
+    <p data-edit="" data-edit-id="e329" data-bound-blur="1">Такой метод работы экономит время и токены вашей подписки.</p>
+
+    <h3 data-edit="" data-edit-id="e330" data-bound-blur="1">Как установить скилл в Claude</h3>
+
+    <p data-edit="" data-edit-id="e331" data-bound-blur="1">Скиллы живут в настройках вашего аккаунта и доступны во всех чатах после установки.</p>
+
+    <figure class="figure">
+      <img src="assets/image-8.png" alt="Skills в настройках Claude" class="figure-img">
+    </figure>
+
+    <ol class="steps-list">
+      <li data-edit="" data-edit-id="e332" data-bound-blur="1">Верхняя левая панель → Customize → Skills.</li>
+      <li data-edit="" data-edit-id="e333" data-bound-blur="1"><strong>Включите функцию Skills</strong>, если она ещё не активна.</li>
+      <li data-edit="" data-edit-id="e334" data-bound-blur="1"><strong>Загрузите скилл.</strong> Скилл — это обычнос файл или папка с файлом <code>название.md</code> и (опционально) дополнительными файлами: примерами, шаблонами, инструкциями. Загружаете её через интерфейс — Claude автоматически индексирует и делает её доступной.</li>
+      <li data-edit="" data-edit-id="e335" data-bound-blur="1"><strong>Готово.</strong> Теперь во всех ваших чатах Claude видит этот скилл и подключает его, когда задача попадает под его описание.</li>
+    </ol>
+
+    <h3 data-edit="" data-edit-id="e336" data-bound-blur="1">Как вызвать скилл в работе - два способа</h3>
+
+    <h4 data-edit="" data-edit-id="e337" data-bound-blur="1">Способ 1. Автоматический вызов (это магия).</h4>
+
+    <p data-edit="" data-edit-id="e338" data-bound-blur="1">Вы пишете обычный запрос - например: <em>«Сделай мне коммерческое предложение для клиента X»</em>.</p>
+
+    <p data-edit="" data-edit-id="e339" data-bound-blur="1">Claude <strong>сам распознаёт</strong>, что у него есть подходящий скилл «КП», подгружает его и работает по вашему алгоритму.</p>
+
+    <p data-edit="" data-edit-id="e340" data-bound-blur="1">Живой запрос - Claude сам подбирает нужный инструмент.</p>
+
+    <p data-edit="" data-edit-id="e341" data-bound-blur="1">Это и есть главная сила Skills 🔥</p>
+
+    <p data-edit="" data-edit-id="e342" data-bound-blur="1">Для того, чтобы эта фукнция работала, при создании скилла вы рассказываете Claude, как его вызывать.</p>
+
+    <h4 data-edit="" data-edit-id="e343" data-bound-blur="1">Способ 2. Прямой вызов через слэш-команду (когда хотите быть уверены).</h4>
+
+    <p data-edit="" data-edit-id="e344" data-bound-blur="1">Иногда вы можете явно сказать Claude: <em>«Используй вот этот конкретный скилл, не гадай»</em>.</p>
+
+    <p data-edit="" data-edit-id="e345" data-bound-blur="1">Или набирать в чате слэш <code>/</code> — и Claude покажет список доступных скиллов и команд.</p>
+
+    <p data-edit="" data-edit-id="e346" data-bound-blur="1">Выбираете нужный — он запускается и решает вашу задачу по алгоритму</p>
+
+    <p data-edit="" data-edit-id="e347" data-bound-blur="1"><u>Например:</u> <code>/КП</code> запускает скилл создания коммерческого предложения, <code>/анализ-аудитории</code> — скилл глубинного анализа ЦА, <code>/распаковка</code> — скилл интервью с экспертом.</p>
+
+    <p data-edit="" data-edit-id="e348" data-bound-blur="1">Это удобно, когда у вас много похожих скиллов, и вы хотите точно попасть в нужный.</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5 — SKILL CREATOR ============ -->
+<section class="section" id="skill-creator">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 5 · Skill Creator</div>
+    <h2 data-edit="" data-edit-id="e349" data-bound-blur="1">📁 Как создать собственный скилл - Skill Creator</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e350" data-bound-blur="1">Создавать свои скиллы под повторяющиеся задачи - реально просто.</p>
+
+    <p data-edit="" data-edit-id="e351" data-bound-blur="1">Внутри Claude есть встроенный инструмент <strong>Skill Creator</strong> - это, скилл, который умеет создавать другие скиллы.</p>
+
+    <figure class="figure">
+      <img src="assets/image-8.png" alt="Skill Creator интерфейс" class="figure-img">
+    </figure>
+
+    <h4 data-edit="" data-edit-id="e352" data-bound-blur="1">Как это работает:</h4>
+
+    <ol class="steps-list">
+      <li data-edit="" data-edit-id="e353" data-bound-blur="1">Запускаете Skill Creator командой <code>/skill-creator</code> в чате (или находите его в списке доступных скиллов).</li>
+      <li data-edit="" data-edit-id="e354" data-bound-blur="1"><strong>Описываете задачу детально и поэтапно.</strong> Skill Creator задаст вам уточняющие вопросы — отвечайте развёрнуто.</li>
+      <li data-edit="" data-edit-id="e355" data-bound-blur="1">На выходе получаете готовый скилл, который <strong>остаётся у вас навсегда</strong> и которым можно делиться с командой</li>
+    </ol>
+
+    <h4 data-edit="" data-edit-id="e356" data-bound-blur="1">Простой пример запроса для Skill Creator:</h4>
+
+    <div class="code-block">
+      <div class="code-block-header">
+        <span>Пример запроса</span>
+        <button class="code-copy-btn" onclick="copyCode(this)">📋 Копировать</button>
+      </div>
+      <pre data-edit="" data-edit-id="e357" data-bound-blur="1">Создай мне скилл, который при моих запросах
+на ответ клиенту по почте всегда:
+
+1. Отвечает в стиле X (вежливо, но по делу,
+   без канцелярита и подхалимства)
+2. Использует структуру: благодарность →
+   суть ответа → конкретные следующие шаги →
+   подпись с моими контактами
+3. В конце обязательно содержит CTA — назначение
+   созвона, ссылку на бронирование или вопрос,
+   подталкивающий к ответу
+4. Адаптирует тон под тип письма: тёплый —
+   для постоянных клиентов, более формальный —
+   для новых</pre>
+    </div>
+
+    <div class="quote-block" data-edit="" data-edit-id="e358" data-bound-blur="1">
+      ☝🏻 <strong>Главный принцип:</strong> представьте, что перед вами стажёр, которому нужно объяснить так, чтобы он точно ничего не упустил. Вот именно так и надо формулировать задачу для Skill Creator. Чем подробнее опишете — тем точнее будет скилл.
+    </div>
+
+    <p data-edit="" data-edit-id="e359" data-bound-blur="1">Skill Creator задаст 5–10 уточняющих вопросов <em>(он сам копает в детали, которые вы могли упустить)</em>, соберёт скилл и подключит его в ваш аккаунт.</p>
+
+    <p data-edit="" data-edit-id="e360" data-bound-blur="1">Дальше - пользуетесь как любым другим.</p>
+
+    <div class="callout callout-warning">
+      <div class="callout-title"><span class="callout-icon">⚠️</span><span data-edit="" data-edit-id="e361" data-bound-blur="1">ВАЖНО: предупреждение про скиллы с GitHub</span></div>
+      <p data-edit="" data-edit-id="e362" data-bound-blur="1">В интернете лежит много готовых скиллов на таких платформах как GitHub и т.д.</p>
+      <p data-edit="" data-edit-id="e363" data-bound-blur="1">Часто их предлагают скачать обещая крутые резултаты</p>
+      <p data-edit="" data-edit-id="e364" data-bound-blur="1"><strong>Я НЕ РЕКОМЕНДУЮ СКАЧИВАТЬ И УСТАНАВЛИВАТЬ СКИЛЛЫ С ОБЩЕДОСТУПНЫХ НЕПРОВЕРЕННЫХ ИСТОНИКОВ</strong></p>
+      <p data-edit="" data-edit-id="e365" data-bound-blur="1">Скиллы могут содержать бэкдоры ☝🏻</p>
+      <p data-edit="" data-edit-id="e366" data-bound-blur="1">Этот вредоносные программы и коды, которые навредят вашему компьютеру, украдут данные или сделают что-то ещё хуже.</p>
+      <p data-edit="" data-edit-id="e367" data-bound-blur="1">Логика та же, что с расширениями для браузера: ставьте только от проверенного источника.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 5 — КОННЕКТОРЫ ============ -->
+<section class="section section-cream" id="connectors">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 5 · Коннекторы</div>
+    <h2 data-edit="" data-edit-id="e368" data-bound-blur="1">📡 Коннекторы - мостики между Claude и вашими сервисами</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e369" data-bound-blur="1"><strong>Коннектор (Connector)</strong> — это интеграция, которая подключает Claude к внешнему сервису: Gmail, Google Drive, Notion, Slack, Asana, Linear, Stripe, CRM.</p>
+
+    <figure class="figure">
+      <img src="assets/image-9.png" alt="Каталог коннекторов Claude" class="figure-img">
+    </figure>
+
+    <p data-edit="" data-edit-id="e370" data-bound-blur="1">После подключения Claude получает доступ к данным в этих сервисах <em>(только к тем, к которым у вас есть доступ — он не видит чужих документов)</em> может <strong>читать и в даже выполнять действия</strong>.</p>
+
+    <h3 data-edit="" data-edit-id="e371" data-bound-blur="1">Что это даёт на практике</h3>
+
+    <ul class="list-clean">
+      <li data-edit="" data-edit-id="e372" data-bound-blur="1"><em>«Найди в моём Gmail переписку с подрядчиком за последний месяц и сделай выжимку»</em> → Claude находит, выжимает.</li>
+      <li data-edit="" data-edit-id="e373" data-bound-blur="1"><em>«Какие у меня задачи на этой неделе в Asana?»</em> → Claude вытащит, отсортирует.</li>
+      <li data-edit="" data-edit-id="e374" data-bound-blur="1"><em>«В нашем Notion-документе про бренд-стиль — какие правила по использованию логотипа?»</em> → Claude найдёт ответ внутри документа.</li>
+      <li data-edit="" data-edit-id="e375" data-bound-blur="1"><em>«В моём Google Drive есть выгрузка продаж за квартал — проанализируй динамику»</em> → Claude читает, анализирует, выдаёт выводы.</li>
+    </ul>
+
+    <h3 data-edit="" data-edit-id="e376" data-bound-blur="1">Что такое MCP (Model Context Protocol)</h3>
+
+    <p data-edit="" data-edit-id="e377" data-bound-blur="1">Технически коннекторы работают на основе протокола <strong>MCP — Model Context Protocol</strong>.</p>
+
+    <p data-edit="" data-edit-id="e378" data-bound-blur="1">Это открытый стандарт от Anthropic для подключения ИИ к внешним инструментам.</p>
+
+    <p data-edit="" data-edit-id="e379" data-bound-blur="1">Метафора, которую использует сама Anthropic: <strong>MCP — это USB-C для ИИ.</strong></p>
+
+    <p data-edit="" data-edit-id="e380" data-bound-blur="1">Простым языком это виртуальный провод по которому можно работать с любым приложением, что разрешено внутри Claude</p>
+
+    <h3 data-edit="" data-edit-id="e381" data-bound-blur="1">Как подключить коннектор</h3>
+
+    <ol class="steps-list">
+      <li data-edit="" data-edit-id="e382" data-bound-blur="1">Идёте на <a href="https://claude.ai/directory/connectors" target="_blank" rel="noopener">claude.ai/directory/connectors</a> <em>(это официальный каталог)</em> или прямо в чате нажимаете <strong>«Поиск и инструменты» → «Добавить коннекторы»</strong></li>
+      <li data-edit="" data-edit-id="e383" data-bound-blur="1">Выбираете нужный сервис → <strong>Connect</strong></li>
+      <li data-edit="" data-edit-id="e384" data-bound-blur="1">Авторизуетесь в этом сервисе</li>
+      <li data-edit="" data-edit-id="e385" data-bound-blur="1">Внимательно смотрите, какие разрешения запрашивает Claude (читать почту, создавать события и т.д.) → подтверждаете</li>
+      <li data-edit="" data-edit-id="e386" data-bound-blur="1">Возвращаетесь в Claude и проверяете командой: «Получи доступ к моему [сервис], покажи последние 5 писем» — если работает, вы подключились</li>
+    </ol>
+
+    <h3 data-edit="" data-edit-id="e387" data-bound-blur="1">Безопасность</h3>
+
+    <p data-edit="" data-edit-id="e388" data-bound-blur="1">Три ключевых принципа:</p>
+
+    <ul class="list-clean">
+      <li data-edit="" data-edit-id="e389" data-bound-blur="1"><strong>Claude видит ровно то, что видите вы.</strong> Если у вас нет доступа к чужой папке — у Claude его не будет.</li>
+      <li data-edit="" data-edit-id="e390" data-bound-blur="1"><strong>Разрешения регулируемые.</strong> Можно дать читать почту, но запретить отправку.</li>
+      <li data-edit="" data-edit-id="e391" data-bound-blur="1"><strong>Можно отозвать в любой момент.</strong> Через настройки Claude или через настройки самого сервиса.</li>
+    </ul>
+
+    <p data-edit="" data-edit-id="e392" data-bound-blur="1">И ставьте коннекторы <strong>только из официального каталога Anthropic</strong>.</p>
+
+    <p data-edit="" data-edit-id="e393" data-bound-blur="1">Это ровно та же история, что со скиллами с GitHub - экономия 5 минут не стоит риска.</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 6 — COWORK ============ -->
+<section class="section" id="block-6">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 6 · PRO-уровень</div>
+    <h2 data-edit="" data-edit-id="e394" data-bound-blur="1">🤖 Работа на уровне PRO - Cowork, Code, Design</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e395" data-bound-blur="1">Это уже не «помощник в чате».</p>
+
+    <p data-edit="" data-edit-id="e396" data-bound-blur="1">Это <strong>агентские режимы -</strong> когда Claude работает за вас, пока вы пьёте кофе или занимаетесь другими делами.</p>
+
+    <p data-edit="" data-edit-id="e397" data-bound-blur="1">Принципиально другой уровень взаимодействия с ИИ.</p>
+
+    <h3 data-edit="" data-edit-id="e398" data-bound-blur="1">Claude Cowork - Claude как полноценный сотрудник</h3>
+
+    <p data-edit="" data-edit-id="e399" data-bound-blur="1"><strong>Claude Cowork</strong> - это режим в приложении Claude, в котором ИИ становится <strong>агентом, который работает со сложными задачами, файлами и приложениями на вашем компьютере</strong>.</p>
+
+    <p data-edit="" data-edit-id="e400" data-bound-blur="1">Этот режим доступен только в десктоп версии (которое можно скачать с офф сайта claude)</p>
+
+    <figure class="figure">
+      <img src="assets/image-10.png" alt="Claude Cowork — интерфейс" class="figure-img">
+    </figure>
+
+    <p data-edit="" data-edit-id="e401" data-bound-blur="1">Если Chat — это диалог («вопрос → ответ»), то Cowork — это <strong>рабочая сессия</strong>: вы описываете задачу, Cowork её планирует, выполняет и сдаёт готовый результат.</p>
+
+    <p data-edit="" data-edit-id="e402" data-bound-blur="1">Это, по моему мнению, <strong>самый интересный продукт Anthropic для предпринимателей и экспертов</strong>.</p>
+
+    <p data-edit="" data-edit-id="e403" data-bound-blur="1">Объясню почему.</p>
+
+    <p data-edit="" data-edit-id="e404" data-bound-blur="1">Работа в Cowork идёт <strong>не в формате диалога</strong>, а в формате полноценной рабочей сессии.</p>
+
+    <p data-edit="" data-edit-id="e405" data-bound-blur="1">Вы можете надиктовать голосовое сообщение прямо в приложение - например:</p>
+
+    <div class="quote-block" data-edit="" data-edit-id="e406" data-bound-blur="1">
+      «Открой папку „Клиент Иванов" на рабочем столе. Прочитай все материалы внутри — там ТЗ, бренд-бук и 5 PDF от конкурентов. Сделай конкурентный анализ, потом собери на его основе посадочную страницу под услугу „маркетинговый аудит" и положи готовый файл в папку „Готово". В конце — короткий отчёт, что ты сделал и какие места считаешь слабыми, чтобы я подкрутил вручную»
+    </div>
+
+    <p data-edit="" data-edit-id="e407" data-bound-blur="1">Дальше вы закрываете ноутбук и идёте по своим делам.</p>
+
+    <p data-edit="" data-edit-id="e408" data-bound-blur="1">В это время Сlaude Cowork:</p>
+
+    <ol class="steps-list">
+      <li data-edit="" data-edit-id="e409" data-bound-blur="1"><strong>Разбирает задачу на этапы</strong> и составляет план действий.</li>
+      <li data-edit="" data-edit-id="e410" data-bound-blur="1"><strong>Открывает файлы</strong>, читает каждый по очереди, делает заметки.</li>
+      <li data-edit="" data-edit-id="e411" data-bound-blur="1"><strong>Собирает анализ</strong>, выводит структуру лендинга, генерирует тексты.</li>
+      <li data-edit="" data-edit-id="e412" data-bound-blur="1"><strong>Создаёт нужные файлы</strong> в нужных папках.</li>
+      <li data-edit="" data-edit-id="e413" data-bound-blur="1"><strong>Пишет отчёт</strong> о проделанной работе с честным указанием слабых мест.</li>
+    </ol>
+
+    <p data-edit="" data-edit-id="e414" data-bound-blur="1">Вы возвращаетесь - задача сделана 🔥</p>
+
+    <p data-edit="" data-edit-id="e415" data-bound-blur="1"><strong>В чате такое невозможно</strong>: там вы ведёте нейросеть шаг за шагом, даёте новые команды, копируете промежуточные результаты, открываете файлы вручную.</p>
+
+    <p data-edit="" data-edit-id="e416" data-bound-blur="1">Cowork делает это всё за вас 📝</p>
+
+    <p data-edit="" data-edit-id="e417" data-bound-blur="1">Это уже не ИИ в классическом смысле, а ИИ-<strong>сотрудник, которому можно делегировать</strong>.</p>
+
+    <p data-edit="" data-edit-id="e418" data-bound-blur="1">Тот самый момент, когда нейросеть из <em>«помощника по запросу»</em> превращается в <strong>исполнителя по задаче</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 6 — ЧТО МОЖНО В COWORK ============ -->
+<section class="section section-cream" id="cowork-tasks">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 6 · Возможности</div>
+    <h2 data-edit="" data-edit-id="e419" data-bound-blur="1">Что можно сделать в режиме Cowork?</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e420" data-bound-blur="1">Вот несколько ключевых сценариев работы с Cowork — каждый закрывает часы рутины</p>
+
+    <div class="product-list">
+      <div class="product-card">
+        <div class="product-emoji">🌐</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e421" data-bound-blur="1">Собрать рабочий сайт или лендинг голосом</h4>
+          <p data-edit="" data-edit-id="e422" data-bound-blur="1">Cowork по вашему описанию собирает готовый сайт в виде файлов, которые можно сразу залить на хостинг или показать клиенту в браузере.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">🛠️</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e423" data-bound-blur="1">Запилить мини-приложение под себя</h4>
+          <p data-edit="" data-edit-id="e424" data-bound-blur="1">Работающий инструмент, который реально запускается у вас на компьютере. Без программистов, без дизайнеров.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">📁</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e425" data-bound-blur="1">Работа с папками файлов на компьютере</h4>
+          <p data-edit="" data-edit-id="e426" data-bound-blur="1">В чате это пришлось бы делать вручную по одному файлу. Cowork делает за один заход и без вашего участия</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">📊</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e427" data-bound-blur="1">Подготовка отчётов из выгрузок</h4>
+          <p data-edit="" data-edit-id="e428" data-bound-blur="1">Cowork сам считает таблицу, соберет заново, формулирует, оформляет отчеты по вашему отписанию</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">🔍</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e429" data-bound-blur="1">Распаковка чужих материалов</h4>
+          <p data-edit="" data-edit-id="e430" data-bound-blur="1">Многоэтапная аналитика, на которую ушло бы 2 дня - за час, пока вы пьёте кофе.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">📝</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e431" data-bound-blur="1">Подготовка контента пакетом</h4>
+          <p data-edit="" data-edit-id="e432" data-bound-blur="1">Cowork работает с вашими файлами как с базой данных.</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-emoji">🔁</div>
+        <div class="product-content">
+          <h4 data-edit="" data-edit-id="e433" data-bound-blur="1">Рутинные задачи на повторе</h4>
+          <p data-edit="" data-edit-id="e434" data-bound-blur="1">Резюмирование Zoom-созвонов из папки записей, ежедневный обзор почты, сборка еженедельных отчётов - всё, что повторяется и съедает часы.</p>
+        </div>
+      </div>
+    </div>
+
+    <p data-edit="" data-edit-id="e435" data-bound-blur="1">И еще сотни задач! 🙃</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 6 — CLAUDE CODE ============ -->
+<section class="section" id="claude-code">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 6 · Claude Code</div>
+    <h2 data-edit="" data-edit-id="e436" data-bound-blur="1">Claude Code - друг разработчиков и вайб-кодеров</h2>
+
+    <figure class="figure">
+      <img src="assets/claude-code.jpg" alt="Claude Code — интерфейс" class="figure-img" onerror="this.style.display='none'">
+    </figure>
+
+    <p class="section-lead" data-edit="" data-edit-id="e437" data-bound-blur="1"><strong>Claude Code</strong> — это инструмент для агентного программирования.</p>
+
+    <p data-edit="" data-edit-id="e438" data-bound-blur="1"><u>Если коротко:</u> вы пишете на обычном русском <em>«исправь баг авторизации»</em> - и Claude сам читает, находит причину, правит код, запускает тесты, проверяет и фиксирует изменения.</p>
+
+    <p data-edit="" data-edit-id="e439" data-bound-blur="1">Без вашего участия в рутине 😇</p>
+
+    <p data-edit="" data-edit-id="e440" data-bound-blur="1">Это <strong>самый сильный инструмент Claude</strong> для тех, кто пишет код или занимается <strong>вайб-кодингом</strong> - собирает рабочие сайты и приложения через диалог с ИИ, не будучи разработчиком.</p>
+
+    <h3 data-edit="" data-edit-id="e441" data-bound-blur="1">Что умеет Claude Code в двух абзацах</h3>
+
+    <p data-edit="" data-edit-id="e442" data-bound-blur="1">Вы можете описать на бытовом русском языке, что вам нужно — сайт, мини-приложение, лендинг, инструмент для команды - и Claude Code соберёт полноценный рабочий продукт.</p>
+
+    <p data-edit="" data-edit-id="e443" data-bound-blur="1">Не превью, а реально работающий код, который можно залить на хостинг или показать клиенту.</p>
+
+    <p data-edit="" data-edit-id="e444" data-bound-blur="1"><strong>Именно благодаря этому инструменту тысячи людей без опыта в IT сейчас запускают свои продукты 🧠</strong></p>
+
+    <div class="callout callout-warning">
+      <div class="callout-title"><span class="callout-icon">⚠️</span><span data-edit="" data-edit-id="e445" data-bound-blur="1">В этом гайде мы не разбираем работу с Claude Code детально</span></div>
+      <p data-edit="" data-edit-id="e446" data-bound-blur="1">Это <strong>отдельная большая тема</strong>, не для новичков и не для старта знакомства с Claude.</p>
+      <p data-edit="" data-edit-id="e447" data-bound-blur="1">Если вы предприниматель, маркетолог или эксперт - вам <strong>не обязательно</strong> уметь работать с Claude Code, чтобы получать от Claude максимум пользы.</p>
+      <p data-edit="" data-edit-id="e448" data-bound-blur="1"><u>90% задач решаются в проектах, через скиллы и коннекторы.</u></p>
+      <p data-edit="" data-edit-id="e449" data-bound-blur="1">А когда захочется собрать свой сайт или мини-приложение — для этого есть Claude Cowork, и Claude Design, которые работают без терминала и команд.</p>
+      <p data-edit="" data-edit-id="e450" data-bound-blur="1">Агентские режимы работы вы попробуете сами, когда придет время 🙃</p>
+    </div>
+
+    <h3 data-edit="" data-edit-id="e451" data-bound-blur="1">Если вы хотели сделать себе ИИ-агента в Telegram — посмотрите это видео</h3>
+
+    <p data-edit="" data-edit-id="e452" data-bound-blur="1">Там я разбираю, как по-простому запустить своего ИИ-агента на СlaudeCode с управлением через Telegram</p>
+
+    <div class="yt-grid" style="grid-template-columns: 1fr; max-width: 540px">
+      <a class="yt-card" href="https://www.youtube.com/watch?v=dCmzF01AD-A&amp;t=3362s" target="_blank" rel="noopener">
+        <div class="yt-card-cover">
+          <img src="assets/cover-7.jpg" alt="Как сделать ИИ-агента в Telegram на ClaudeCode">
+          <div class="yt-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></div>
+        </div>
+        <div class="yt-card-body">
+          <span class="yt-card-tag">Видео на YouTube</span>
+          <h4 class="yt-card-title" data-edit="" data-edit-id="e453" data-bound-blur="1">Как сделать ИИ-агента в Telegram на ClaudeCode 🫶🏻</h4>
+          <span class="yt-card-cta">Смотреть на YouTube
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ БЛОК 6 — CLAUDE DESIGN ============ -->
+<section class="section section-cream" id="claude-design">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 6 · Claude Design</div>
+    <h2 data-edit="" data-edit-id="e454" data-bound-blur="1">Claude Design - визуальный редактор в диалоге</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e455" data-bound-blur="1"><strong>Claude Design</strong> — новый продукт Anthropic Labs <em>(запущен в апреле 2026)</em>.</p>
+
+    <p data-edit="" data-edit-id="e456" data-bound-blur="1">Создаёт визуальный контент через диалог: дизайны, прототипы, презентации, одностраничники, карточки для соцсетей.</p>
+
+    <p data-edit="" data-edit-id="e457" data-bound-blur="1">Не нужно уметь работать с Figma.</p>
+    <p data-edit="" data-edit-id="e458" data-bound-blur="1">Не нужно уметь работать в Canva.</p>
+    <p data-edit="" data-edit-id="e459" data-bound-blur="1">Просто описываете в чате, что нужно и Claude делает макет в визуальном редакторе.</p>
+    <p data-edit="" data-edit-id="e460" data-bound-blur="1">Дальше можно править: цвета, шрифты, блоки, тексты и всё это через диалог.</p>
+
+    <p data-edit="" data-edit-id="e461" data-bound-blur="1">На данный момент Design доступен в веб-версии Claude.</p>
+    <p data-edit="" data-edit-id="e462" data-bound-blur="1">Но, будьте аккуратны: генерировать изображения довольно дорого по токенам и тут пригодится более дорогая подписка Max</p>
+
+    <h3 data-edit="" data-edit-id="e463" data-bound-blur="1">Как устроен интерфейс</h3>
+
+    <figure class="figure">
+      <img src="assets/image-11.png" alt="Claude Design интерфейс" class="figure-img">
+    </figure>
+
+    <p data-edit="" data-edit-id="e464" data-bound-blur="1">Окно поделено пополам: <strong>слева чат с Claude, справа холст</strong>.</p>
+    <p data-edit="" data-edit-id="e465" data-bound-blur="1">Пишете правку → Claude применяет её → видите результат сразу.</p>
+
+    <h3 data-edit="" data-edit-id="e466" data-bound-blur="1">Экспорт</h3>
+
+    <ul class="list-clean">
+      <li data-edit="" data-edit-id="e467" data-bound-blur="1">В <strong>Canva</strong> — для дальнейшей правки в привычном инструменте</li>
+      <li data-edit="" data-edit-id="e468" data-bound-blur="1">В <strong>PDF</strong> — для печати или презентации</li>
+      <li data-edit="" data-edit-id="e469" data-bound-blur="1">В <strong>PPTX</strong> — для PowerPoint и совместимых</li>
+    </ul>
+
+    <h3 data-edit="" data-edit-id="e470" data-bound-blur="1">Когда использовать</h3>
+
+    <ul class="list-clean">
+      <li data-edit="" data-edit-id="e471" data-bound-blur="1">Быстрые лендинги, чтобы протестировать оффер</li>
+      <li data-edit="" data-edit-id="e472" data-bound-blur="1">Презентации для клиентов без участия дизайнера</li>
+      <li data-edit="" data-edit-id="e473" data-bound-blur="1">Карточки для соцсетей и инфографика</li>
+      <li data-edit="" data-edit-id="e474" data-bound-blur="1">Прототипы интерфейсов перед передачей разработчику</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ БЛОК 7 — ПРИМЕРЫ ============ -->
+<section class="section" id="block-7">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 7 · Примеры</div>
+    <h2 data-edit="" data-edit-id="e475" data-bound-blur="1">Какие задачи можно решать с Claude — конкретные примеры</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e476" data-bound-blur="1">Чтобы у вас в голове сложилась полная картина, вот несколько десятков реальных задач, которые я и мои студенты решаем с Claude каждый день. 🤌🏻</p>
+
+    <div class="category-grid">
+      <div class="category-card">
+        <div class="cat-emoji">📈</div>
+        <h4 data-edit="" data-edit-id="e477" data-bound-blur="1">Маркетинг и контент</h4>
+        <ul>
+          <li data-edit="" data-edit-id="e478" data-bound-blur="1">Глубокий анализ ЦА в незнакомой нише по 180+ пунктам</li>
+          <li data-edit="" data-edit-id="e479" data-bound-blur="1">Извлечение ключевых смыслов и болей вашей аудитории</li>
+          <li data-edit="" data-edit-id="e480" data-bound-blur="1">Создание контент-плана на месяц для Telegram, Instagram, YouTube</li>
+          <li data-edit="" data-edit-id="e481" data-bound-blur="1">Сценарии для Reels и Shorts с цепляющими хуками</li>
+          <li data-edit="" data-edit-id="e482" data-bound-blur="1">Сильные тексты и офферы для лендингов</li>
+          <li data-edit="" data-edit-id="e483" data-bound-blur="1">Анализ конкурентов в нише с конкретными выводами</li>
+          <li data-edit="" data-edit-id="e484" data-bound-blur="1">Распаковка контента конкурентов и поиск идей</li>
+        </ul>
+      </div>
+
+      <div class="category-card">
+        <div class="cat-emoji">📚</div>
+        <h4 data-edit="" data-edit-id="e485" data-bound-blur="1">Работа с информацией</h4>
+        <ul>
+          <li data-edit="" data-edit-id="e486" data-bound-blur="1">Резюме Zoom-звонков, переписок, голосовых из Telegram</li>
+          <li data-edit="" data-edit-id="e487" data-bound-blur="1">Парсинг видео на YouTube и текстов конкурентов</li>
+          <li data-edit="" data-edit-id="e488" data-bound-blur="1">Анализ договора на 30 страниц с подсветкой подводных камней</li>
+          <li data-edit="" data-edit-id="e489" data-bound-blur="1">Сводка из Excel-выгрузки CRM с конкретными выводами</li>
+          <li data-edit="" data-edit-id="e490" data-bound-blur="1">Превращение голосовых заметок и потоков мысли в структурированные документы</li>
+        </ul>
+      </div>
+
+      <div class="category-card">
+        <div class="cat-emoji">💼</div>
+        <h4 data-edit="" data-edit-id="e491" data-bound-blur="1">Продажи</h4>
+        <ul>
+          <li data-edit="" data-edit-id="e492" data-bound-blur="1">Создание коммерческих предложений</li>
+          <li data-edit="" data-edit-id="e493" data-bound-blur="1">Скрипты продаж и ответы на возражения</li>
+          <li data-edit="" data-edit-id="e494" data-bound-blur="1">Распаковка конкурентов и сравнительные таблицы</li>
+          <li data-edit="" data-edit-id="e495" data-bound-blur="1">Юнит-экономика продукта с объяснением каждой цифры</li>
+        </ul>
+      </div>
+
+      <div class="category-card">
+        <div class="cat-emoji">🎯</div>
+        <h4 data-edit="" data-edit-id="e496" data-bound-blur="1">Бизнес-задачи</h4>
+        <ul>
+          <li data-edit="" data-edit-id="e497" data-bound-blur="1">ТЗ для дизайнеров, разработчиков, копирайтеров</li>
+          <li data-edit="" data-edit-id="e498" data-bound-blur="1">Подбор кандидатов на собеседование по резюме с HH</li>
+          <li data-edit="" data-edit-id="e499" data-bound-blur="1">Создание прогревов для запуска продукта</li>
+          <li data-edit="" data-edit-id="e500" data-bound-blur="1">Сценарии для вебинаров и эфиров</li>
+        </ul>
+      </div>
+
+      <div class="category-card">
+        <div class="cat-emoji">🚀</div>
+        <h4 data-edit="" data-edit-id="e501" data-bound-blur="1">Создание продуктов</h4>
+        <ul>
+          <li data-edit="" data-edit-id="e502" data-bound-blur="1">Разработка лид-магнита, который реально скачивают и читают</li>
+          <li data-edit="" data-edit-id="e503" data-bound-blur="1">Структура мини-продукта (например, по методу Хормози)</li>
+          <li data-edit="" data-edit-id="e504" data-bound-blur="1">Сценарии и контент для онлайн-курса</li>
+          <li data-edit="" data-edit-id="e505" data-bound-blur="1">Воронки продаж от лид-магнита до флагмана</li>
+        </ul>
+      </div>
+
+      <div class="category-card">
+        <div class="cat-emoji">🌱</div>
+        <h4 data-edit="" data-edit-id="e506" data-bound-blur="1">Жизнь и саморазвитие</h4>
+        <ul>
+          <li data-edit="" data-edit-id="e507" data-bound-blur="1">Личный коуч и психолог в сложных ситуациях</li>
+          <li data-edit="" data-edit-id="e508" data-bound-blur="1">Планировщик недели с разбивкой по дням</li>
+          <li data-edit="" data-edit-id="e509" data-bound-blur="1">Помощник в путешествиях с маршрутами и лайфхаками</li>
+          <li data-edit="" data-edit-id="e510" data-bound-blur="1">Разбор сложных документов простым языком</li>
+        </ul>
+      </div>
+    </div>
+
+    <p data-edit="" data-edit-id="e511" data-bound-blur="1">И это <strong>только то, что лежит на поверхности</strong>.</p>
+
+    <p data-edit="" data-edit-id="e512" data-bound-blur="1">На самом деле список задач с ИИ ограничен только вашей фантазией и качеством промптов.</p>
+  </div>
+</section>
+
+<!-- ============ БЛОК 8 — ЧТО ДАЛЬШЕ ============ -->
+<section class="section section-cream" id="block-8">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Блок 8 · Что дальше</div>
+    <h2 data-edit="" data-edit-id="e513" data-bound-blur="1">Что вам делать дальше?</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e514" data-bound-blur="1">Сlaude становится в 10 раз мощнее, когда вы перестаёте задавать ему точечные вопросы и <strong>выстраиваете систему</strong>: <em>проекты под повторяющиеся задачи, скиллы под методологии, коннекторы для рабочих сервисов, агенты для рутины и тд</em></p>
+
+    <p data-edit="" data-edit-id="e515" data-bound-blur="1">Не пытайтесь освоить всё сразу ☝🏻</p>
+
+    <h3 data-edit="" data-edit-id="e516" data-bound-blur="1">Вот мини-план освоения Claude</h3>
+
+    <ol class="steps-list">
+      <li data-edit="" data-edit-id="e517" data-bound-blur="1">Сначала просто общайтесь в чате. Осваивайе правильную формулу запросов (промптов) и обратный промптинг</li>
+      <li data-edit="" data-edit-id="e518" data-bound-blur="1">Соберите фактуру и загрузите ее в долгосрочную память</li>
+      <li data-edit="" data-edit-id="e519" data-bound-blur="1">Подключите 1–2 коннектора из тех, что используете каждый день</li>
+      <li data-edit="" data-edit-id="e520" data-bound-blur="1">Сделайте Проекты (Projects) под ваши повторяющиеся задачи</li>
+      <li data-edit="" data-edit-id="e521" data-bound-blur="1">Попробуйте работу с Cowork</li>
+    </ol>
+
+    <p data-edit="" data-edit-id="e522" data-bound-blur="1">Через 1-2 недели Claude станет инструментом, без которого вы уже <strong>не сможете работать так эффективно, как с ним</strong></p>
+  </div>
+</section>
+
+<!-- ============ ФИНАЛЬНЫЙ ТЁМНЫЙ CTA ============ -->
+<section class="section section-dark" id="cta-final">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Финал · Закрытый канал</div>
+    <h2 data-edit="" data-edit-id="e523" data-bound-blur="1">Хотите получить 60+ готовых ИИ-ассистентов, промптов, скилов и освоить работу с ИИ на уровне PRO?</h2>
+
+    <p class="section-lead" data-edit="" data-edit-id="e524" data-bound-blur="1">Всё, что я расписал в этом гайде — это <strong>2% от того, что я делаю с ИИ каждый день</strong>.</p>
+
+    <p data-edit="" data-edit-id="e525" data-bound-blur="1">Внутри моего закрытого канала <strong>«ИИ на практике»</strong> - больше 60 готовых ИИ-ассистентов и промптов, скиллы, разборы реальных кейсов, видеоуроки.</p>
+
+    <p data-edit="" data-edit-id="e526" data-bound-blur="1">Доступ выдаётся <strong>навсегда</strong>, для читателей гайда действует скидка 50%.</p>
+
+    <p data-edit="" data-edit-id="e527" data-bound-blur="1">Посмотрите, что внутри и увидимся там ⤵️</p>
+
+    <div style="margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap">
+      <a href="https://dmitriymarketing.com/chatgpt" class="btn-terra" target="_blank" rel="noopener">👉 <span data-edit="" data-edit-id="e528" data-bound-blur="1">Забрать доступ со скидкой 50%</span></a>
+      <a href="https://t.me/+mllpHcmAGHY3ZGQy" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:17px 28px;border:1px solid rgba(250,246,238,.25);border-radius:14px;color:#FAF6EE;font-weight:600;font-size:15px;text-decoration:none;transition:all .2s">👉🏻 <span data-edit="" data-edit-id="e529" data-bound-blur="1">Более 550+ реальных отзывов</span></a>
+    </div>
+
+    <figure class="figure" style="margin-top: 44px; max-width: 720px">
+      <img src="assets/image-13.png" alt="Превью канала «ИИ на практике»" class="figure-img" style="border-color: rgba(250,246,238,.15)">
+    </figure>
+
+    <h3 data-edit="" style="margin-top: 48px" data-edit-id="e530" data-bound-blur="1">Подписывайтесь на мой Telegram и Нельзяграм</h3>
+
+    <p data-edit="" data-edit-id="e531" data-bound-blur="1">Там я каждый день показываю, как использую ИИ для маркетинга и контента:</p>
+
+    <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px">
+      <a href="https://t.me/dmitriymarketing" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;background:#2AABEE;color:#FFF;font-weight:700;border-radius:12px;text-decoration:none;transition:all .2s;font-size:15px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.939z"></path></svg>
+        Telegram
+      </a>
+      <a href="https://www.instagram.com/dmitriymarketing/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;background:linear-gradient(135deg,#E1306C,#F77737);color:#FFF;font-weight:700;border-radius:12px;text-decoration:none;transition:all .2s;font-size:15px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg>
+        Нельзяграм
+      </a>
+    </div>
+
+    <p data-edit="" style="margin-top: 60px; font-size: 17px" data-edit-id="e532" data-bound-blur="1"><em>Понравился гайд?</em></p>
+    <p data-edit="" data-edit-id="e533" data-bound-blur="1"><em>Перешлите тому, кому он будет полезен.</em></p>
+    <p data-edit="" data-edit-id="e534" data-bound-blur="1"><em>Так до большего количества людей дойдёт информация, которая может изменить их работу.</em></p>
+
+    <p data-edit="" style="margin-top: 30px; font-family: 'Gilroy', sans-serif; font-size: 22px; font-weight: 800; color: #FFF" data-edit-id="e535" data-bound-blur="1"><strong>Удачи вам, здоровья и будьте богаты 😘</strong></p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-brand">Dmitriymarketing</div>
+  <p class="footer-desc">
+    Подписывайтесь на Telegram — там я каждый день показываю, как использую ИИ
+    для маркетинга и контента.
+  </p>
+  <a href="https://t.me/dmitriymarketing" class="footer-tg" target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295-.002 0 0 0 0 0l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.643.135-.953l11.566-4.458c.538-.196 1.006.128.832.939z"></path></svg>
+    Перейти в Telegram
+  </a>
+  <div class="footer-copy">
+    © 2026 ИП Агарков Д.И. · Все права защищены<br>
+    <em>Удачи вам, здоровья и будьте богаты</em>
+  </div>
+</footer>
+
+</main>
+
+<!-- ============ EDIT MODE FAB ============ -->
+<button class="edit-fab" id="editFab" onclick="toggleEditMode()" title="Редактировать текст на странице (Ctrl+E)" style="display: none;">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+  <span>Редактировать</span>
+</button>
+
+<!-- ============ EDIT PANEL ============ -->
+<div class="edit-panel" id="editPanel">
+  <div class="edit-panel-title">
+    <span>✏️ Режим правки</span>
+    <button class="edit-panel-close" onclick="toggleEditMode()" title="Выйти">×</button>
+  </div>
+  <div class="edit-panel-status" id="editStatus">Кликни на любой выделенный текст и правь. Enter = новая строка, Shift+Enter = перенос. Не забудь сохранить.</div>
+
+  <button onclick="saveDraft()">💾 Сохранить в браузере</button>
+  <button onclick="exportEditedHtml()" class="btn-strong">⬇️ Скачать готовый HTML</button>
+  <button onclick="resetDraft()">🗑 Сбросить правки</button>
+
+  <div class="edit-panel-section">
+    <span class="edit-panel-label">🎨 Цветовая схема</span>
+
+    <div class="color-row">
+      <label>Акцент основной<br><span class="swatch-hex" id="hexAccent">#D4853F</span></label>
+      <input type="color" id="colorAccent" value="#D4853F">
+    </div>
+    <div class="color-row">
+      <label>Акцент сильный<br><span class="swatch-hex" id="hexAccentStrong">#B8621B</span></label>
+      <input type="color" id="colorAccentStrong" value="#B8621B">
+    </div>
+    <div class="color-row">
+      <label>Тёмный (заголовки)<br><span class="swatch-hex" id="hexDark">#4A4535</span></label>
+      <input type="color" id="colorDark" value="#4A4535">
+    </div>
+
+    <span class="edit-panel-label" style="margin-top:10px">Готовые палитры</span>
+    <div class="preset-row" id="presetRow"><div class="preset-swatch" title="Терракот (founders)" style="background: linear-gradient(135deg, rgb(212, 133, 63) 0%, rgb(184, 98, 27) 100%);"></div><div class="preset-swatch" title="Лайм (бренд)" style="background: linear-gradient(135deg, rgb(212, 250, 39) 0%, rgb(168, 200, 32) 100%);"></div><div class="preset-swatch" title="Изумруд" style="background: linear-gradient(135deg, rgb(52, 211, 153) 0%, rgb(5, 150, 105) 100%);"></div><div class="preset-swatch" title="Океан" style="background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(29, 78, 216) 100%);"></div><div class="preset-swatch" title="Магнолия" style="background: linear-gradient(135deg, rgb(236, 72, 153) 0%, rgb(190, 24, 93) 100%);"></div><div class="preset-swatch" title="Графит" style="background: linear-gradient(135deg, rgb(113, 113, 122) 0%, rgb(63, 63, 70) 100%);"></div></div>
+
+    <button onclick="resetColors()" style="margin-top:8px">↺ Вернуть оригинал</button>
+  </div>
+</div>
+
+<!-- ============ EDIT TOOLBAR (floating, появляется над активным блоком) ============ -->
+<div class="edit-toolbar" id="editToolbar" style="left: 625px; top: 55016.3px;">
+  <button type="button" onclick="exec('bold')" class="icon-only" title="Жирный (Ctrl+B)"><b>B</b></button>
+  <button type="button" onclick="exec('italic')" class="icon-only" title="Курсив (Ctrl+I)"><i>I</i></button>
+  <button type="button" onclick="exec('underline')" class="icon-only" title="Подчёркнутый (Ctrl+U)"><u>U</u></button>
+  <button type="button" onclick="exec('strikeThrough')" class="icon-only" title="Зачёркнутый"><s>S</s></button>
+  <span class="sep"></span>
+  <button type="button" onclick="changeBlockTag('h2')" title="Заголовок крупный (H2)">H2</button>
+  <button type="button" onclick="changeBlockTag('h3')" title="Заголовок средний (H3)">H3</button>
+  <button type="button" onclick="changeBlockTag('h4')" title="Заголовок мелкий (H4)">H4</button>
+  <button type="button" onclick="changeBlockTag('p')" title="Сделать обычным абзацем">¶</button>
+  <span class="sep"></span>
+  <button type="button" onclick="insertBlock('p')" title="Добавить абзац ниже">+ ¶</button>
+  <button type="button" onclick="insertBlock('h3')" title="Добавить H3 ниже">+ H3</button>
+  <button type="button" onclick="insertCallout('tip')" title="Добавить блок-подсказку">+ 💡</button>
+  <button type="button" onclick="insertCallout('warning')" title="Добавить блок-предупреждение">+ ⚠️</button>
+  <button type="button" onclick="insertCallout('success')" title="Добавить блок-успех">+ ✅</button>
+  <button type="button" onclick="insertQuote()" title="Добавить большую цитату">+ « »</button>
+  <button type="button" onclick="deleteCurrentBlock()" title="Удалить текущий блок" style="background:rgba(239,68,68,.4)">🗑</button>
+</div>
+
+
+<script>
+  // ============ THEME ============
+  const themeBtn = document.getElementById('themeBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const themeLabel = document.getElementById('themeLabel');
+
+  const SUN_ICON = `<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>`;
+  const MOON_ICON = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('claude-guide-theme', theme);
+    if (theme === 'dark') {
+      themeIcon.innerHTML = SUN_ICON;
+      themeLabel.textContent = 'Светлая тема';
+    } else {
+      themeIcon.innerHTML = MOON_ICON;
+      themeLabel.textContent = 'Тёмная тема';
+    }
+  }
+
+  function toggleTheme() {
+    const cur = document.documentElement.getAttribute('data-theme');
+    setTheme(cur === 'dark' ? 'light' : 'dark');
+  }
+
+  // Load saved theme or system pref
+  const saved = localStorage.getItem('claude-guide-theme');
+  if (saved) {
+    setTheme(saved);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
+
+  // ============ COPY CODE BUTTON ============
+  function copyCode(btn) {
+    const pre = btn.closest('.code-block').querySelector('pre');
+    if (!pre) return;
+    navigator.clipboard.writeText(pre.textContent).then(() => {
+      btn.classList.add('copied');
+      const orig = btn.textContent;
+      btn.textContent = '✓ Скопировано';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.textContent = orig;
+      }, 1800);
+    }).catch(() => {
+      alert('Не удалось скопировать. Выдели текст вручную.');
+    });
+  }
+
+  // ============ SIDEBAR / NAV ============
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+  }
+  function navTo(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (window.innerWidth <= 1024) toggleSidebar();
+  }
+
+  // ============ ACTIVE NAV ITEM + PROGRESS ============
+  const sections = Array.from(document.querySelectorAll('section[id], footer'));
+  const navItems = Array.from(document.querySelectorAll('.nav-item'));
+
+  function updateActiveNav() {
+    const scrollY = window.scrollY + 120;
+    let activeId = sections[0]?.id;
+    for (const s of sections) {
+      if (s.offsetTop <= scrollY) activeId = s.id;
+    }
+    navItems.forEach(item => {
+      const onclick = item.getAttribute('onclick') || '';
+      const matches = onclick.includes(`'${activeId}'`);
+      item.classList.toggle('active', matches);
+    });
+
+    // Progress
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = Math.min(100, Math.max(0, (window.scrollY / docH) * 100));
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('progress-pct').textContent = Math.round(pct) + '%';
+  }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  // ============ EDIT MODE ============
+  // Версия контента из <meta name="content-version"> — меняется когда я обновляю текст
+  const CONTENT_VERSION = document.querySelector('meta[name="content-version"]')?.content || 'unknown';
+
+  // Каждый редактируемый блок получает уникальный ID, чтобы сохранять правки в localStorage
+  const editables = Array.from(document.querySelectorAll('[data-edit]'));
+  editables.forEach((el, i) => {
+    if (!el.dataset.editId) el.dataset.editId = 'e' + i;
+  });
+
+  // ВАЖНО: черновики НЕ применяются автоматически. Страница всегда открывается со свежим
+  // текстом из HTML. Если в браузере есть сохранённые правки — показываем уведомление
+  // в edit-панели с кнопкой «Применить мои правки».
+  // Можно принудительно отключить даже уведомление, открыв страницу с ?nodraft=1
+  function checkDraftsOnLoad() {
+    try {
+      // Эвакуационный режим — параметр в URL ?nodraft=1 → ничего не показываем
+      const urlNoDraft = new URLSearchParams(location.search).get('nodraft');
+      if (urlNoDraft === '1') return;
+
+      const raw = localStorage.getItem('claude-guide-draft');
+      if (!raw) return;
+      const stored = JSON.parse(raw);
+      if (!stored || typeof stored !== 'object') return;
+
+      const isNewFormat = stored.__version !== undefined;
+      const draftVer = isNewFormat ? stored.__version : 'legacy';
+      const draftData = isNewFormat ? stored.edits : stored;
+      const count = Object.keys(draftData || {}).length;
+      if (count === 0) return;
+
+      const status = document.getElementById('editStatus');
+      if (!status) return;
+
+      const sameVer = draftVer === CONTENT_VERSION;
+      if (sameVer) {
+        status.innerHTML = `📝 В браузере есть <strong>${count}</strong> твоих правок этой версии страницы. <a href="#" onclick="applyDraft();return false" style="color:var(--terra-500);text-decoration:underline">Применить</a> · <a href="#" onclick="resetDraft();return false" style="color:var(--text-dim);text-decoration:underline">Удалить</a>`;
+      } else {
+        status.innerHTML = `⚠️ В браузере остались <strong>${count}</strong> правок от прошлой версии (<code>${draftVer}</code>). На свежей странице они <strong>не подходят</strong>. <a href="#" onclick="resetDraft();return false" style="color:var(--terra-500);text-decoration:underline">Удалить</a>`;
+      }
+    } catch (e) { console.warn('Draft check failed:', e) }
+  }
+  checkDraftsOnLoad();
+
+  // Применить сохранённые правки (если совпадает версия)
+  function applyDraft() {
+    try {
+      const raw = localStorage.getItem('claude-guide-draft');
+      if (!raw) return;
+      const stored = JSON.parse(raw);
+      if (!stored || typeof stored !== 'object') return;
+      const isNewFormat = stored.__version !== undefined;
+      const draftVer = isNewFormat ? stored.__version : 'legacy';
+      const draftData = isNewFormat ? stored.edits : stored;
+      if (draftVer !== CONTENT_VERSION) {
+        alert('Правки сохранены для другой версии страницы и не подходят для текущей.');
+        return;
+      }
+      let applied = 0;
+      Object.entries(draftData || {}).forEach(([id, html]) => {
+        const el = editables.find(e => e.dataset.editId === id);
+        if (el) { el.innerHTML = html; applied++ }
+      });
+      const status = document.getElementById('editStatus');
+      if (status) status.textContent = `✅ Применено ${applied} правок.`;
+    } catch (e) { console.warn('Apply draft failed:', e) }
+  }
+
+  function saveDraft() {
+    const edits = {};
+    editables.forEach(el => { edits[el.dataset.editId] = el.innerHTML });
+    const stored = { __version: CONTENT_VERSION, edits, savedAt: new Date().toISOString() };
+    localStorage.setItem('claude-guide-draft', JSON.stringify(stored));
+    document.getElementById('editStatus').textContent =
+      `✅ Сохранено в браузере: ${Object.keys(edits).length} блоков.`;
+  }
+
+  function resetDraft() {
+    if (!confirm('Удалить все мои правки и вернуть оригинальный текст?')) return;
+    localStorage.removeItem('claude-guide-draft');
+    location.reload();
+  }
+
+  function toggleEditMode() {
+    const active = document.body.classList.toggle('edit-active');
+    const fab = document.getElementById('editFab');
+    const panel = document.getElementById('editPanel');
+    editables.forEach(el => {
+      el.contentEditable = active ? 'true' : 'false';
+      el.spellcheck = active;
+    });
+    fab.style.display = active ? 'none' : 'inline-flex';
+    panel.classList.toggle('open', active);
+    if (active) {
+      document.getElementById('editStatus').textContent = 'Кликни на любой выделенный текст и правь. Enter = новая строка, Shift+Enter = перенос. Не забудь сохранить.';
+    }
+  }
+
+  // Ctrl+E / Cmd+E — горячая клавиша
+  document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'e') {
+      e.preventDefault();
+      toggleEditMode();
+    }
+  });
+
+  // Автосохранение при потере фокуса с editable-блока
+  editables.forEach(el => {
+    el.addEventListener('blur', () => {
+      if (document.body.classList.contains('edit-active')) saveDraft();
+    });
+  });
+
+  // ============ EXPORT ============
+  // Скачать HTML с применёнными правками — чистый файл, без edit-mode разметки
+  function exportEditedHtml() {
+    // Клонируем весь документ
+    const clone = document.documentElement.cloneNode(true);
+
+    // Применяем текущие значения к data-edit элементам в клоне
+    const cloneEditables = clone.querySelectorAll('[data-edit]');
+    editables.forEach((src, i) => {
+      if (cloneEditables[i]) cloneEditables[i].innerHTML = src.innerHTML;
+    });
+
+    // НЕ удаляем edit-mode UI — просто ставим им hidden-флаг через body-класс.
+    // Это позволяет потом снова открыть экспортированный HTML и продолжить править.
+    // FAB/панель/тулбар останутся в DOM, но скрыты пока не активирован edit-mode.
+    const body = clone.querySelector('body'); if (body) body.classList.remove('edit-active');
+    // Сбросим состояние drawer'ов (вдруг они открыты в текущей сессии)
+    const cPanel = clone.querySelector('#editPanel'); if (cPanel) cPanel.classList.remove('open');
+    const cTb = clone.querySelector('#editToolbar'); if (cTb) cTb.classList.remove('visible');
+
+    // Чистим <div>-артефакты внутри <p> (наследие contenteditable):
+    // <div><br></div> → <br>, остальные <div> внутри <p> разворачиваются как переносы
+    clone.querySelectorAll('p, .quote-block, h2, h3, h4').forEach(el => {
+      el.querySelectorAll('div').forEach(d => {
+        const txt = d.innerHTML.trim();
+        if (txt === '<br>' || txt === '') {
+          d.replaceWith(document.createElement('br'));
+        } else {
+          // развернуть div: оставить контент + <br> в конце
+          const fragment = document.createDocumentFragment();
+          while (d.firstChild) fragment.appendChild(d.firstChild);
+          fragment.appendChild(document.createElement('br'));
+          d.replaceWith(fragment);
+        }
+      });
+    });
+
+    // Очищаем contenteditable и spellcheck
+    clone.querySelectorAll('[contenteditable]').forEach(el => {
+      el.removeAttribute('contenteditable');
+      el.removeAttribute('spellcheck');
+    });
+
+    // Уносим текущие inline-цвета в финальный файл (если пользователь менял палитру)
+    const inlineStyle = document.documentElement.getAttribute('style');
+    if (inlineStyle) clone.setAttribute('style', inlineStyle);
+
+    const html = '<!DOCTYPE html>\n' + clone.outerHTML;
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    const stamp = new Date().toISOString().slice(0,10);
+    a.download = `claude-guide-${stamp}.html`;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(url); a.remove() }, 100);
+
+    document.getElementById('editStatus').textContent = '⬇️ Файл скачан. Скинь его мне, чтобы я подтянул правки.';
+  }
+
+  // ============ COLOR EDITING ============
+  // Дефолты (light theme) — должны совпадать с CSS :root [data-theme="light"]
+  const COLOR_DEFAULTS = {
+    accent: '#D4853F',
+    accentStrong: '#B8621B',
+    dark: '#4A4535'
+  };
+
+  // Готовые палитры
+  const COLOR_PRESETS = [
+    { name: 'Терракот (founders)', accent: '#D4853F', accentStrong: '#B8621B', dark: '#4A4535' },
+    { name: 'Лайм (бренд)',         accent: '#D4FA27', accentStrong: '#A8C820', dark: '#1a1a3a' },
+    { name: 'Изумруд',              accent: '#34D399', accentStrong: '#059669', dark: '#1F2A24' },
+    { name: 'Океан',                accent: '#3B82F6', accentStrong: '#1D4ED8', dark: '#1E293B' },
+    { name: 'Магнолия',             accent: '#EC4899', accentStrong: '#BE185D', dark: '#3F1432' },
+    { name: 'Графит',               accent: '#71717A', accentStrong: '#3F3F46', dark: '#18181B' }
+  ];
+
+  // hex → rgb для прозрачных значений
+  function hexToRgb(hex) {
+    const m = hex.replace('#','').match(/.{2}/g);
+    return m ? m.map(c => parseInt(c, 16)).join(',') : '0,0,0';
+  }
+
+  // Осветление/затемнение — простой shift по компонентам
+  function shadeHex(hex, amt) {
+    const num = parseInt(hex.replace('#',''), 16);
+    let r = (num >> 16) + amt, g = ((num >> 8) & 0xff) + amt, b = (num & 0xff) + amt;
+    r = Math.min(255, Math.max(0, r));
+    g = Math.min(255, Math.max(0, g));
+    b = Math.min(255, Math.max(0, b));
+    return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
+  }
+
+  function applyColors(c) {
+    const root = document.documentElement.style;
+    // terra палитра — 7 ступеней от основного. Используем shade для 50/100/200/300/600/700.
+    root.setProperty('--terra-50',  shadeHex(c.accent, 70));
+    root.setProperty('--terra-100', shadeHex(c.accent, 55));
+    root.setProperty('--terra-200', shadeHex(c.accent, 35));
+    root.setProperty('--terra-300', shadeHex(c.accent, 18));
+    root.setProperty('--terra-400', c.accent);
+    root.setProperty('--terra-500', c.accentStrong);
+    root.setProperty('--terra-600', shadeHex(c.accentStrong, -20));
+    root.setProperty('--terra-700', shadeHex(c.accentStrong, -40));
+    root.setProperty('--dark',      c.dark);
+
+    // Обновим хекс-надписи
+    document.getElementById('hexAccent').textContent = c.accent.toUpperCase();
+    document.getElementById('hexAccentStrong').textContent = c.accentStrong.toUpperCase();
+    document.getElementById('hexDark').textContent = c.dark.toUpperCase();
+
+    // Обновим инпуты (если они изменились через preset)
+    document.getElementById('colorAccent').value = c.accent;
+    document.getElementById('colorAccentStrong').value = c.accentStrong;
+    document.getElementById('colorDark').value = c.dark;
+
+    // Сохраним
+    localStorage.setItem('claude-guide-colors', JSON.stringify(c));
+  }
+
+  function readColorsFromInputs() {
+    return {
+      accent: document.getElementById('colorAccent').value,
+      accentStrong: document.getElementById('colorAccentStrong').value,
+      dark: document.getElementById('colorDark').value
+    };
+  }
+
+  // Подключаем live-обновление по input
+  ['colorAccent','colorAccentStrong','colorDark'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => applyColors(readColorsFromInputs()));
+  });
+
+  function resetColors() {
+    // Снимаем все inline-переменные с :root — возвращаемся к CSS-дефолтам из темы
+    const root = document.documentElement.style;
+    ['--terra-50','--terra-100','--terra-200','--terra-300',
+     '--terra-400','--terra-500','--terra-600','--terra-700',
+     '--dark'].forEach(v => root.removeProperty(v));
+    // Сбрасываем инпуты к дефолтам
+    document.getElementById('colorAccent').value = COLOR_DEFAULTS.accent;
+    document.getElementById('colorAccentStrong').value = COLOR_DEFAULTS.accentStrong;
+    document.getElementById('colorDark').value = COLOR_DEFAULTS.dark;
+    document.getElementById('hexAccent').textContent = COLOR_DEFAULTS.accent.toUpperCase();
+    document.getElementById('hexAccentStrong').textContent = COLOR_DEFAULTS.accentStrong.toUpperCase();
+    document.getElementById('hexDark').textContent = COLOR_DEFAULTS.dark.toUpperCase();
+    localStorage.removeItem('claude-guide-colors');
+  }
+
+  // Сохранённые цвета НЕ применяются автоматически — страница всегда открывается
+  // с дефолтной терракотовой палитрой. Если хочешь применить сохранённую — клик
+  // в edit-панель (color picker сразу триггерит applyColors при изменении).
+  // Если нужна совсем чистая загрузка — открывай с ?nodraft=1, цвета тоже не тронем.
+
+  // Рендерим палитры-пресеты
+  const presetRow = document.getElementById('presetRow');
+  COLOR_PRESETS.forEach(p => {
+    const btn = document.createElement('div');
+    btn.className = 'preset-swatch';
+    btn.title = p.name;
+    btn.style.background = `linear-gradient(135deg, ${p.accent} 0%, ${p.accentStrong} 100%)`;
+    btn.onclick = () => applyColors(p);
+    presetRow.appendChild(btn);
+  });
+
+  // ============ FLOATING TOOLBAR ============
+  const toolbar = document.getElementById('editToolbar');
+  let activeBlock = null;     // текущий активный data-edit элемент
+
+  // Найти ближайший data-edit блок
+  function getEditableBlock(node) {
+    while (node && node !== document.body) {
+      if (node.nodeType === 1 && node.hasAttribute && node.hasAttribute('data-edit')) return node;
+      node = node.parentNode;
+    }
+    return null;
+  }
+
+  // Показать тулбар над активным блоком
+  function positionToolbar(el) {
+    const r = el.getBoundingClientRect();
+    toolbar.style.left = (window.scrollX + r.left) + 'px';
+    toolbar.style.top  = (window.scrollY + r.top) + 'px';
+    toolbar.classList.add('visible');
+  }
+
+  function hideToolbar() {
+    toolbar.classList.remove('visible');
+    activeBlock = null;
+  }
+
+  document.addEventListener('focusin', (e) => {
+    if (!document.body.classList.contains('edit-active')) return;
+    const blk = getEditableBlock(e.target);
+    if (blk) {
+      activeBlock = blk;
+      positionToolbar(blk);
+    }
+  });
+
+  // При скролле — двигаем тулбар вместе с блоком
+  window.addEventListener('scroll', () => {
+    if (activeBlock && toolbar.classList.contains('visible')) {
+      positionToolbar(activeBlock);
+    }
+  }, { passive: true });
+
+  // Прячем тулбар при клике вне редактируемых элементов и тулбара
+  document.addEventListener('mousedown', (e) => {
+    if (!document.body.classList.contains('edit-active')) return;
+    if (toolbar.contains(e.target)) return;            // клик в тулбар — игнор
+    const blk = getEditableBlock(e.target);
+    if (!blk) hideToolbar();
+  });
+
+  // ===== Команды форматирования =====
+  function exec(cmd, val) {
+    if (!activeBlock) return;
+    activeBlock.focus();
+    document.execCommand(cmd, false, val || null);
+    saveDraft();
+  }
+
+  // Сменить тег текущего блока (h2/h3/h4/p) сохраняя content и data-edit-id
+  function changeBlockTag(newTag) {
+    if (!activeBlock) return;
+    if (activeBlock.tagName.toLowerCase() === newTag) return;
+
+    const newEl = document.createElement(newTag);
+    newEl.innerHTML = activeBlock.innerHTML;
+    // переносим атрибуты
+    for (const a of activeBlock.attributes) newEl.setAttribute(a.name, a.value);
+    newEl.contentEditable = 'true';
+
+    activeBlock.replaceWith(newEl);
+    activeBlock = newEl;
+    activeBlock.focus();
+    positionToolbar(activeBlock);
+
+    // Перерегистрируем в массиве editables
+    const idx = editables.indexOf(activeBlock);
+    refreshEditables();
+    saveDraft();
+  }
+
+  // Вставить новый блок ПОСЛЕ текущего
+  function insertBlock(tag, content) {
+    if (!activeBlock) return;
+    const el = document.createElement(tag);
+    el.setAttribute('data-edit', '');
+    el.setAttribute('data-edit-id', 'eAdd' + Date.now());
+    el.innerHTML = content || (tag === 'p' ? 'Новый абзац — кликни и пиши…' : 'Новый заголовок');
+    el.contentEditable = 'true';
+    activeBlock.after(el);
+    activeBlock = el;
+    refreshEditables();
+    el.focus();
+    // выделяем плейсхолдер чтобы сразу набирать поверх
+    document.getSelection().selectAllChildren(el);
+    positionToolbar(el);
+    saveDraft();
+  }
+
+  // Вставить callout (tip/warning/success/info)
+  function insertCallout(type) {
+    if (!activeBlock) return;
+    const meta = {
+      tip:     { icon: '💡', label: 'Подсказка' },
+      warning: { icon: '⚠️', label: 'Важный момент' },
+      success: { icon: '✅', label: 'Готово' },
+      info:    { icon: 'ℹ️', label: 'Заметка' }
+    }[type];
+    const wrap = document.createElement('div');
+    wrap.className = 'callout callout-' + type;
+    wrap.innerHTML = `
+      <div class="callout-title"><span class="callout-icon">${meta.icon}</span><span data-edit data-edit-id="eAdd${Date.now()}t" contenteditable="true">${meta.label}</span></div>
+      <p data-edit data-edit-id="eAdd${Date.now()}p" contenteditable="true">Текст блока — кликни и пиши…</p>
+    `;
+    activeBlock.after(wrap);
+    refreshEditables();
+    const firstP = wrap.querySelector('p[data-edit]');
+    if (firstP) {
+      activeBlock = firstP;
+      firstP.focus();
+      document.getSelection().selectAllChildren(firstP);
+      positionToolbar(firstP);
+    }
+    saveDraft();
+  }
+
+  // Большая цитата
+  function insertQuote() {
+    if (!activeBlock) return;
+    const q = document.createElement('div');
+    q.className = 'quote-block';
+    q.setAttribute('data-edit', '');
+    q.setAttribute('data-edit-id', 'eAdd' + Date.now() + 'q');
+    q.contentEditable = 'true';
+    q.textContent = 'Цитата — кликни и пиши…';
+    activeBlock.after(q);
+    activeBlock = q;
+    refreshEditables();
+    q.focus();
+    document.getSelection().selectAllChildren(q);
+    positionToolbar(q);
+    saveDraft();
+  }
+
+  // Удалить текущий блок (с подтверждением)
+  function deleteCurrentBlock() {
+    if (!activeBlock) return;
+    if (!confirm('Удалить этот блок?')) return;
+    const next = activeBlock.nextElementSibling || activeBlock.previousElementSibling;
+    activeBlock.remove();
+    activeBlock = null;
+    hideToolbar();
+    refreshEditables();
+    saveDraft();
+  }
+
+  // Пересобрать список editables и переподписать blur-сохранение
+  function refreshEditables() {
+    editables.length = 0;
+    document.querySelectorAll('[data-edit]').forEach((el, i) => {
+      if (!el.dataset.editId) el.dataset.editId = 'eRefresh' + i + Date.now();
+      editables.push(el);
+      if (document.body.classList.contains('edit-active')) {
+        el.contentEditable = 'true';
+      }
+      // повесим blur только один раз
+      if (!el.dataset.boundBlur) {
+        el.addEventListener('blur', () => {
+          if (document.body.classList.contains('edit-active')) saveDraft();
+        });
+        el.dataset.boundBlur = '1';
+      }
+    });
+  }
+
+  // Перезагружаем editables при включении edit-mode (на случай если новые блоки)
+  const origToggle = toggleEditMode;
+  window.toggleEditMode = function() {
+    origToggle();
+    if (document.body.classList.contains('edit-active')) {
+      refreshEditables();
+    } else {
+      hideToolbar();
+    }
+  };
+</script>
+
+
+
+</body></html>
