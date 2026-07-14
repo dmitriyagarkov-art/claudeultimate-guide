@@ -2,7 +2,7 @@
 <html lang="ru" data-theme="light"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="content-version" content="2026-05-05-v21-btn-swap">
+<meta name="content-version" content="2026-07-14-v22-video-fable">
 <title>Claude Ultimate Guide 2026 — от Dmitriymarketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -736,6 +736,27 @@
     gap: 16px;
     margin: 28px 0;
   }
+  /* ===== VIDEO EMBED (responsive 16:9) ===== */
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 24px 60px -28px rgba(0,0,0,0.35);
+    margin: 24px 0 0;
+    border: 1px solid var(--beige);
+  }
+  .video-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+
   .yt-card {
     background: var(--surface);
     border: 1px solid var(--beige);
@@ -1583,6 +1604,7 @@
     <span class="nav-block-title">Введение</span>
     <button class="nav-item" onclick="navTo('hero')">Главная</button>
     <button class="nav-item" onclick="navTo('intro')">О гайде</button>
+    <button class="nav-item" onclick="navTo('video-intro')">Видеоинструкция</button>
 
     <span class="nav-block-title">Раздел 1</span>
     <button class="nav-item" onclick="navTo('what-is-claude')">Что такое Claude</button>
@@ -1709,6 +1731,17 @@
       <div class="callout-title"><span class="callout-icon">⚠️</span>Авторские права</div>
       <p data-edit="" data-edit-id="e13" data-bound-blur="1">© 2026 ИП Агарков Д.И  Все права защищены. Копирование, тиражирование, публикация в открытых источниках, перепродажа и любое коммерческое использование материала является нарушением авторского права (ст. 1259, 1270 ГК РФ).</p>
       <p data-edit="" data-edit-id="e14" data-bound-blur="1">Нарушение влечёт гражданскую, административную и уголовную ответственность (ст. 1301 ГК РФ, ст. 7.12 КоАП РФ, ст. 146 УК РФ).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO INTRO ============ -->
+<section class="section" id="video-intro">
+  <div class="section-inner">
+    <div class="section-eyebrow"><span class="dash"></span>Смотреть</div>
+    <h2 data-edit="" data-edit-id="e-video-h2" data-bound-blur="1"><span style="font-size: clamp(28px, 3.5vw, 40px);">🎬&nbsp;</span>Подробная видеоинструкция</h2>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/fXHqnsCgM9k" title="Подробная видеоинструкция к гайду" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -1859,7 +1892,7 @@
     <div class="section-eyebrow"><span class="dash"></span>Раздел 1 · Модели</div>
     <h2 data-edit="" data-edit-id="e75" data-bound-blur="1">Модели Claude: Какую выбирать под свою задачу?</h2>
     <p class="section-lead" data-edit="" data-edit-id="e76" data-bound-blur="1">
-      На момент написая гайда в Claude три основных модели</p><p data-edit="" data-edit-id="eAdd1777902572599" data-bound-blur="1">Они постоянно обновляются и каждая хороша по своему</p>
+      На момент написая гайда в Claude четыре основных модели</p><p data-edit="" data-edit-id="eAdd1777902572599" data-bound-blur="1">Они постоянно обновляются и каждая хороша по своему</p>
 
     <figure class="figure">
       <img src="image.png" alt="Сравнение моделей Claude в интерфейсе" class="figure-img">
@@ -1886,9 +1919,18 @@
     <div class="model-card">
       <div class="model-emoji">🚛</div>
       <div class="model-content">
-        <div class="model-title" data-edit="" data-edit-id="e83" data-bound-blur="1">Opus 4.7 — тяжелая артиллерия</div>
+        <div class="model-title" data-edit="" data-edit-id="e83" data-bound-blur="1">Opus 4.8 — тяжелая артиллерия</div>
         <p data-edit="" data-edit-id="e84" data-bound-blur="1">Глубокие рассуждения, детальный анализ, сложные многоэтапные проекты. Самая дорогая, самая медленная, самая умная. Когда ставки высоки или задача нетривиальная, то берёте её.</p>
         <div class="model-best" data-edit="" data-edit-id="e85" data-bound-blur="1"><strong>Идеально для:</strong> серьёзной аналитики, многослойных стратегий, сложного кода, ключевых решений в бизнесе.</div>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <div class="model-emoji">🚀</div>
+      <div class="model-content">
+        <div class="model-title" data-edit="" data-edit-id="e83b" data-bound-blur="1">Fable — флагман нового поколения</div>
+        <p data-edit="" data-edit-id="e84b" data-bound-blur="1">Самая мощная модель Anthropic на момент написания гайда. Вышла в июне 2026 как первая публичная модель Mythos-класса и опережает Opus 4.8 почти на всех тестах: программирование, рассуждения, работа с длинными документами (контекст до 1 млн токенов). Стоит примерно в два раза дороже Opus, поэтому включают её осознанно — под задачи, где нужен максимальный интеллект.</p>
+        <div class="model-best" data-edit="" data-edit-id="e85b" data-bound-blur="1"><strong>Идеально для:</strong> сложного кода, глубокой аналитики, работы с большими документами и транскриптами, задач, с которыми не справился Opus.</div>
       </div>
     </div>
 
