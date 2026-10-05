@@ -2,7 +2,7 @@
 <html lang="ru" data-theme="light"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="content-version" content="2026-07-16-v25-video-embed-back">
+<meta name="content-version" content="2026-10-04-v26-models-oct">
 <title>Claude Ultimate Guide 2026 — от Dmitriymarketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -660,6 +660,18 @@
     font-size: 13px; color: var(--text-dim);
   }
   .model-best strong { color: var(--dark) }
+  .model-card.model-featured {
+    border: 2px solid var(--terra-500);
+    background: linear-gradient(135deg, var(--terra-50), var(--surface) 60%);
+    box-shadow: var(--shadow);
+  }
+  .model-featured .model-emoji { background: var(--terra-500) }
+  .models-updated {
+    display: inline-block; margin: 4px 0 8px;
+    padding: 4px 12px; border-radius: 20px;
+    background: var(--terra-50); color: var(--terra-700);
+    font-size: 12.5px; font-weight: 600;
+  }
 
   /* ===== COMPARE BLOCK — тёмный контейнер a-la founders guide "If you've used ChatGPT" ===== */
   .compare {
@@ -1898,19 +1910,38 @@
   <div class="section-inner">
     <div class="section-eyebrow"><span class="dash"></span>Раздел 1 · Модели</div>
     <h2 data-edit="" data-edit-id="e75" data-bound-blur="1">Модели Claude: Какую выбирать под свою задачу?</h2>
+    <span class="models-updated" data-edit="" data-edit-id="e76-upd" data-bound-blur="1">🔄 Актуально на октябрь 2026</span>
     <p class="section-lead" data-edit="" data-edit-id="e76" data-bound-blur="1">
-      На момент написая гайда в Claude четыре основных модели</p><p data-edit="" data-edit-id="eAdd1777902572599" data-bound-blur="1">Они постоянно обновляются и каждая хороша по своему</p>
+      На момент написания гайда в Claude четыре основных модели</p><p data-edit="" data-edit-id="eAdd1777902572599" data-bound-blur="1">Они постоянно обновляются и каждая хороша по своему</p>
 
     <figure class="figure">
       <img src="image.png" alt="Сравнение моделей Claude в интерфейсе" class="figure-img">
     </figure>
 
+    <div class="model-card model-featured">
+      <div class="model-emoji">⚡</div>
+      <div class="model-content">
+        <div class="model-title" data-edit="" data-edit-id="e83" data-bound-blur="1">Opus 5.5 — главная рабочая модель <span class="model-tag">Рекомендую</span></div>
+        <p data-edit="" data-edit-id="e84" data-bound-blur="1">Вышла 22 сентября 2026 и сейчас это лучший баланс ума, скорости и цены. По качеству почти на уровне топового Fable 5.1, но отвечает на 30% быстрее и обходится на 40% дешевле предыдущего Opus 5. То есть вы получаете флагманский интеллект без долгого ожидания и лишнего расхода ресурсов.</p>
+        <div class="model-best" data-edit="" data-edit-id="e85" data-bound-blur="1"><strong>Идеально для:</strong> большинства рабочих задач: стратегии, аналитики, продающих текстов, воронок, кода, работы с большими документами (до 1 млн токенов контекста).</div>
+      </div>
+    </div>
+
     <div class="model-card">
       <div class="model-emoji">🐎</div>
       <div class="model-content">
-        <div class="model-title" data-edit="" data-edit-id="e77" data-bound-blur="1">Sonnet 4.6 — рабочая лошадка</div>
-        <p data-edit="" data-edit-id="e78" data-bound-blur="1">80–90% задач закрываются именно ей. Достаточно умная, чтобы делать сложную работу, достаточно быстрая, чтобы не сидеть в ожидании. Сбалансированный интеллект и скорость.</p>
-        <div class="model-best" data-edit="" data-edit-id="e79" data-bound-blur="1"><strong>Идеально для:</strong> написания текстов, анализа, разработки стратегии, ежедневной работы.</div>
+        <div class="model-title" data-edit="" data-edit-id="e77" data-bound-blur="1">Sonnet 5.5 — рабочая лошадка на каждый день</div>
+        <p data-edit="" data-edit-id="e78" data-bound-blur="1">Вышла 28 сентября 2026. Быстрая и умная модель для повседневных задач с понятной постановкой. Сама решает, сколько «думать» над запросом, и стоит в два раза дешевле Opus 5.5. Тоже держит до 1 млн токенов контекста.</p>
+        <div class="model-best" data-edit="" data-edit-id="e79" data-bound-blur="1"><strong>Идеально для:</strong> постов, правок текстов, ответов клиентам, саммари, рутины, которую нужно делать много и часто.</div>
+      </div>
+    </div>
+
+    <div class="model-card">
+      <div class="model-emoji">🚀</div>
+      <div class="model-content">
+        <div class="model-title" data-edit="" data-edit-id="e83b" data-bound-blur="1">Fable 5.1 — максимальный интеллект</div>
+        <p data-edit="" data-edit-id="e84b" data-bound-blur="1">Самая мощная публичная модель Anthropic (вышла 1 сентября 2026). Сильнее всего в длинных автономных задачах, агентной работе и сложном коде. Но стоит в 2,5 раза дороже Opus 5.5, а на обычных задачах разница в качестве небольшая. Поэтому включайте её точечно.</p>
+        <div class="model-best" data-edit="" data-edit-id="e85b" data-bound-blur="1"><strong>Идеально для:</strong> самых сложных многоэтапных проектов, агентов, которые работают часами, задач, с которыми не справился Opus.</div>
       </div>
     </div>
 
@@ -1918,33 +1949,15 @@
       <div class="model-emoji">😈</div>
       <div class="model-content">
         <div class="model-title" data-edit="" data-edit-id="e80" data-bound-blur="1">Haiku 4.5 — демон скорости</div>
-        <p data-edit="" data-edit-id="e81" data-bound-blur="1">Молниеносная, лёгкая. Когда нужно переписать заголовок за 3 секунды или быстро ответить на простой вопрос. Представьте очень быстрого стажёра, который мгновенно справляется с простыми запросами.</p>
+        <p data-edit="" data-edit-id="e81" data-bound-blur="1">Молниеносная, лёгкая и самая дешёвая. Когда нужно переписать заголовок за 3 секунды или быстро ответить на простой вопрос. Anthropic уже анонсировали Haiku 5.5, она выйдет в ближайшие недели.</p>
         <div class="model-best" data-edit="" data-edit-id="e82" data-bound-blur="1"><strong>Идеально для:</strong> правок, простых вопросов и ответов, базовых перефразировок.</div>
-      </div>
-    </div>
-
-    <div class="model-card">
-      <div class="model-emoji">🚛</div>
-      <div class="model-content">
-        <div class="model-title" data-edit="" data-edit-id="e83" data-bound-blur="1">Opus 4.8 — тяжелая артиллерия</div>
-        <p data-edit="" data-edit-id="e84" data-bound-blur="1">Глубокие рассуждения, детальный анализ, сложные многоэтапные проекты. Самая дорогая, самая медленная, самая умная. Когда ставки высоки или задача нетривиальная, то берёте её.</p>
-        <div class="model-best" data-edit="" data-edit-id="e85" data-bound-blur="1"><strong>Идеально для:</strong> серьёзной аналитики, многослойных стратегий, сложного кода, ключевых решений в бизнесе.</div>
-      </div>
-    </div>
-
-    <div class="model-card">
-      <div class="model-emoji">🚀</div>
-      <div class="model-content">
-        <div class="model-title" data-edit="" data-edit-id="e83b" data-bound-blur="1">Fable — флагман нового поколения</div>
-        <p data-edit="" data-edit-id="e84b" data-bound-blur="1">Самая мощная модель Anthropic на момент написания гайда. Вышла в июне 2026 как первая публичная модель Mythos-класса и опережает Opus 4.8 почти на всех тестах: программирование, рассуждения, работа с длинными документами (контекст до 1 млн токенов). Стоит примерно в два раза дороже Opus, поэтому включают её осознанно — под задачи, где нужен максимальный интеллект.</p>
-        <div class="model-best" data-edit="" data-edit-id="e85b" data-bound-blur="1"><strong>Идеально для:</strong> сложного кода, глубокой аналитики, работы с большими документами и транскриптами, задач, с которыми не справился Opus.</div>
       </div>
     </div>
 
     <div class="callout callout-tip">
       <div class="callout-title"><span class="callout-icon">💡</span><span data-edit="" data-edit-id="e86" data-bound-blur="1">Рекомендация для новичков:</span></div>
-      <p data-edit="" data-edit-id="e87" data-bound-blur="1">начинайте с Sonnet.</p>
-      <p data-edit="" data-edit-id="e88" data-bound-blur="1">Переключайтесь на Opus, когда чувствуете, что задача требует другого уровня глубины (учтите что эта модель быстрее расходует лимиты вашей подписки)</p>
+      <p data-edit="" data-edit-id="e87" data-bound-blur="1">Работайте на Opus 5.5 по умолчанию, сейчас это самая выгодная модель по соотношению качества и скорости.</p>
+      <p data-edit="" data-edit-id="e88" data-bound-blur="1">Для простой рутины переходите на Sonnet 5.5, чтобы экономить лимиты подписки. Fable 5.1 включайте только под действительно сложные задачи, она расходует лимиты быстрее всех.</p>
       <p data-edit="" data-edit-id="e89" data-bound-blur="1">На Haiku когда нужно быстро прогнать что-то простое.</p>
     </div>
   </div>
